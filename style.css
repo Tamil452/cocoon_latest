@@ -3664,7 +3664,7 @@ body:has(button:hover) #curOuter {
   .hero-visual { display: none; }
 
   .disc-panels { grid-template-columns: 1fr; height: auto; }
-  .disc-panel { height: 400px; }
+  .disc-panel { height: auto; min-height: 600px; }
 
   .story-grid { grid-template-columns: 1fr; gap: 40px; }
   .story-img { height: 320px; }
@@ -3719,7 +3719,7 @@ body:has(button:hover) #curOuter {
   .dt { padding: 8px 14px; font-size: 0.68rem; }
 
   .disc-panels { grid-template-columns: 1fr; }
-  .disc-panel { height: 350px; }
+  .disc-panel { height: auto; min-height: 540px; }
   .disc-content { padding: 28px; }
 
   .stats-band { padding: 48px 0; }
