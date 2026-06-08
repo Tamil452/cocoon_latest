@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Schedule — Cocoon Zumba Studio | Coimbatore</title>
+  <meta name="description" content="View the full weekly class timetable for Zumba fitness classes at Cocoon Training Academy, Coimbatore. Morning and evening batches available."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── SCHEDULE PAGE SPECIFIC ── */
+    .schedule-page { background: var(--bg); }
+
+    .sch-hero {
+      position: relative; height: 60vh; min-height: 480px;
+      display: flex; align-items: flex-end; overflow: hidden;
+    }
+    .sch-hero-bg {
+      position: absolute; inset: 0;
+    }
+    .sch-hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.25); }
+    .sch-hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, transparent 60%);
+    }
+    .sch-hero-content {
+      position: relative; z-index: 2;
+      padding: 0 80px 64px;
+      max-width: 1280px; width: 100%;
+    }
+    .sch-hero-content .sec-tag { margin-bottom: 16px; }
+    .sch-hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 9vw, 9rem);
+      color: var(--white); letter-spacing: 2px; line-height: 0.9;
+      margin-bottom: 16px;
+    }
+    .sch-hero-sub {
+      font-size: 1rem; color: var(--g2); max-width: 480px; line-height: 1.7;
+    }
+
+    /* Filter controls */
+    .sch-controls {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--goldb);
+      position: sticky; top: 76px; z-index: 100;
+      padding: 16px 0;
+    }
+    .sch-controls-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .day-tabs { display: flex; gap: 4px; }
+    .day-tab {
+      padding: 8px 18px; border-radius: 6px;
+      background: var(--bg3); border: 1px solid var(--goldb);
+      color: var(--g2); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+      transition: all 0.25s ease; white-space: nowrap;
+    }
+    .day-tab:hover { color: var(--gold); border-color: var(--gold3); }
+    .day-tab.active { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+
+    .type-filters { display: flex; gap: 6px; }
+    .type-btn {
+      padding: 7px 16px; border-radius: 999px;
+      background: transparent; border: 1px solid var(--goldb);
+      color: var(--g2); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .type-btn:hover { color: var(--gold); border-color: var(--gold3); }
+    .type-btn.active { background: var(--goldt); border-color: var(--gold); color: var(--gold); }
+
+    /* Schedule Board */
+    .sch-board-section { padding: 60px 0 80px; }
+    #schBoard { display: flex; flex-direction: column; gap: 40px; transition: opacity 0.25s, transform 0.25s; }
+    #schBoard.fading { opacity: 0; transform: translateY(8px); }
+
+    .slot-group {}
+    .slot-label {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--g3);
+      margin-bottom: 16px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--goldb);
+    }
+    .slot-label-icon { font-size: 1.1rem; }
+    .slot-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    /* Individual card */
+    .sch-card {
+      background: var(--bg3); border: 1px solid var(--goldb);
+      border-radius: 12px; padding: 22px 20px;
+      position: relative; overflow: hidden;
+      animation: cardIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .sch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+      border-color: var(--gold3);
+    }
+    .sch-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    }
+    .sch-card.card-zumba::before { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+    .sch-card.card-toning::before { background: linear-gradient(90deg, var(--gold3), var(--gold)); }
+    @keyframes cardIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
+
+    .sc-type {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .sch-card.card-zumba .sc-type { color: var(--gold); }
+    .sch-card.card-toning .sc-type { color: var(--gold3); }
+
+    .sc-name {
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .sc-time {
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 8px;
+    }
+    .sc-time-val { font-size: 0.8rem; font-weight: 700; color: var(--gold); }
+    .sc-time-sep { color: var(--g3); font-size: 0.7rem; }
+    .sc-coach { font-size: 0.75rem; color: var(--g2); margin-bottom: 12px; }
+    .sc-spots {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sc-level {
+      display: inline-block; padding: 3px 10px; border-radius: 4px;
+      background: var(--goldt); border: 1px solid var(--goldb);
+      font-size: 0.62rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .sc-spot-indicator {
+      width: 8px; height: 8px; border-radius: 50%;
+      display: inline-block;
+    }
+    .sc-spot-indicator.open { background: #4CAF50; }
+    .sc-spot-indicator.few  { background: var(--gold); }
+    .sc-spot-indicator.full { background: #e53e3e; }
+    .sc-spot-text { font-size: 0.62rem; color: var(--g3); display: flex; align-items: center; gap: 4px; }
+
+    /* Empty state */
+    .sch-empty {
+      text-align: center; padding: 80px 20px;
+      color: var(--g3); font-size: 1rem;
+    }
+    .sch-empty .empty-icon { font-size: 3rem; display: block; margin-bottom: 16px; }
+
+    /* Quick CTA strip */
+    .sch-cta-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--goldb);
+      padding: 40px 0;
+      text-align: center;
+    }
+    .sch-cta-strip h3 {
+      font-family: var(--ff-display); font-size: 1.8rem; letter-spacing: 1px;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .sch-cta-strip p { color: var(--g2); font-size: 0.9rem; margin-bottom: 20px; }
+
+    /* Legend */
+    .sch-legend {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--g3); }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    @media (max-width: 768px) {
+      .sch-hero-content { padding: 0 20px 48px; }
+      .sch-controls-inner { flex-direction: column; align-items: flex-start; }
+      .day-tabs { flex-wrap: wrap; }
+      .slot-cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .day-tab { padding: 6px 12px; font-size: 0.68rem; }
+    }
+  </style>
+</head>
+<body data-page="schedule" class="schedule-page">
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="pageTransition"></div>
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <!-- CUSTOM CURSOR -->
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ═══════ NAV ═══════ -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words">
+          <span class="lw-top">COCOON</span>
+          <span class="lw-bot">TRAINING ACADEMY</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ═══════ PAGE HERO ═══════ -->
+  <div class="sch-hero">
+    <div class="sch-hero-bg">
+      <img src="images/hero_main.png" alt="" aria-hidden="true"/>
+    </div>
+    <div class="sch-hero-content">
+      <div class="sec-tag">Weekly Timetable</div>
+      <h1 class="sch-hero-title">CLASS<br/>TIMETABLE.</h1>
+      <p class="sch-hero-sub">Morning and evening batches across all 7 days. Find a slot that fits your life and start your journey.</p>
+    </div>
+  </div>
+
+  <!-- ═══════ STICKY CONTROLS ═══════ -->
+  <div class="sch-controls" role="navigation" aria-label="Schedule filters">
+    <div class="sch-controls-inner">
+      <!-- Day tabs -->
+      <div class="day-tabs" role="tablist" aria-label="Day selector">
+        <button class="day-tab active" role="tab" aria-selected="true" data-day="monday">Mon</button>
+        <button class="day-tab" role="tab" data-day="tuesday">Tue</button>
+        <button class="day-tab" role="tab" data-day="wednesday">Wed</button>
+        <button class="day-tab" role="tab" data-day="thursday">Thu</button>
+        <button class="day-tab" role="tab" data-day="friday">Fri</button>
+        <button class="day-tab" role="tab" data-day="saturday">Sat</button>
+        <button class="day-tab" role="tab" data-day="sunday">Sun</button>
+      </div>
+
+      <!-- Type + legend -->
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <div class="type-filters" role="group" aria-label="Class type filter">
+          <button class="type-btn active" data-type="all">All</button>
+          <button class="type-btn" data-type="Zumba">💃 Zumba Classic</button>
+          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning</button>
+        </div>
+        <div class="sch-legend" aria-label="Spot availability legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#4CAF50;"></div>Available</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Few spots</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#e53e3e;"></div>Full</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SCHEDULE BOARD ═══════ -->
+  <section class="sch-board-section">
+    <div class="wrap">
+      <div id="schBoard" aria-live="polite" aria-atomic="true">
+        <!-- JS rendered -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ QUICK CTA ═══════ -->
+  <div class="sch-cta-strip">
+    <h3>SPOT A CLASS YOU LIKE?</h3>
+    <p>Book your first session for free. No commitment, no pressure.</p>
+    <a href="contact.html" class="btn-primary">Book Free Trial &rarr;</a>
+  </div>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark">C</div>
+              <div class="logo-words">
+                <span class="lw-top">COCOON</span>
+                <span class="lw-bot">TRAINING ACADEMY</span>
+              </div>
+            </a>
+            <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Classes</h5>
+            <ul>
+              <li><a href="classes.html">Zumba Fitness</a></li>
+              <li><a href="classes.html">Zumba Kids</a></li>
+              <li><a href="classes.html">Zumba Gold</a></li>
+              <li><a href="classes.html">Zumba Toning</a></li>
+              <li><a href="classes.html">Zumba Step</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Academy</h5>
+            <ul>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Coaches</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>No. 7, Arunachalam Street</li>
+              <li>Coimbatore &ndash; 641001</li>
+              <li>+91 98430 12345</li>
+              <li>info@cocoonacademy.in</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>&#11088; 4.9 Rating</span>
+          <span>&#127891; Zumba Certified</span>
+          <span>&#127941; Zumba Masterclasses</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <script src="script.js"></script>
+  <script>
+    /* ── SCHEDULE PAGE CONTROLLER ── */
+    (function () {
+      let activeDay = 'monday';
+      let activeType = 'all';
+
+      const board = document.getElementById('schBoard');
+
+      function makeCard(cls, delay) {
+        const isZumba = cls.class === 'Zumba' || cls.class === 'Zumba Gold' || cls.class === 'Zumba Kids';
+        const typeClass = isZumba ? 'card-zumba' : 'card-toning';
+        const typeIcon  = isZumba ? '💃' : '🏋️';
+        const spotClass = { open: 'open', few: 'few', full: 'full' }[cls.spots] || 'open';
+        const spotLabel = { open: 'Available', few: 'Few spots left', full: 'Full' }[cls.spots] || 'Available';
+
+        const el = document.createElement('div');
+        el.className = `sch-card ${typeClass}`;
+        el.style.animationDelay = delay + 'ms';
+        el.innerHTML = `
+          <div class="sc-type"><span>${typeIcon}</span> ${cls.class}</div>
+          <div class="sc-name">${cls.title}</div>
+          <div class="sc-time">
+            <span class="sc-time-val">${cls.time}</span>
+            <span class="sc-time-sep">→</span>
+            <span class="sc-time-val" style="color:var(--g2)">${cls.duration}</span>
+          </div>
+          <div class="sc-coach">👤 ${cls.instructor}</div>
+          <div class="sc-spots">
+            <span class="sc-level">${cls.level}</span>
+            <span class="sc-spot-text">
+              <span class="sc-spot-indicator ${spotClass}"></span>${spotLabel}
+            </span>
+          </div>
+        `;
+        return el;
+      }
+
+      function renderBoard() {
+        board.classList.add('fading');
+        setTimeout(() => {
+          board.innerHTML = '';
+          const dayData = SCHEDULE_DATA[activeDay];
+          if (!dayData) { board.innerHTML = '<div class="sch-empty"><span class="empty-icon">🌟</span>No classes scheduled today.</div>'; return; }
+
+          let totalCards = 0;
+
+          ['morning', 'evening'].forEach(slot => {
+            const classes = (dayData[slot] || []).filter(c => activeType === 'all' || c.class === activeType);
+            if (!classes.length) return;
+
+            const group = document.createElement('div');
+            group.className = 'slot-group';
+            const icon = slot === 'morning' ? '🌅' : '🌆';
+            const label = slot === 'morning' ? 'Morning Batches' : 'Evening Batches';
+            group.innerHTML = `<div class="slot-label"><span class="slot-label-icon">${icon}</span>${label}</div><div class="slot-cards" id="sc-${slot}"></div>`;
+            board.appendChild(group);
+
+            const grid = group.querySelector('.slot-cards');
+            classes.forEach((cls, i) => {
+              grid.appendChild(makeCard(cls, totalCards * 60));
+              totalCards++;
+            });
+          });
+
+          if (!totalCards) {
+            board.innerHTML = '<div class="sch-empty"><span class="empty-icon">🔍</span>No classes match your filter for this day.</div>';
+          }
+
+          board.classList.remove('fading');
+        }, 200);
+      }
+
+      /* Day tabs */
+      document.querySelectorAll('.day-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.day-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+          btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+          activeDay = btn.dataset.day;
+          renderBoard();
+        });
+      });
+
+      /* Type filter */
+      document.querySelectorAll('.type-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeType = btn.dataset.type;
+          renderBoard();
+        });
+      });
+
+      renderBoard();
+    })();
+  </script>
+</body>
+</html>

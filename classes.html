@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes – Cocoon Zumba Studio</title>
+  <meta name="description" content="Explore Zumba fitness classes at Cocoon Training Academy, Coimbatore. Programs for all ages and levels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PAGE HERO ─────────────────────────────────────── */
+    .page-hero{position:relative;min-height:56vh;display:flex;align-items:flex-end;padding:0 0 80px;overflow:hidden;}
+    .page-hero-bg{position:absolute;inset:0;background:url('images/zumba_class.png') center/cover no-repeat;filter:brightness(.35);}
+    .page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,transparent 60%);}
+    .page-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px;width:100%;}
+    .page-hero-eyebrow{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+    .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.95;color:var(--white);margin-bottom:20px;}
+    .page-hero h1 em{color:var(--gold);font-style:normal;}
+    .page-hero p{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--g1);max-width:560px;line-height:1.65;}
+
+    /* ── DISCIPLINE FILTER TABS ─────────────────────────── */
+    .disc-filter-section{background:var(--bg2);border-bottom:1px solid var(--g3);}
+    .disc-filter-wrap{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:12px;overflow-x:auto;scrollbar-width:none;}
+    .disc-filter-wrap::-webkit-scrollbar{display:none;}
+    .disc-filter-wrap{padding-top:0;padding-bottom:0;}
+    .disc-tab{font-family:'Inter',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:20px 28px;border:none;background:transparent;color:var(--g2);cursor:pointer;border-bottom:3px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap;position:relative;}
+    .disc-tab:hover{color:var(--gold);}
+    .disc-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+    /* ── DISCIPLINE BLOCK SHARED ────────────────────────── */
+    .discipline-block{padding:120px 0;position:relative;}
+    .discipline-block+.discipline-block{border-top:1px solid var(--g3);}
+    .zumba-block{background:var(--bg);}
+    .disc-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+
+    /* ── SPLIT LAYOUT ───────────────────────────────────── */
+    .disc-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;}
+    .disc-split-img{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;}
+    .disc-split-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(0.16,1,0.3,1);}
+    .disc-split-img:hover img{transform:scale(1.04);}
+    .disc-split-img::before{content:'';position:absolute;inset:0;border:1px solid var(--goldb);border-radius:var(--r2);z-index:1;pointer-events:none;}
+    .disc-tag{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold2);margin-bottom:16px;}
+    .disc-split-content{padding-top:20px;}
+    .disc-split-content h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);line-height:.95;color:var(--white);margin-bottom:24px;}
+    .disc-split-content p{font-family:'Inter',sans-serif;font-size:1.05rem;color:var(--g1);line-height:1.75;margin-bottom:32px;}
+
+    /* ── SUB-PROGRAM CARDS ──────────────────────────────── */
+    .subprog-heading{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g2);margin-bottom:20px;}
+    .subprog-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:60px;}
+    .subprog-card{background:var(--bg3);border:1px solid var(--g3);border-radius:var(--r);padding:24px;cursor:default;transition:border-color .3s,transform .3s;position:relative;overflow:hidden;}
+    .subprog-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--goldt),transparent);opacity:0;transition:opacity .3s;}
+    .subprog-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+    .subprog-card:hover::after{opacity:1;}
+    .subprog-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
+    .subprog-name{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+    .subprog-desc{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--g2);line-height:1.55;margin-bottom:12px;}
+    .level-badge{display:inline-block;font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:var(--goldb);color:var(--gold2);}
+    .level-badge.beginner{background:rgba(100,200,100,.12);color:#6dc86d;}
+    .level-badge.intermediate{background:rgba(200,151,63,.18);color:var(--gold2);}
+    .level-badge.advanced{background:rgba(200,80,80,.12);color:#e07070;}
+    .level-badge.all{background:rgba(130,130,200,.12);color:#a0a0e0;}
+    .level-badge.kids{background:rgba(200,160,220,.15);color:#d0a8e8;}
+    .level-badge.cert{background:rgba(60,200,200,.12);color:#60d0d0;}
+
+    /* ── BENEFITS GRID ──────────────────────────────────── */
+    .benefits-heading{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g2);margin-bottom:20px;}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .benefit-item{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--bg4);border-radius:var(--r);border:1px solid var(--g3);}
+    .benefit-icon{font-size:1.4rem;flex-shrink:0;}
+    .benefit-text strong{display:block;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;color:var(--white);margin-bottom:4px;}
+    .benefit-text span{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--g2);}
+
+
+
+    /* ── COMBO BLOCK ────────────────────────────────────── */
+    .combo-block{background:var(--bg3);padding:120px 0;position:relative;overflow:hidden;}
+    .combo-block::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,var(--goldt) 0%,transparent 70%);pointer-events:none;}
+    .combo-inner{max-width:900px;margin:0 auto;padding:0 40px;text-align:center;}
+    .combo-eyebrow{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+    .combo-inner h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);color:var(--white);margin-bottom:24px;line-height:.95;}
+    .combo-inner h2 span{color:var(--gold);}
+    .combo-inner p{font-family:'Inter',sans-serif;font-size:1.1rem;color:var(--g1);line-height:1.75;max-width:650px;margin:0 auto 40px;}
+    .combo-pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+    .combo-pill{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;padding:8px 20px;border-radius:30px;border:1px solid var(--gold);color:var(--gold);background:var(--goldt);}
+    .combo-price-teaser{display:inline-flex;align-items:center;gap:16px;background:var(--bg4);border:1px solid var(--gold);border-radius:var(--r2);padding:20px 36px;margin-bottom:32px;}
+    .combo-price-teaser .cpt-label{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--g2);}
+    .combo-price-teaser .cpt-price{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);line-height:1;}
+    .combo-price-teaser .cpt-period{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--g2);}
+
+    /* ── FAQ ─────────────────────────────────────────────── */
+    .classes-faq{background:var(--bg);padding:100px 0;}
+    .faq-inner{max-width:760px;margin:0 auto;padding:0 40px;}
+    .section-label{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center;}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:var(--white);text-align:center;margin-bottom:60px;line-height:.95;}
+    .faq-list{list-style:none;display:flex;flex-direction:column;gap:2px;}
+    .faq-item{background:var(--bg2);border-radius:var(--r);overflow:hidden;border:1px solid var(--g3);}
+    .faq-item.open{border-color:var(--gold3);}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;cursor:pointer;gap:20px;}
+    .faq-q span{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;color:var(--white);}
+    .faq-icon{font-size:1.3rem;color:var(--gold);flex-shrink:0;transition:transform .3s cubic-bezier(0.16,1,0.3,1);}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(0.16,1,0.3,1);}
+    .faq-body p{padding:0 28px 22px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--g1);line-height:1.7;}
+
+    /* ── PAGE CTA ─────────────────────────────────────────── */
+    .page-cta{background:var(--bg2);padding:100px 0;text-align:center;}
+    .page-cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);color:var(--white);margin-bottom:20px;}
+    .page-cta h2 span{color:var(--gold);}
+    .page-cta p{font-family:'Inter',sans-serif;font-size:1.05rem;color:var(--g1);margin-bottom:36px;}
+    .page-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:900px){
+      .disc-split{grid-template-columns:1fr;gap:40px;}
+      .disc-split-img{aspect-ratio:16/9;}
+      .subprog-grid{grid-template-columns:1fr;}
+      .benefits-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      .benefits-grid{grid-template-columns:1fr;}
+      .page-hero-content{padding:0 20px;}
+      .disc-inner{padding:0 20px;}
+      .combo-inner{padding:0 20px;}
+      .faq-inner{padding:0 20px;}
+    }
+  </style>
+</head>
+<body data-page="classes">
+
+  <!-- Page Transition -->
+  <div class="page-transition" id="pageTransition"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div id="curOuter"></div><div id="curInner"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words"><span class="lw-top">COCOON</span><span class="lw-bot">TRAINING ACADEMY</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="classes.html" class="active">Classes</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- 1. PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-eyebrow">Disciplines &amp; Programs</p>
+      <h1>FIND YOUR<br><em>DISCIPLINE</em></h1>
+      <p>Whether you crave the rhythm of Zumba Classic or the strength of Zumba Toning & Step — we have a program built for your goals, your pace, your transformation.</p>
+    </div>
+  </section>
+
+  <!-- 2. DISCIPLINE FILTER TABS -->
+  <div class="disc-filter-section">
+    <div class="disc-filter-wrap">
+      <button class="disc-tab active" data-filter="all">All Programs</button>
+      <button class="disc-tab" data-filter="zumba">Zumba Classic</button>
+      <button class="disc-tab" data-filter="all">Zumba Toning &amp; Step</button>
+    </div>
+  </div>
+
+  <!-- 3. ZUMBA DEEP DIVE -->
+  <section class="discipline-block zumba-block" id="zumba" data-disc="zumba">
+    <div class="disc-inner">
+      <!-- Split -->
+      <div class="disc-split">
+        <div class="disc-split-img" data-scroll-reveal>
+          <img src="images/zumba_class.png" alt="Zumba class at Cocoon Training Academy" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag">Feel the Rhythm, Feel the Joy</span>
+          <h2>ZUMBA<br>FITNESS</h2>
+          <p>Born in Colombia, perfected in Coimbatore. Zumba at Cocoon is a high-energy dance-fitness experience that blends Latin rhythms — salsa, merengue, cumbia — with international pop. No dance experience required. Just show up and move.</p>
+          <p>Our certified instructors guide every step with precision and passion, making sure every session leaves you energised, sweaty, and smiling.</p>
+        </div>
+      </div>
+
+      <!-- Sub-programs -->
+      <p class="subprog-heading">Our Zumba Programs</p>
+      <div class="subprog-grid">
+        <div class="subprog-card" data-scroll-reveal>
+          <span class="subprog-icon">🕺</span>
+          <p class="subprog-name">Zumba Fitness (All Levels)</p>
+          <p class="subprog-desc">The flagship class. High-energy Latin dance cardio for adults of all fitness levels. Burn calories without feeling like a workout.</p>
+          <span class="level-badge all">All Levels</span>
+        </div>
+        <div class="subprog-card" data-scroll-reveal>
+          <span class="subprog-icon">🌟</span>
+          <p class="subprog-name">Zumba Kids (Ages 5–12)</p>
+          <p class="subprog-desc">Fun, age-appropriate choreography designed to build coordination, confidence, and a love of movement in children.</p>
+          <span class="level-badge kids">Ages 5–12</span>
+        </div>
+        <div class="subprog-card" data-scroll-reveal>
+          <span class="subprog-icon">💛</span>
+          <p class="subprog-name">Zumba Gold (Seniors)</p>
+          <p class="subprog-desc">Low-impact Zumba tailored for active older adults. Same great music and moves, modified for joint health and balance.</p>
+          <span class="level-badge beginner">Low Impact</span>
+        </div>
+        <div class="subprog-card" data-scroll-reveal>
+          <span class="subprog-icon">🏆</span>
+          <p class="subprog-name">Instructor Certification</p>
+          <p class="subprog-desc">Ready to lead? Our intensive ZIN™-aligned certification course trains you to teach Zumba professionally.</p>
+          <span class="level-badge cert">Certification</span>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <p class="benefits-heading">Why Zumba at Cocoon</p>
+      <div class="benefits-grid">
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">🔥</span>
+          <div class="benefit-text"><strong>Burn 400–600 Cal/Session</strong><span>Torch serious calories while dancing — not suffering.</span></div>
+        </div>
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">💪</span>
+          <div class="benefit-text"><strong>Full Body Workout</strong><span>Core, legs, arms — every muscle joins the party.</span></div>
+        </div>
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">🎵</span>
+          <div class="benefit-text"><strong>No Experience Needed</strong><span>First class? You'll feel like you've been here for months.</span></div>
+        </div>
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">🧘</span>
+          <div class="benefit-text"><strong>Stress Relief</strong><span>Dance releases endorphins. Science and smiles agree.</span></div>
+        </div>
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">🤝</span>
+          <div class="benefit-text"><strong>Vibrant Community</strong><span>Join a tribe of 200+ active members in Coimbatore.</span></div>
+        </div>
+        <div class="benefit-item" data-scroll-reveal>
+          <span class="benefit-icon">📅</span>
+          <div class="benefit-text"><strong>Flexible Schedules</strong><span>Morning and evening batches every day of the week.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PREMIUM UNLIMITED BLOCK -->
+  <section class="combo-block" id="combo" data-disc="all">
+    <div class="combo-inner">
+      <p class="combo-eyebrow">Unlimited Access Pass</p>
+      <h2>ZUMBA UNLIMITED<br><span>MEMBERSHIP</span></h2>
+      <p>Get complete access to all Zumba programs under one roof! Flow between Zumba Fitness, Zumba Toning, Zumba Step, and specialized classes — creating the ultimate dynamic cardio schedule in Coimbatore.</p>
+      <div class="combo-pills">
+        <span class="combo-pill">Zumba Classic</span>
+        <span class="combo-pill">Zumba Toning</span>
+        <span class="combo-pill">Zumba Step</span>
+        <span class="combo-pill">Zumba Kids</span>
+        <span class="combo-pill">Zumba Gold</span>
+      </div>
+      <div class="combo-price-teaser">
+        <div>
+          <div class="cpt-label">Starting from</div>
+          <div class="cpt-price">₹2,499</div>
+          <div class="cpt-period">/ month</div>
+        </div>
+        <div style="width:1px;height:48px;background:var(--g3);"></div>
+        <div style="font-family:'Inter',sans-serif;font-size:.85rem;color:var(--g1);text-align:left;">
+          Unlimited access<br>to all batch times
+        </div>
+      </div>
+      <div class="page-cta-btns">
+        <a href="pricing.html" class="btn-primary">See Full Pricing →</a>
+        <a href="contact.html" class="btn-ghost">Book Free Trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section class="classes-faq">
+    <div class="faq-inner">
+      <p class="section-label">Got Questions?</p>
+      <h2 class="section-title">FREQUENTLY ASKED</h2>
+      <ul class="faq-list">
+        <li class="faq-item">
+          <div class="faq-q" role="button">
+            <span>Do I need prior dancing experience to join?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body"><p>Absolutely not! Our Zumba programs are designed with simple, repetitive steps that anyone can follow regardless of dance background. Our instructors are trained to guide you so you feel comfortable from day one. Your first class is free, so come try it!</p></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" role="button">
+            <span>What age groups do you cater to?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body"><p>We have specialized programs for all age groups: Zumba Kids (ages 5–12), Zumba Gold for active seniors and beginners (50+), and regular Zumba Fitness for teens and adults. We believe dance fitness is for everyone.</p></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" role="button">
+            <span>What should I wear to a Zumba class?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body"><p>We recommend comfortable athletic wear (such as long-sleeve activewear tops and leggings) and supportive cross-training or fitness shoes that allow easy pivot movements. Please bring a water bottle and a small sweat towel.</p></div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-q" role="button">
+            <span>How many calories can I expect to burn?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body"><p>A typical 60-minute high-energy Zumba class burns between 400 to 600 calories depending on intensity. It's a full-body cardiovascular workout that boosts endurance and tones muscles.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. CTA -->
+  <section class="page-cta">
+    <div class="wrap">
+      <p class="section-label">Ready to Begin?</p>
+      <h2>YOUR FIRST CLASS<br>IS <span>FREE</span></h2>
+      <p>No commitment. No pressure. Just come, move, and feel the difference.</p>
+      <div class="page-cta-btns">
+        <a href="contact.html" class="btn-primary">Book Your Free Trial</a>
+        <a href="schedule.html" class="btn-ghost">View Schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top"><div class="wrap"><div class="footer-grid">
+      <div class="fg-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">C</div>
+          <div class="logo-words"><span class="lw-top">COCOON</span><span class="lw-bot">TRAINING ACADEMY</span></div>
+        </a>
+        <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
+        <div class="social-links"><a href="#">IG</a><a href="#">FB</a><a href="#">YT</a><a href="#">WA</a></div>
+      </div>
+      <div class="fg-col"><h5>Classes</h5><ul><li><a href="classes.html">Zumba Fitness</a></li><li><a href="classes.html">Zumba Kids</a></li><li><a href="classes.html">Zumba Toning</a></li><li><a href="classes.html">Zumba Step</a></li></ul></div>
+      <div class="fg-col"><h5>Academy</h5><ul><li><a href="about.html">Our Story</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="fg-col"><h5>Contact</h5><ul><li>Coimbatore &ndash; 641001</li><li>+91 98430 12345</li><li>info@cocoonacademy.in</li></ul></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="wrap footer-bottom-inner"><p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy.</p><div class="footer-badges"><span>&#11088; 4.9 Rating</span><span>&#127891; Zumba Certified</span></div></div></div>
+  </footer>
+  <a href="#" class="back-to-top" id="backToTop">&uarr;</a>
+
+  <script src="script.js"></script>
+  <script>
+    // ── DISCIPLINE FILTER TABS ──────────────────────────────
+    const discTabs = document.querySelectorAll('.disc-tab');
+    const discBlocks = document.querySelectorAll('.discipline-block, .combo-block');
+    discTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        discTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        discBlocks.forEach(block => {
+          if (filter === 'all') {
+            block.style.display = '';
+          } else {
+            block.style.display = (block.dataset.disc === filter || block.dataset.disc === 'all') ? '' : 'none';
+          }
+        });
+        // Scroll to first visible
+        const firstVisible = document.querySelector('.discipline-block:not([style*="none"])') || document.querySelector('.combo-block');
+        if (firstVisible) firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // ── FAQ ACCORDION ───────────────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const body = item.querySelector('.faq-body');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-body').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

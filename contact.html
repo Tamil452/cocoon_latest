@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact & Book Free Trial — Cocoon Training Academy, Coimbatore</title>
+  <meta name="description" content="Book your free trial class at Cocoon Training Academy, Coimbatore's premier Zumba fitness studio. First class free. Call within 2 hours."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-page="contact">
+
+  <!-- Page Transition -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Custom Cursor -->
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words">
+          <span class="lw-top">COCOON</span>
+          <span class="lw-bot">TRAINING ACADEMY</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ══════════ PAGE HERO ══════════ -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('images/contact_bg.png');"></div>
+    <div class="page-hero-content">
+      <div class="sec-tag reveal">Contact Us</div>
+      <h1 class="ph-title reveal" style="--delay:0.1s">START YOUR JOURNEY TODAY</h1>
+      <p class="ph-sub reveal" style="--delay:0.2s">Your first class is free. No commitments, no pressure — just come experience the energy of Cocoon Training Academy and see if it's right for you.</p>
+    </div>
+    <div class="page-hero-scroll-cue">
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════ TRUST STRIP ══════════ -->
+  <div class="trust-strip">
+    <div class="ts-item">
+      <span class="ts-icon">🎁</span>
+      <div><strong>First Class Free</strong><span>Zero cost trial</span></div>
+    </div>
+    <div class="ts-item">
+      <span class="ts-icon">🤝</span>
+      <div><strong>No Commitment</strong><span>No lock-in contracts</span></div>
+    </div>
+    <div class="ts-item">
+      <span class="ts-icon">⚡</span>
+      <div><strong>Call Within 2 Hours</strong><span>We respond fast</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CONTACT GRID ══════════ -->
+  <section class="section contact-section" id="bookTrial">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <!-- LEFT: FORM -->
+        <div class="contact-form-col reveal">
+          <div class="sec-tag">Book Free Trial</div>
+          <h2 class="sec-title" style="margin-bottom:12px">BOOK YOUR<br/><em>Free Trial</em></h2>
+          <p class="sec-subtitle" style="margin-bottom:32px">Fill in your details and we'll personally call you within 2 hours to confirm your free class slot.</p>
+
+          <!-- Trial Form -->
+          <form class="trial-form" id="trialForm" onsubmit="handleTrialForm(event)" novalidate>
+            <div class="form-row">
+              <div class="fg">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Kavitha" required autocomplete="given-name"/>
+              </div>
+              <div class="fg">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Sundaram" required autocomplete="family-name"/>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98430 12345" required autocomplete="tel"/>
+            </div>
+            <div class="fg">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="kavitha@gmail.com" autocomplete="email"/>
+            </div>
+            <div class="fg">
+              <label for="classInterest">Class Interest</label>
+              <select id="classInterest" name="classInterest" required>
+                <option value="">Choose a program...</option>
+                <option value="zumba-fitness">Zumba Fitness Classic</option>
+                <option value="zumba-toning">Zumba Toning (Strength)</option>
+                <option value="zumba-step">Zumba Step (Cardio)</option>
+                <option value="zumba-kids">Zumba Kids (Ages 5–12)</option>
+                <option value="zumba-gold">Zumba Gold (Active Seniors)</option>
+                <option value="zumba-unlimited">Zumba Unlimited Access Pass</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="preferredTime">Preferred Time</label>
+              <select id="preferredTime" name="preferredTime" required>
+                <option value="">Select a time slot...</option>
+                <option value="morning">Morning (6:00 AM – 9:00 AM)</option>
+                <option value="evening">Evening (5:00 PM – 8:00 PM)</option>
+                <option value="flexible">Flexible (Any time)</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="questions">Any questions? <span style="color:var(--g3);font-weight:400">(optional)</span></label>
+              <textarea id="questions" name="questions" placeholder="Tell us anything you'd like us to know — injuries, goals, experience level..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:16px 28px;font-size:0.9rem;border-radius:8px;">
+              Book My Free Trial Class
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <p class="form-privacy">🔒 Your info is private. We'll only contact you about your trial.</p>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="formSuccess">
+            <div class="fs-butterfly">🦋</div>
+            <h3 class="fs-heading">YOU'RE IN!</h3>
+            <p class="fs-sub">We'll call you within 2 hours to confirm your free class slot. Get ready to transform!</p>
+            <div class="fs-details">
+              <div class="fs-detail-item">
+                <span class="fs-d-icon">📍</span>
+                <span>No. 7, Arunachalam Street, Coimbatore – 641001</span>
+              </div>
+              <div class="fs-detail-item">
+                <span class="fs-d-icon">📞</span>
+                <span>+91 98430 12345</span>
+              </div>
+            </div>
+            <a href="index.html" class="btn-primary" style="margin-top:24px;border-radius:8px;">Back to Home</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: INFO -->
+        <div class="contact-info-col reveal" style="--delay:0.15s">
+          <h3 class="contact-info-heading">GET IN TOUCH</h3>
+          <p class="sec-subtitle" style="margin-bottom:28px">Drop by, call us, or send us a message. We're always happy to help you start your fitness journey.</p>
+
+          <div class="info-cards">
+            <!-- Location -->
+            <div class="info-card">
+              <div class="ic-icon">📍</div>
+              <div class="ic-body">
+                <strong>Our Location</strong>
+                <p>No. 7, Arunachalam Street<br/>Coimbatore – 641001, Tamil Nadu</p>
+                <a href="https://maps.google.com/?q=11.0168,76.9558" target="_blank" rel="noopener" class="ic-link">Get Directions &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="info-card">
+              <div class="ic-icon">📞</div>
+              <div class="ic-body">
+                <strong>Phone</strong>
+                <a href="tel:+919843012345">+91 98430 12345</a>
+                <span>Mon–Sat: 6:00 AM – 8:30 PM</span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="info-card">
+              <div class="ic-icon">✉️</div>
+              <div class="ic-body">
+                <strong>Email</strong>
+                <a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a>
+                <span>We reply within 24 hours</span>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="info-card">
+              <div class="ic-icon">🕐</div>
+              <div class="ic-body">
+                <strong>Class Hours</strong>
+                <p>Mon – Sat: 6:00 AM – 8:30 PM</p>
+                <p>Sunday: 7:00 AM – 1:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="contact-social">
+            <h4 class="contact-social-heading">FOLLOW US</h4>
+            <div class="contact-social-links">
+              <a href="#" class="csocial-link" aria-label="Instagram">
+                <span class="csocial-icon">IG</span>
+                <span class="csocial-name">Instagram</span>
+              </a>
+              <a href="#" class="csocial-link" aria-label="Facebook">
+                <span class="csocial-icon">FB</span>
+                <span class="csocial-name">Facebook</span>
+              </a>
+              <a href="#" class="csocial-link" aria-label="YouTube">
+                <span class="csocial-icon">YT</span>
+                <span class="csocial-name">YouTube</span>
+              </a>
+              <a href="#" class="csocial-link csocial-wa" aria-label="WhatsApp">
+                <span class="csocial-icon">WA</span>
+                <span class="csocial-name">WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Facts -->
+          <div class="contact-quick-facts">
+            <div class="cqf-item">
+              <strong>800+</strong>
+              <span>Happy Students</span>
+            </div>
+            <div class="cqf-sep"></div>
+            <div class="cqf-item">
+              <strong>10+</strong>
+              <span>Years Active</span>
+            </div>
+            <div class="cqf-sep"></div>
+            <div class="cqf-item">
+              <strong>4.9★</strong>
+              <span>Google Rating</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MAP ══════════ -->
+  <section class="section section-sm map-section">
+    <div class="wrap">
+      <div class="map-header reveal">
+        <div class="sec-tag">Find Us</div>
+        <h3 class="sec-title" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:8px">FIND <em>US</em></h3>
+        <p class="sec-subtitle" style="margin-bottom:32px">We're centrally located in Coimbatore, easily accessible from all parts of the city.</p>
+      </div>
+      <div class="map-container reveal" style="--delay:0.1s">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62645.25!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Cocoon Training Academy Location — Coimbatore"
+        ></iframe>
+      </div>
+      <div class="map-address-strip reveal" style="--delay:0.2s">
+        <div class="mas-item">
+          <span class="mas-icon">📍</span>
+          <span>No. 7, Arunachalam Street, Coimbatore – 641001</span>
+        </div>
+        <div class="mas-item">
+          <span class="mas-icon">🚌</span>
+          <span>5 min from Gandhipuram Bus Stand</span>
+        </div>
+        <div class="mas-item">
+          <span class="mas-icon">🅿️</span>
+          <span>Free parking available nearby</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MINI CTA ══════════ -->
+  <section class="section section-sm mini-cta-section">
+    <div class="wrap text-center">
+      <div class="mini-cta-inner reveal">
+        <div class="sec-tag" style="margin:0 auto 20px">Still Deciding?</div>
+        <h2 class="sec-title" style="font-size:clamp(2rem,4vw,4rem);margin-bottom:16px">Your First Class<br/><em>Is On Us</em></h2>
+        <p class="sec-subtitle" style="margin:0 auto 36px;text-align:center">Come try any class for free. No credit card, no commitment. Just show up and experience the difference.</p>
+        <div class="mini-cta-actions">
+          <a href="#bookTrial" class="btn-primary">
+            Book Free Trial Now
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="tel:+919843012345" class="btn-ghost">
+            📞 Call Us Now
+          </a>
+        </div>
+        <p class="mini-cta-note">⭐ Rated 4.9/5 by 800+ students &nbsp;·&nbsp; Zumba fitness studio Certified &nbsp;·&nbsp; Est. 2014</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark">C</div>
+              <div class="logo-words">
+                <span class="lw-top">COCOON</span>
+                <span class="lw-bot">TRAINING ACADEMY</span>
+              </div>
+            </a>
+            <p>Coimbatore's premier Zumba fitness studio. Since 2014.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Classes</h5>
+            <ul>
+              <li><a href="classes.html">Zumba Fitness</a></li>
+              <li><a href="classes.html">Zumba Toning</a></li>
+              <li><a href="classes.html">Zumba Step</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Academy</h5>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>Coimbatore &ndash; 641001</li>
+              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+              <li><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>&#11088; 4.9 Rating</span>
+          <span>&#127891; Zumba Certified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <script src="script.js"></script>
+  <script>
+    function handleTrialForm(e) {
+      e.preventDefault();
+      var form = document.getElementById('trialForm');
+      var success = document.getElementById('formSuccess');
+      if (form && success) {
+        form.style.display = 'none';
+        success.style.display = 'flex';
+      }
+    }
+  </script>
+</body>
+</html>

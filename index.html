@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cocoon Zumba Studio — Dance, Sweat, Smile | Coimbatore</title>
+  <meta name="description" content="Coimbatore's premier Zumba fitness studio. 800+ students, 10+ years, 25+ events. Book your free trial dance class today." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ---- Index-specific overrides ------------------------ */
+
+
+
+    /* Hero visual gradient overlay at left edge */
+    .hero-visual::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0;
+      width: 120px;
+      background: linear-gradient(to right, var(--bg), transparent);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Disciplines headings centering */
+    .disciplines-section > .wrap > .section-head { margin-bottom: 0; }
+
+    /* CTA banner bg */
+    .cta-banner-bg::after {
+      background: linear-gradient(135deg, rgba(7,7,7,0.88) 60%, rgba(7,7,7,0.72) 100%);
+    }
+  </style>
+</head>
+<body data-page="home">
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ===================== NAV ========================== -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words">
+          <span class="lw-top">COCOON</span>
+          <span class="lw-bot">TRAINING ACADEMY</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ===================== HERO ========================= -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-content">
+
+      <!-- Eyebrow -->
+      <div class="hero-eyebrow">
+        <span class="pulse-dot"></span>
+        <span>EST. 2014 &middot; COIMBATORE, TAMIL NADU</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="hero-title">
+        <div class="ht-line ht-1"><span>DANCE.</span></div>
+        <div class="ht-line ht-2"><span>SWEAT.</span></div>
+        <div class="ht-line ht-3"><span>TRANSFORM.</span></div>
+      </h1>
+
+      <!-- Sub -->
+      <p class="hero-sub">
+        Coimbatore's most celebrated Zumba fitness studio. Shake, shake, and sweat to high-energy Latin beats under the guidance of certified instructors — your transformation begins on the dance floor.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas">
+        <a href="classes.html" class="btn-primary">Explore Classes &rarr;</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="hs-item">
+          <span class="hs-num">
+            <span class="count" data-to="800" data-suffix="+">0+</span>
+          </span>
+          <span class="hs-label">Students Trained</span>
+        </div>
+        <div class="hs-item">
+          <span class="hs-num">
+            <span class="count" data-to="10" data-suffix="+">0+</span>
+          </span>
+          <span class="hs-label">Years of Excellence</span>
+        </div>
+        <div class="hs-item">
+          <span class="hs-num">
+            <span class="count" data-to="25" data-suffix="+">0+</span>
+          </span>
+          <span class="hs-label">Zumba Events</span>
+        </div>
+      </div>
+    </div><!-- /hero-content -->
+
+    <!-- Visual -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hv-main">
+        <img src="images/zumba_class.png" alt="Zumba class at Cocoon Academy" loading="eager" />
+      </div>
+      <div class="hv-side">
+        <img src="images/about_community.png" alt="Zumba community at Cocoon Academy" loading="eager" />
+      </div>
+      <div class="hv-badge"><strong>4.9★</strong><span>Google Rating</span></div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section><!-- /hero -->
+
+  <!-- ===================== MARQUEE ====================== -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mt-text">ZUMBA FITNESS</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA TONING</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA KIDS</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA GOLD</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA STEP</span><span class="mt-sep">◆</span>
+      <span class="mt-text">CARDIO DANCE</span><span class="mt-sep">◆</span>
+      
+      <!-- Duplicated for seamless infinity scroll -->
+      <span class="mt-text">ZUMBA FITNESS</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA TONING</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA KIDS</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA GOLD</span><span class="mt-sep">◆</span>
+      <span class="mt-text">ZUMBA STEP</span><span class="mt-sep">◆</span>
+      <span class="mt-text">CARDIO DANCE</span><span class="mt-sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ===================== DISCIPLINES ================== -->
+  <section class="disciplines-section" id="disciplines">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="sec-tag">Our Programs</div>
+        <h2>EXPLORE OUR <em>ZUMBA PROGRAMS</em></h2>
+        <p>High-energy cardio, full-body toning, and specialized classes for kids and seniors — choose your dance style.</p>
+      </div>
+
+      <div class="disc-panels">
+
+                <!-- Zumba Panel -->
+        <div class="disc-panel disc-zumba" data-reveal data-reveal-delay="1">
+          <div class="disc-panel-bg">
+            <img src="images/zumba_class.png" alt="Zumba Fitness Class" />
+          </div>
+          <div class="disc-content">
+            <div class="disc-num">01</div>
+            <h3 class="disc-title">DANCE YOUR WAY TO HEALTH</h3>
+            <p class="disc-desc">High-energy Latin rhythms blended into an exhilarating fitness party. Burns calories, builds stamina, and leaves you smiling every single class.</p>
+            <ul class="disc-list">
+              <li>Zumba Fitness (All Levels)</li>
+              <li>Zumba Kids (Ages 5–12)</li>
+              <li>Zumba Gold (Active Seniors)</li>
+              <li>Zumba Toning</li>
+            </ul>
+            <a href="classes.html" class="btn-ghost">Explore Zumba &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Zumba Specialized Panel -->
+        <div class="disc-panel disc-specialized" data-reveal data-reveal-delay="2">
+          <div class="disc-panel-bg">
+            <img src="images/about_community.png" alt="Zumba Kids & Gold Class" />
+          </div>
+          <div class="disc-content">
+            <div class="disc-num">02</div>
+            <h3 class="disc-title">ZUMBA KIDS &amp; GOLD</h3>
+            <p class="disc-desc">Specialized classes designed to fit every age group. High-energy dance parties for children and low-impact, joint-friendly programs for active seniors.</p>
+            <ul class="disc-list">
+              <li>Zumba Kids (Ages 5–12)</li>
+              <li>Zumba Gold (Active Seniors)</li>
+              <li>Balance &amp; Rhythm Training</li>
+              <li>Zumba Family Classes</li>
+            </ul>
+            <a href="classes.html" class="btn-ghost">Explore Specialized Zumba &rarr;</a>
+          </div>
+        </div></div>
+
+      </div>
+    </div>
+  </section><!-- /disciplines -->
+
+  <!-- ===================== STATS BAND =================== -->
+  <div class="stats-band" aria-label="Academy statistics">
+    <div class="wrap">
+      <div class="sb-inner">
+        <div class="sb-item" data-reveal>
+          <div class="sb-val">
+            <span class="count" data-to="800" data-suffix="+">0</span>
+          </div>
+          <div class="sb-label">Students Trained</div>
+        </div>
+        <div class="sb-sep" aria-hidden="true"></div>
+        <div class="sb-item" data-reveal data-reveal-delay="1">
+          <div class="sb-val">
+            <span class="count" data-to="10" data-suffix="+">0</span>
+          </div>
+          <div class="sb-label">Years Active</div>
+        </div>
+        <div class="sb-sep" aria-hidden="true"></div>
+        <div class="sb-item" data-reveal data-reveal-delay="2">
+          <div class="sb-val">
+            <span class="count" data-to="25" data-suffix="+">0</span>
+          </div>
+          <div class="sb-label">Zumba Events</div>
+        </div>
+        <div class="sb-sep" aria-hidden="true"></div>
+        <div class="sb-item" data-reveal data-reveal-delay="3">
+          <div class="sb-val">
+            <span class="count" data-to="4">0</span>
+          </div>
+          <div class="sb-label">Community Meets</div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /stats-band -->
+
+  <!-- ===================== TESTIMONIAL ================== -->
+  <section class="testi-feature" aria-label="Student testimonial">
+    <span class="tf-quote-mark" aria-hidden="true">&ldquo;</span>
+    <div class="wrap">
+      <div class="testi-inner" data-reveal>
+        <div class="tf-stars" aria-label="5 stars">★★★★★</div>
+        <p class="tf-text">
+          &ldquo;I joined Zumba thinking it was just dancing. Within 2 months I lost 8 kgs and found a community I never knew I needed. This place changed my life.&rdquo;
+        </p>
+        <div class="tf-author">
+          <div class="tf-av">A</div>
+          <div class="tf-name">
+            <strong>Anitha Rajan</strong>
+            <span>Zumba Student &mdash; Member since 2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /testimonial -->
+
+  <!-- ===================== CTA BANNER =================== -->
+  <section class="cta-banner" aria-label="Call to action">
+    <div class="cta-banner-bg">
+      <img src="images/hero_main.png" alt="" aria-hidden="true" />
+    </div>
+    <div class="wrap cta-banner-inner" data-reveal>
+      <div class="sec-tag">Limited Spots Available</div>
+      <h2>READY TO BEGIN?</h2>
+      <p>Join hundreds of students who transformed their health, fitness, and confidence at Cocoon Training Academy.</p>
+      <a href="contact.html" class="btn-primary">Book Your Free Trial &rarr;</a>
+      <span class="cta-fine">First class absolutely free &bull; No commitment required</span>
+    </div>
+  </section><!-- /cta-banner -->
+
+  <!-- ===================== FOOTER ======================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark">C</div>
+              <div class="logo-words">
+                <span class="lw-top">COCOON</span>
+                <span class="lw-bot">TRAINING ACADEMY</span>
+              </div>
+            </a>
+            <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Classes</h5>
+            <ul>
+              <li><a href="classes.html">Zumba Fitness</a></li>
+              <li><a href="classes.html">Zumba Kids</a></li>
+              <li><a href="classes.html">Zumba Gold</a></li>
+              <li><a href="classes.html">Zumba Toning</a></li>
+              <li><a href="classes.html">Zumba Step</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Academy</h5>
+            <ul>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Coaches</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>No. 7, Arunachalam Street</li>
+              <li>Coimbatore &ndash; 641001</li>
+              <li>+91 98430 12345</li>
+              <li>info@cocoonacademy.in</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>&#11088; 4.9 Rating</span>
+          <span>&#127891; Zumba Certified</span>
+          <span>&#127941; Zumba Masterclasses</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Cocoon Zumba Studio | Our Story &amp; Team</title>
+  <meta name="description" content="A decade of dance, energy, and transformation. Discover the story of Cocoon Zumba Studio — Coimbatore's premier Zumba fitness community." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ---- About-specific overrides ----------------------- */
+
+    /* Timeline left-side text alignment */
+    .tl-item:nth-child(odd) .tl-body  { text-align: right; }
+    .tl-item:nth-child(even) .tl-body { text-align: left;  }
+    .tl-item:nth-child(odd) .tl-desc  { margin-left: auto; }
+
+    @media (max-width: 768px) {
+      .tl-item:nth-child(odd) .tl-body,
+      .tl-item:nth-child(even) .tl-body { text-align: left; }
+      .tl-item:nth-child(odd) .tl-desc  { margin-left: 0; }
+    }
+  </style>
+</head>
+<body data-page="about">
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ===================== NAV ========================== -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words">
+          <span class="lw-top">COCOON</span>
+          <span class="lw-bot">TRAINING ACADEMY</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ===================== PAGE HERO ==================== -->
+  <section class="page-hero" aria-label="About page hero">
+    <div class="page-hero-bg">
+      <img src="images/about_community.png" alt="Cocoon Academy community" loading="eager" />
+    </div>
+    <div class="page-hero-content">
+      <div class="sec-tag" data-reveal>About the Academy</div>
+      <h1 class="ph-title" data-reveal data-reveal-delay="1">OUR STORY</h1>
+      <p class="ph-sub" data-reveal data-reveal-delay="2">A decade of transformation in Coimbatore</p>
+    </div>
+  </section><!-- /page-hero -->
+
+  <!-- ===================== STORY SECTION ================ -->
+  <section class="story-section" id="story" aria-label="Our story">
+    <div class="wrap">
+      <div class="story-grid">
+
+        <!-- Image col -->
+        <div class="story-img" data-reveal>
+          <img src="images/about_community.png" alt="Cocoon Academy community training" />
+        </div>
+
+        <!-- Content col -->
+        <div class="story-content" data-reveal data-reveal-delay="2">
+          <div class="sec-tag">Est. 2014</div>
+          <h2>WHERE RHYTHM MEETS <em>Tradition</em></h2>
+          <p>
+            Cocoon Zumba Studio was born in 2014 from a single conviction: that fitness should feel like joy, and that workouts shouldn't feel like a chore. Our founder, a licensed Zumba instructor and fitness professional, set up a modest studio in Coimbatore with just 12 students and an unshakeable belief in the power of music and dance to transform lives.
+          </p>
+          <p>
+            Today, we are home to 800+ active students across all age groups, four certified female coaches, and a vibrant community of dance fitness enthusiasts. We are the premier Zumba-only studio in Tamil Nadu, offering specialized Zumba Fitness, Zumba Toning, Zumba Kids, and Zumba Gold classes — honoring the global language of rhythm, health, and pure happiness.
+          </p>
+
+          <!-- Mini stats -->
+          <div class="story-stat-boxes">
+            <div class="story-stat-box">
+              <strong>800+</strong>
+              <span>Students Trained</span>
+            </div>
+            <div class="story-stat-box">
+              <strong>25+</strong>
+              <span>Zumba Events</span>
+            </div>
+            <div class="story-stat-box">
+              <strong>4.9★</strong>
+              <span>Google Rating</span>
+            </div>
+            <div class="story-stat-box">
+              <strong>4</strong>
+              <span>Community Meets</span>
+            </div>
+          </div>
+
+          <a href="contact.html" class="story-link">Start Your Journey &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /story -->
+
+  <!-- ===================== TIMELINE ===================== -->
+  <section class="timeline-section" aria-label="Academy milestones">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="sec-tag">Milestones</div>
+        <h2>A DECADE OF <em>Milestones</em></h2>
+        <p>From a small studio to a state-recognised training academy — here's the journey.</p>
+      </div>
+
+      <div class="timeline" role="list">
+        <!-- Center vertical line -->
+        <div class="tl-line" aria-hidden="true"></div>
+
+        <ul>
+
+          <!-- 2014 -->
+          <li class="tl-item" role="listitem" data-reveal>
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2014</span>
+              <div class="tl-title">COCOON IS BORN</div>
+              <p class="tl-desc">Founded by Lakshmi Priya with 12 founding students in a 600 sq.ft studio in RS Puram, Coimbatore. The dream of bringing Latin-inspired dance cardio to Coimbatore takes its first breath.</p>
+            </div>
+          </li>
+
+          <!-- 2015 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2015</span>
+              <div class="tl-title">FIRST CHARITY FITNESS FESTIVAL</div>
+              <p class="tl-desc">We organize Coimbatore's first major charity Zumba fitness marathon, drawing 200+ dancers. The city takes notice of the Cocoon vibe.</p>
+            </div>
+          </li>
+
+          <!-- 2016 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2016</span>
+              <div class="tl-title">ZUMBA KIDS PROGRAM LAUNCHES</div>
+              <p class="tl-desc">Recognising the power of early movement education, we launch Zumba Kids — bringing rhythm and fitness to children aged 5–14. Enrolment doubles within three months.</p>
+            </div>
+          </li>
+
+          <!-- 2018 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2018</span>
+              <div class="tl-title">CORPORATE WELLNESS EXPANSION</div>
+              <p class="tl-desc">Cocoon launches its corporate wellness program, delivering Zumba classes to major tech hubs in Coimbatore to reduce workspace fatigue and boost energy.</p>
+            </div>
+          </li>
+
+          <!-- 2020 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2020</span>
+              <div class="tl-title">RESILIENCE — ONLINE PIVOT</div>
+              <p class="tl-desc">During the pandemic, Cocoon pivots to live-streamed online classes within a week. We retain 85% of our student base and reach learners in Bangalore, Chennai, and Hyderabad.</p>
+            </div>
+          </li>
+
+          <!-- 2022 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="1">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2022</span>
+              <div class="tl-title">EXPANDED CAMPUS &amp; 500 STUDENTS</div>
+              <p class="tl-desc">We move to our current 3,000 sq.ft. facility on Arunachalam Street, featuring dedicated double dance studios with shock-absorbent flooring, and cross the milestone of 500 enrolled students.</p>
+            </div>
+          </li>
+
+          <!-- 2024 -->
+          <li class="tl-item" role="listitem" data-reveal data-reveal-delay="2">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-year">2024</span>
+              <div class="tl-title">10 YEARS · MASSIVE CONCERT</div>
+              <p class="tl-desc">Our golden decade. We celebrate 10 years of pure joy by hosting a massive outdoor Zumba concert at Gandhipuram, bringing together 600+ students. The cocoon has fully transformed.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section><!-- /timeline -->
+
+  <!-- ===================== VALUES ======================= -->
+  <section class="values-section" aria-label="Our values">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="sec-tag">What We Stand For</div>
+        <h2>OUR <em>Core Values</em></h2>
+        <p>Every class, every session, every milestone is guided by three principles we refuse to compromise on.</p>
+      </div>
+
+      <div class="values-grid">
+
+        <div class="value-card" data-reveal data-reveal-delay="1">
+          <span class="value-icon" aria-hidden="true">💃</span>
+          <h3>VITALITY</h3>
+          <p>Zumba is a celebration of life through movement. We teach with high energy, ensuring every class is a dance fitness party that releases stress and boosts mental wellness. We honor the Latin and global rhythms that give birth to our choreography.</p>
+        </div>
+
+        <div class="value-card" data-reveal data-reveal-delay="2">
+          <span class="value-icon" aria-hidden="true">🏆</span>
+          <h3>EXCELLENCE</h3>
+          <p>We never teach to the average — we teach to the individual's full potential. Every student at Cocoon receives personalised attention, structured progression, and access to the same methods that produced 25+ national award-winning champions.</p>
+        </div>
+
+        <div class="value-card" data-reveal data-reveal-delay="3">
+          <span class="value-icon" aria-hidden="true">🫂</span>
+          <h3>COMMUNITY</h3>
+          <p>We believe the best transformation happens in community. Cocoon isn't a gym — it's a family. Our students celebrate together, compete together, and lift each other through every challenge. When you join Cocoon, you belong.</p>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /values -->
+
+  <!-- ===================== ACHIEVEMENTS ================= -->
+  <section class="achievements-section" aria-label="Academy achievements">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="sec-tag">Trophy Cabinet</div>
+        <h2>BUILT ON <em>Victories</em></h2>
+        <p>Over a decade of competing at the highest levels — these are the numbers that tell our story.</p>
+      </div>
+
+      <div class="achievements-grid">
+
+        <div class="ach-tile" data-reveal data-reveal-delay="1">
+          <span class="ach-icon" aria-hidden="true">🎉</span>
+          <div class="ach-num">100+</div>
+          <div class="ach-label">Zumba Events Led</div>
+        </div>
+
+        <div class="ach-tile" data-reveal data-reveal-delay="2">
+          <span class="ach-icon" aria-hidden="true">🔥</span>
+          <div class="ach-num">2,000+</div>
+          <div class="ach-label">Calories Burned/Class</div>
+        </div>
+
+        <div class="ach-tile" data-reveal data-reveal-delay="3">
+          <span class="ach-icon" aria-hidden="true">💖</span>
+          <div class="ach-num">10+</div>
+          <div class="ach-label">Years of Pure Joy</div>
+        </div>
+
+        <div class="ach-tile" data-reveal data-reveal-delay="4">
+          <span class="ach-icon" aria-hidden="true">⭐</span>
+          <div class="ach-num">4.9</div>
+          <div class="ach-label">Google Rating</div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /achievements -->
+
+  <!-- ===================== TEAM ========================= -->
+  <section class="section team-section" id="coaches" aria-label="Our coaches">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="sec-tag">Meet the Team</div>
+        <h2>MEET THE <em>Masters</em></h2>
+        <p>Four dedicated coaches. Decades of combined experience. One shared mission — your transformation.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- Coach 1: Lakshmi Priya -->
+        <div class="coach-card" data-reveal data-reveal-delay="1">
+          <div class="cc-avatar" aria-hidden="true">L</div>
+          <div class="cc-body">
+            <h4>LAKSHMI PRIYA</h4>
+            <span class="cc-role">Founder &amp; Head Zumba Instructor</span>
+            <p>A licensed Zumba Instructor since 2013 and the heart of Cocoon Academy. Lakshmi trained under international Zumba educators in Mumbai and brought the program back to Coimbatore with a mission to make fitness joyful for all. She has choreographed over 200 Zumba routines and personally trained more than 400 students.</p>
+            <div class="cc-tags">
+              <span>Zumba Licensed</span>
+              <span>10+ Yrs Teaching</span>
+              <span>400+ Students</span>
+              <span>Choreographer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach 2: Ananya Sen -->
+        <div class="coach-card" data-reveal data-reveal-delay="2">
+          <div class="cc-avatar" aria-hidden="true">A</div>
+          <div class="cc-body">
+            <h4>ANANYA SEN</h4>
+            <span class="cc-role">Head Zumba Toning Instructor</span>
+            <p>Ananya Sen is a certified Zumba Toning instructor with a passion for strength conditioning. She has been leading fitness classes since 2016 and specializes in using light weights to sculpt and tone muscles while dancing. Her high-octane playlists keep members motivated and moving every single class.</p>
+            <div class="cc-tags">
+              <span>Zumba Toning Cert.</span>
+              <span>Weight Sculpting</span>
+              <span>Fitness Specialist</span>
+              <span>8+ Yrs Coaching</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach 3: Divya Nair -->
+        <div class="coach-card" data-reveal data-reveal-delay="3">
+          <div class="cc-avatar" aria-hidden="true">D</div>
+          <div class="cc-body">
+            <h4>DIVYA NAIR</h4>
+            <span class="cc-role">Zumba Kids &amp; Zumba Gold Specialist</span>
+            <p>Divya specialises in age-specific Zumba programming — her Zumba Kids classes are legendary for their energy and her Zumba Gold sessions are beloved by seniors across Coimbatore. With a background in child development and dance therapy, she creates sessions that are as nurturing as they are effective.</p>
+            <div class="cc-tags">
+              <span>Child Dev. Cert.</span>
+              <span>Zumba Kids</span>
+              <span>Zumba Gold</span>
+              <span>Dance Therapy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach 4: Meera Krishnan -->
+        <div class="coach-card" data-reveal data-reveal-delay="4">
+          <div class="cc-avatar" aria-hidden="true">M</div>
+          <div class="cc-body">
+            <h4>MEERA KRISHNAN</h4>
+            <span class="cc-role">Zumba Step &amp; Cardio Specialist</span>
+            <p>Meera Krishnan is a licensed Zumba Step and Dance Cardio instructor. With a background in dance therapy and modern fitness conditioning, she creates routines that challenge coordination and burn serious calories. Meera brings high energy and creative choreography to every session.</p>
+            <div class="cc-tags">
+              <span>Zumba Step Lic.</span>
+              <span>Dance Therapy</span>
+              <span>Cardio Conditioning</span>
+              <span>5+ Yrs Coaching</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /team -->
+
+  <!-- ===================== ABOUT CTA ==================== -->
+  <section class="section about-cta text-center" aria-label="Call to action">
+    <div class="wrap" data-reveal>
+      <div class="sec-tag">Your Journey Starts Now</div>
+      <h2>TRAIN WITH THE BEST</h2>
+      <p>Come experience a free class, meet our coaches, and discover the discipline that will change your life. No pressure. Just transformation.</p>
+      <a href="contact.html" class="btn-primary">Book Your Free Trial &rarr;</a>
+    </div>
+  </section><!-- /about-cta -->
+
+  <!-- ===================== FOOTER ======================= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark">C</div>
+              <div class="logo-words">
+                <span class="lw-top">COCOON</span>
+                <span class="lw-bot">TRAINING ACADEMY</span>
+              </div>
+            </a>
+            <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Classes</h5>
+            <ul>
+              <li><a href="classes.html">Zumba Fitness</a></li>
+              <li><a href="classes.html">Zumba Kids</a></li>
+              <li><a href="classes.html">Zumba Gold</a></li>
+              <li><a href="classes.html">Zumba Toning</a></li>
+              <li><a href="classes.html">Zumba Step</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Academy</h5>
+            <ul>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="about.html">Coaches</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>No. 7, Arunachalam Street</li>
+              <li>Coimbatore &ndash; 641001</li>
+              <li>+91 98430 12345</li>
+              <li>info@cocoonacademy.in</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>&#11088; 4.9 Rating</span>
+          <span>&#127891; Zumba Certified</span>
+          <span>&#127941; Zumba Masterclasses</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
