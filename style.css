@@ -1001,7 +1001,7 @@ body:has(button:hover) #curOuter {
 
 .disc-panels {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   height: 650px;
 }
 
@@ -3699,6 +3699,20 @@ body:has(button:hover) #curOuter {
   .wrap { padding: 0 20px; }
   .nav-wrap { padding: 0 20px; }
 
+  #nav {
+    padding: 12px 0 !important;
+    background: rgba(7,7,7,0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--goldb) !important;
+  }
+  .nav-cta {
+    display: none !important;
+  }
+  .nav-right {
+    margin-left: auto;
+  }
+
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
@@ -3743,8 +3757,9 @@ body:has(button:hover) #curOuter {
 
   .footer-grid { grid-template-columns: 1fr; }
 
+  .story-stat-boxes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .timeline::before { left: 20px; }
-  .tl-item { grid-template-columns: 1fr; gap: 16px; }
+  .tl-item { grid-template-columns: 1fr; gap: 16px; padding-left: 48px; }
   .tl-item:nth-child(odd) .tl-content,
   .tl-item:nth-child(even) .tl-content {
     grid-column: 1;
@@ -3774,6 +3789,23 @@ body:has(button:hover) #curOuter {
 
 /* ── 480px ─ */
 @media (max-width: 480px) {
+  .logo {
+    gap: 8px !important;
+  }
+  .logo-mark {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.2rem !important;
+  }
+  .lw-top {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+  }
+  .lw-bot {
+    font-size: 0.45rem !important;
+    letter-spacing: 1px !important;
+  }
+
   .footer-grid { grid-template-columns: 1fr; }
 
   .prog-row { grid-template-columns: 1fr; }
@@ -3929,5 +3961,80 @@ body:has(button:hover) #curOuter {
   /* Reduce accordion padding slightly for mobile */
   .faq-q, .accordion-trigger {
     padding: 16px 20px !important;
+  }
+}
+
+/* ── 20. KIDS & DEVELOPMENT STYLES ───────────────────── */
+.level-badge.junior {
+  background: rgba(76, 175, 80, 0.15);
+  color: #81c784;
+}
+.level-badge.senior {
+  background: rgba(33, 150, 243, 0.15);
+  color: #64b5f6;
+}
+.sch-card.card-learning::before {
+  background: linear-gradient(90deg, #4caf50, #81c784) !important;
+}
+.sch-card.card-learning .sc-type {
+  color: #81c784 !important;
+}
+
+/* Learning Center Features Grid */
+.learning-features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+.learning-feature-card {
+  background: var(--bg3);
+  border: 1px solid var(--g3);
+  border-radius: var(--r);
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.learning-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #81c784;
+}
+.lfc-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.lfc-title {
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.lfc-desc {
+  font-size: 0.78rem;
+  color: var(--g2);
+  line-height: 1.5;
+}
+
+/* Kids Pricing Box */
+.kids-pricing-header {
+  margin: 60px 0 30px;
+  text-align: center;
+}
+.kids-pricing-header h3 {
+  font-family: var(--ff-display);
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+@media(max-width: 1024px) {
+  .learning-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media(max-width: 600px) {
+  .learning-features-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
