@@ -46,8 +46,9 @@
     .sch-controls {
       background: var(--bg2);
       border-bottom: 1px solid var(--goldb);
-      position: sticky; top: 76px; z-index: 100;
+      position: sticky; top: 68px; z-index: 100;
       padding: 16px 0;
+      transition: top 0.3s;
     }
     .sch-controls-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 40px;
@@ -64,6 +65,13 @@
     }
     .day-tab:hover { color: var(--gold); border-color: var(--gold3); }
     .day-tab.active { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+
+    .sch-filter-legend-wrap {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
     .type-filters { display: flex; gap: 6px; }
     .type-btn {
@@ -183,12 +191,69 @@
 
     @media (max-width: 768px) {
       .sch-hero-content { padding: 0 20px 48px; }
-      .sch-controls-inner { flex-direction: column; align-items: flex-start; }
-      .day-tabs { flex-wrap: wrap; }
+      .sch-controls {
+        top: 64px !important;
+        padding: 12px 0;
+        overflow-x: hidden;
+      }
+      .sch-controls-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 0 16px;
+      }
+      .day-tabs {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        margin: 0 -16px !important;
+        padding: 4px 16px !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .day-tabs::-webkit-scrollbar {
+        display: none !important;
+      }
+      .day-tab {
+        flex: 0 0 auto !important;
+        padding: 6px 14px !important;
+        font-size: 0.68rem !important;
+      }
+      .sch-filter-legend-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .type-filters {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        margin: 0 -16px !important;
+        padding: 4px 16px !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .type-filters::-webkit-scrollbar {
+        display: none !important;
+      }
+      .type-btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 6px 12px !important;
+        font-size: 0.68rem !important;
+      }
+      .sch-legend {
+        margin-top: 4px;
+        justify-content: flex-start;
+        gap: 12px;
+      }
       .slot-cards { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 480px) {
-      .day-tab { padding: 6px 12px; font-size: 0.68rem; }
+      .day-tab { padding: 5px 10px; font-size: 0.65rem; }
     }
   </style>
 </head>
@@ -271,11 +336,13 @@
       </div>
 
       <!-- Type + legend -->
-      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div class="sch-filter-legend-wrap">
         <div class="type-filters" role="group" aria-label="Class type filter">
           <button class="type-btn active" data-type="all">All</button>
           <button class="type-btn" data-type="Zumba">💃 Zumba Classic</button>
-          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning</button>
+          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning &amp; Step</button>
+          <button class="type-btn" data-type="Zumba Kids">🌟 Zumba Kids &amp; Gold</button>
+          <button class="type-btn" data-type="Kids Learning">📚 Kids Learning</button>
         </div>
         <div class="sch-legend" aria-label="Spot availability legend">
           <div class="legend-item"><div class="legend-dot" style="background:#4CAF50;"></div>Available</div>
@@ -345,10 +412,13 @@
           <div class="fg-col">
             <h5>Contact</h5>
             <ul>
-              <li>No. 7, Arunachalam Street</li>
-              <li>Coimbatore &ndash; 641001</li>
-              <li>+91 98430 12345</li>
-              <li>info@cocoonacademy.in</li>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
+              <li>No. 7, Arunachalam Street, 641001</li>
+              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
+              <li>No. 19, Nadu Chetty Street, 609801</li>
+              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
             </ul>
           </div>
         </div>
@@ -379,8 +449,9 @@
 
       function makeCard(cls, delay) {
         const isZumba = cls.class === 'Zumba' || cls.class === 'Zumba Gold' || cls.class === 'Zumba Kids';
-        const typeClass = isZumba ? 'card-zumba' : 'card-toning';
-        const typeIcon  = isZumba ? '💃' : '🏋️';
+        const isLearning = cls.class === 'Kids Learning';
+        const typeClass = isLearning ? 'card-learning' : (isZumba ? 'card-zumba' : 'card-toning');
+        const typeIcon  = isLearning ? '📚' : (isZumba ? '💃' : '🏋️');
         const spotClass = { open: 'open', few: 'few', full: 'full' }[cls.spots] || 'open';
         const spotLabel = { open: 'Available', few: 'Few spots left', full: 'Full' }[cls.spots] || 'Available';
 
@@ -416,7 +487,12 @@
           let totalCards = 0;
 
           ['morning', 'evening'].forEach(slot => {
-            const classes = (dayData[slot] || []).filter(c => activeType === 'all' || c.class === activeType);
+            const classes = (dayData[slot] || []).filter(c => {
+              if (activeType === 'all') return true;
+              if (activeType === 'Zumba Toning') return c.class === 'Zumba Toning' || c.class === 'Zumba Step';
+              if (activeType === 'Zumba Kids') return c.class === 'Zumba Kids' || c.class === 'Zumba Gold';
+              return c.class === activeType;
+            });
             if (!classes.length) return;
 
             const group = document.createElement('div');
@@ -460,6 +536,42 @@
           renderBoard();
         });
       });
+
+      // Drag-to-scroll utility for desktop dragging compatibility
+      function enableDragScroll(selector) {
+        const slider = document.querySelector(selector);
+        if (!slider) return;
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+          isDown = true;
+          slider.style.cursor = 'grabbing';
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+          isDown = false;
+          slider.style.cursor = 'grab';
+        });
+        slider.addEventListener('mouseup', () => {
+          isDown = false;
+          slider.style.cursor = 'grab';
+        });
+        slider.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+
+        slider.style.cursor = 'grab';
+      }
+
+      enableDragScroll('.day-tabs');
+      enableDragScroll('.type-filters');
 
       renderBoard();
     })();

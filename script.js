@@ -16,6 +16,7 @@ const SCHEDULE_DATA = {
       { time: '08:30 AM', duration: '60 min', class: 'Zumba', title: 'Power Zumba Cardio', level: 'Intermediate', instructor: 'Meera Krishnan', spots: 'open' },
     ],
     evening: [
+      { time: '05:00 PM', duration: '60 min', class: 'Kids Learning', title: 'Phonics & Reading Program', level: 'Ages 4–10', instructor: 'EB Club Tutor', spots: 'open' },
       { time: '05:30 PM', duration: '60 min', class: 'Zumba Step', title: 'Latin Step Flow', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
       { time: '06:45 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
       { time: '08:00 PM', duration: '60 min', class: 'Zumba Toning', title: 'Core & Toning Advanced', level: 'Advanced', instructor: 'Ananya Sen', spots: 'full' },
@@ -39,6 +40,7 @@ const SCHEDULE_DATA = {
       { time: '09:00 AM', duration: '60 min', class: 'Zumba Gold', title: 'Active Seniors Zumba', level: 'All Levels', instructor: 'Divya Nair', spots: 'open' },
     ],
     evening: [
+      { time: '05:00 PM', duration: '60 min', class: 'Kids Learning', title: 'Storytelling & Vocabulary', level: 'Ages 4–10', instructor: 'EB Club Tutor', spots: 'open' },
       { time: '05:30 PM', duration: '60 min', class: 'Zumba Step', title: 'Latin Step Flow', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
       { time: '07:00 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
     ],
@@ -60,6 +62,7 @@ const SCHEDULE_DATA = {
       { time: '07:15 AM', duration: '45 min', class: 'Zumba Toning', title: 'Toning & Sculpting', level: 'Beginner', instructor: 'Ananya Sen', spots: 'open' },
     ],
     evening: [
+      { time: '05:00 PM', duration: '60 min', class: 'Kids Learning', title: 'Creative Writing & Reading', level: 'Ages 4–10', instructor: 'EB Club Tutor', spots: 'open' },
       { time: '05:30 PM', duration: '75 min', class: 'Zumba Step', title: 'Latin Step & Dance', level: 'All Levels', instructor: 'Meera Krishnan', spots: 'few' },
       { time: '07:00 PM', duration: '60 min', class: 'Zumba', title: 'TGIF Dance fitness Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
       { time: '08:15 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
@@ -305,6 +308,12 @@ function initMobileDrawer() {
   burger.addEventListener('click', () => {
     drawer.classList.contains('open') ? closeDrawer() : openDrawer();
   });
+
+  // Close button listener
+  const closeBtn = document.getElementById('drawerClose');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
 
   if (overlay) overlay.addEventListener('click', closeDrawer);
 
