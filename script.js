@@ -53,7 +53,7 @@ const SCHEDULE_DATA = {
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Zumba Kids', title: 'Zumba Kids Party', level: 'Beginner (Kids)', instructor: 'Divya Nair', spots: 'open' },
       { time: '06:30 PM', duration: '60 min', class: 'Zumba Toning', title: 'Sculpt & Burn', level: 'Beginner', instructor: 'Ananya Sen', spots: 'open' },
-      { time: '07:45 PM', duration: '60 min', class: 'Zumba', title: 'Reggaeton Dance Beats', level: 'Intermediate', instructor: 'Meera Krishnan', spots: 'open' },
+      { time: '07:45 PM', duration: '60 min', class: 'Zumba', title: 'Reggaeton Dance Beats', level: 'Intermediate', instructor: 'Uvanitha Kamaraj', spots: 'open' },
     ],
   },
   friday: {
@@ -82,7 +82,7 @@ const SCHEDULE_DATA = {
   },
   sunday: {
     morning: [
-      { time: '07:00 AM', duration: '60 min', class: 'Zumba', title: 'Sunday Sunrise Dance', level: 'All Levels', instructor: 'Meera Krishnan', spots: 'open' },
+      { time: '07:00 AM', duration: '60 min', class: 'Zumba', title: 'Sunday Sunrise Dance', level: 'All Levels', instructor: 'Uvanitha Kamaraj', spots: 'open' },
       { time: '08:30 AM', duration: '120 min', class: 'Zumba Step', title: 'Masterclass Step Workshop', level: 'All Levels', instructor: 'Ananya Sen', spots: 'open' },
       { time: '11:00 AM', duration: '60 min', class: 'Zumba', title: 'Family Zumba Dance', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
     ],
