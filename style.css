@@ -997,6 +997,25 @@ body:has(button:hover) #curOuter {
   100% { transform: translateX(-50%); }
 }
 
+.tagline-strip {
+  background: var(--bg3);
+  border-top: 1px solid var(--goldb);
+  border-bottom: 1px solid var(--goldb);
+  padding: 32px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tagline-text {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--gold2);
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ── 15. DISCIPLINES SECTION (HOME) ──────────────────────── */
 .disciplines-section {
   overflow: hidden;
