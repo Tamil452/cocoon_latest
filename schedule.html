@@ -352,8 +352,6 @@
         <div class="type-filters" role="group" aria-label="Class type filter">
           <button class="type-btn active" data-type="all">All</button>
           <button class="type-btn" data-type="Zumba">💃 Zumba Fitness</button>
-          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning</button>
-          <button class="type-btn" data-type="Zumba Step">🪜 Zumba Step</button>
           <button class="type-btn" data-type="Zumba Kids Jr.">👶 Zumba Kids Jr.</button>
           <button class="type-btn" data-type="Zumba Kids">🌟 Zumba Kids</button>
           <button class="type-btn" data-type="Zumba Gold">💛 Zumba Gold</button>
@@ -467,13 +465,7 @@
         let typeClass = 'card-zumba';
         let typeIcon = '💃';
         
-        if (cls.class === 'Zumba Toning') {
-          typeClass = 'card-toning';
-          typeIcon = '🏋️';
-        } else if (cls.class === 'Zumba Step') {
-          typeClass = 'card-step';
-          typeIcon = '🪜';
-        } else if (cls.class === 'Zumba Kids Jr.') {
+        if (cls.class === 'Zumba Kids Jr.') {
           typeClass = 'card-junior';
           typeIcon = '👶';
         } else if (cls.class === 'Zumba Kids') {

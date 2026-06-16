@@ -12,58 +12,47 @@ const SCHEDULE_DATA = {
   monday: {
     morning: [
       { time: '06:00 AM', duration: '60 min', class: 'Zumba', title: 'Morning Energize', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
-      { time: '07:15 AM', duration: '45 min', class: 'Zumba Toning', title: 'Toning & Sculpting', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'few' },
       { time: '08:30 AM', duration: '60 min', class: 'Zumba', title: 'Power Zumba Cardio', level: 'Intermediate', instructor: 'Meera Krishnan', spots: 'open' },
     ],
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Zumba Kids Jr.', title: 'Junior Dance & Play', level: 'Ages 4&ndash;6', instructor: 'Divya Nair', spots: 'open' },
-      { time: '05:30 PM', duration: '60 min', class: 'Zumba Step', title: 'Latin Step Flow', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
       { time: '06:45 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
-      { time: '08:00 PM', duration: '60 min', class: 'Zumba Toning', title: 'Core & Toning Advanced', level: 'Advanced', instructor: 'Ananya Sen', spots: 'full' },
     ],
   },
   tuesday: {
     morning: [
       { time: '06:00 AM', duration: '60 min', class: 'Zumba', title: 'Sunrise Salsa Beat', level: 'All Levels', instructor: 'Meera Krishnan', spots: 'open' },
-      { time: '07:30 AM', duration: '90 min', class: 'Zumba Step', title: 'Traditional Step Rhythms', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
     ],
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Zumba Kids', title: 'Zumba Kids Party', level: 'Beginner (Kids)', instructor: 'Divya Nair', spots: 'open' },
-      { time: '06:15 PM', duration: '60 min', class: 'Zumba Toning', title: 'Toning & Sculpting', level: 'Beginner', instructor: 'Ananya Sen', spots: 'few' },
       { time: '07:30 PM', duration: '60 min', class: 'Zumba', title: 'Latin Dance Fusion', level: 'Intermediate', instructor: 'Meera Krishnan', spots: 'open' },
     ],
   },
   wednesday: {
     morning: [
       { time: '06:00 AM', duration: '60 min', class: 'Zumba', title: 'Morning Energize', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
-      { time: '07:15 AM', duration: '45 min', class: 'Zumba Toning', title: 'Toning & Sculpting', level: 'Beginner', instructor: 'Ananya Sen', spots: 'open' },
       { time: '09:00 AM', duration: '60 min', class: 'Zumba Gold', title: 'Active Seniors Zumba', level: 'All Levels', instructor: 'Divya Nair', spots: 'open' },
     ],
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Zumba Kids Jr.', title: 'Junior Groove Party', level: 'Ages 4&ndash;6', instructor: 'Divya Nair', spots: 'open' },
-      { time: '05:30 PM', duration: '60 min', class: 'Zumba Step', title: 'Latin Step Flow', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
       { time: '07:00 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
     ],
   },
   thursday: {
     morning: [
       { time: '06:00 AM', duration: '60 min', class: 'Zumba', title: 'Power Zumba Cardio', level: 'Intermediate', instructor: 'Meera Krishnan', spots: 'open' },
-      { time: '07:30 AM', duration: '90 min', class: 'Zumba Toning', title: 'Core & Toning Advanced', level: 'Advanced', instructor: 'Ananya Sen', spots: 'few' },
     ],
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Zumba Kids', title: 'Zumba Kids Party', level: 'Beginner (Kids)', instructor: 'Divya Nair', spots: 'open' },
-      { time: '06:30 PM', duration: '60 min', class: 'Zumba Toning', title: 'Sculpt & Burn', level: 'Beginner', instructor: 'Ananya Sen', spots: 'open' },
       { time: '07:45 PM', duration: '60 min', class: 'Zumba', title: 'Reggaeton Dance Beats', level: 'Intermediate', instructor: 'Uvanitha Kamaraj', spots: 'open' },
     ],
   },
   friday: {
     morning: [
       { time: '06:00 AM', duration: '60 min', class: 'Zumba', title: 'Morning Energize', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
-      { time: '07:15 AM', duration: '45 min', class: 'Zumba Toning', title: 'Toning & Sculpting', level: 'Beginner', instructor: 'Ananya Sen', spots: 'open' },
     ],
     evening: [
       { time: '05:00 PM', duration: '60 min', class: 'Aqua Zumba', title: 'Aqua Pool Party', level: 'All Levels', instructor: 'Uvanitha Kamaraj', spots: 'open' },
-      { time: '05:30 PM', duration: '75 min', class: 'Zumba Step', title: 'Latin Step & Dance', level: 'All Levels', instructor: 'Meera Krishnan', spots: 'few' },
       { time: '07:00 PM', duration: '60 min', class: 'Zumba', title: 'TGIF Dance fitness Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
       { time: '08:15 PM', duration: '60 min', class: 'Zumba', title: 'Evening Groove Party', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
     ],
@@ -71,19 +60,16 @@ const SCHEDULE_DATA = {
   saturday: {
     morning: [
       { time: '07:00 AM', duration: '90 min', class: 'Zumba', title: 'Weekend Dance Warrior', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
-      { time: '08:45 AM', duration: '90 min', class: 'Zumba Step', title: 'Full Syllabus Step Rhythms', level: 'Intermediate', instructor: 'Ananya Sen', spots: 'open' },
       { time: '10:30 AM', duration: '60 min', class: 'Zumba Gold', title: 'Active Seniors Zumba', level: 'All Levels', instructor: 'Divya Nair', spots: 'open' },
       { time: '12:00 PM', duration: '60 min', class: 'Zumba Kids', title: 'Zumba Kids Fun', level: 'Beginner (Kids)', instructor: 'Divya Nair', spots: 'few' },
     ],
     evening: [
-      { time: '05:00 PM', duration: '90 min', class: 'Zumba Toning', title: 'Core & Toning Advanced', level: 'Advanced', instructor: 'Ananya Sen', spots: 'few' },
       { time: '06:30 PM', duration: '90 min', class: 'Zumba', title: 'Saturday Night Dance Fever', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'open' },
     ],
   },
   sunday: {
     morning: [
       { time: '07:00 AM', duration: '60 min', class: 'Zumba', title: 'Sunday Sunrise Dance', level: 'All Levels', instructor: 'Uvanitha Kamaraj', spots: 'open' },
-      { time: '08:30 AM', duration: '120 min', class: 'Zumba Step', title: 'Masterclass Step Workshop', level: 'All Levels', instructor: 'Ananya Sen', spots: 'open' },
       { time: '11:00 AM', duration: '60 min', class: 'Zumba', title: 'Family Zumba Dance', level: 'All Levels', instructor: 'Lakshmi Priya', spots: 'few' },
     ],
     evening: [
