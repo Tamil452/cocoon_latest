@@ -201,7 +201,7 @@ body:has(button:hover) #curOuter {
 }
 
 /* ── 7. LAYOUT UTILITIES ─────────────────────────────────── */
-.wrap {
+.wrap, .disc-inner {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 40px;
@@ -3718,7 +3718,7 @@ body:has(button:hover) #curOuter {
 
 /* ── 768px ─ */
 @media (max-width: 768px) {
-  .wrap { padding: 0 20px; }
+  .wrap, .disc-inner { padding: 0 20px; }
   .nav-wrap { padding: 0 20px; }
 
   #nav {
@@ -4005,7 +4005,7 @@ body:has(button:hover) #curOuter {
 /* Learning Center Features Grid */
 .learning-features-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin: 40px 0;
 }
@@ -4039,6 +4039,170 @@ body:has(button:hover) #curOuter {
   line-height: 1.5;
 }
 
+/* Sub-program Grid & Cards (shared for Classes & Learning Centre) */
+.subprog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+.subprog-card {
+  background: var(--bg3);
+  border: 1px solid var(--g3);
+  border-radius: var(--r);
+  padding: 28px 24px;
+  cursor: default;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.subprog-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--goldt), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.subprog-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.subprog-card.green-border:hover {
+  border-color: #4caf50 !important;
+}
+.subprog-card:hover::after {
+  opacity: 1;
+}
+.subprog-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.subprog-name {
+  font-family: var(--ff-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.subprog-desc {
+  font-family: var(--ff-body);
+  font-size: 0.82rem;
+  color: var(--g2);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+.subprog-heading {
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 20px;
+}
+.level-badge {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--goldb);
+  color: var(--gold2);
+  align-self: flex-start;
+}
+.level-badge.beginner {
+  background: rgba(100, 200, 100, 0.12);
+  color: #6dc86d;
+}
+.level-badge.intermediate {
+  background: rgba(200, 151, 63, 0.18);
+  color: var(--gold2);
+}
+.level-badge.advanced {
+  background: rgba(200, 80, 80, 0.12);
+  color: #e07070;
+}
+.level-badge.all {
+  background: rgba(130, 130, 200, 0.12);
+  color: #a0a0e0;
+}
+.level-badge.kids {
+  background: rgba(200, 160, 220, 0.15);
+  color: #d0a8e8;
+}
+.level-badge.cert {
+  background: rgba(60, 200, 200, 0.12);
+  color: #60d0d0;
+}
+
+/* Split Grid Layout (shared for Classes & Learning Centre) */
+.disc-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+.disc-split-img {
+  position: relative;
+  border-radius: var(--r2);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.disc-split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.disc-split-img:hover img {
+  transform: scale(1.04);
+}
+.disc-split-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--goldb);
+  border-radius: var(--r2);
+  z-index: 1;
+  pointer-events: none;
+}
+.disc-tag {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold2);
+  margin-bottom: 16px;
+}
+.disc-split-content {
+  padding-top: 20px;
+}
+.disc-split-content h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: .95;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.disc-split-content p {
+  font-family: var(--ff-body);
+  font-size: 1.05rem;
+  color: var(--g1);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
 /* Kids Pricing Box */
 .kids-pricing-header {
   margin: 60px 0 30px;
@@ -4052,12 +4216,29 @@ body:has(button:hover) #curOuter {
 
 @media(max-width: 1024px) {
   .learning-features-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width: 900px) {
+  .subprog-grid {
+    grid-template-columns: 1fr;
+  }
+  .disc-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 60px !important;
+  }
+  .disc-split-img {
+    aspect-ratio: 16/10;
+    order: -1;
+  }
+  .disc-split-content {
+    padding-top: 0;
   }
 }
 @media(max-width: 600px) {
   .learning-features-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -4091,6 +4272,22 @@ body:has(button:hover) #curOuter {
   line-height: 1.7;
   color: var(--g1);
   margin-bottom: 24px;
+}
+.disc-split-content .disc-desc {
+  max-width: none;
+  font-size: 1.02rem;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.z-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.z-check-list li:not(:last-child) {
+  margin-bottom: 10px;
 }
 .z-check-list {
   list-style: none;

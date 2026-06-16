@@ -35,34 +35,9 @@
     .zumba-block{background:var(--bg);}
     .disc-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
 
-    /* ── SPLIT LAYOUT ───────────────────────────────────── */
-    .disc-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;}
-    .disc-split-img{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;}
-    .disc-split-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(0.16,1,0.3,1);}
-    .disc-split-img:hover img{transform:scale(1.04);}
-    .disc-split-img::before{content:'';position:absolute;inset:0;border:1px solid var(--goldb);border-radius:var(--r2);z-index:1;pointer-events:none;}
-    .disc-tag{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--gold2);margin-bottom:16px;}
-    .disc-split-content{padding-top:20px;}
-    .disc-split-content h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);line-height:.95;color:var(--white);margin-bottom:24px;}
-    .disc-split-content p{font-family:'Inter',sans-serif;font-size:1.05rem;color:var(--g1);line-height:1.75;margin-bottom:32px;}
 
-    /* ── SUB-PROGRAM CARDS ──────────────────────────────── */
-    .subprog-heading{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g2);margin-bottom:20px;}
-    .subprog-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:60px;}
-    .subprog-card{background:var(--bg3);border:1px solid var(--g3);border-radius:var(--r);padding:24px;cursor:default;transition:border-color .3s,transform .3s;position:relative;overflow:hidden;}
-    .subprog-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--goldt),transparent);opacity:0;transition:opacity .3s;}
-    .subprog-card:hover{border-color:var(--gold);transform:translateY(-3px);}
-    .subprog-card:hover::after{opacity:1;}
-    .subprog-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
-    .subprog-name{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:6px;}
-    .subprog-desc{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--g2);line-height:1.55;margin-bottom:12px;}
-    .level-badge{display:inline-block;font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:var(--goldb);color:var(--gold2);}
-    .level-badge.beginner{background:rgba(100,200,100,.12);color:#6dc86d;}
-    .level-badge.intermediate{background:rgba(200,151,63,.18);color:var(--gold2);}
-    .level-badge.advanced{background:rgba(200,80,80,.12);color:#e07070;}
-    .level-badge.all{background:rgba(130,130,200,.12);color:#a0a0e0;}
-    .level-badge.kids{background:rgba(200,160,220,.15);color:#d0a8e8;}
-    .level-badge.cert{background:rgba(60,200,200,.12);color:#60d0d0;}
+
+
 
     /* ── BENEFITS GRID ──────────────────────────────────── */
     .benefits-heading{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g2);margin-bottom:20px;}
@@ -113,9 +88,6 @@
 
     /* ── RESPONSIVE ─────────────────────────────────────── */
     @media(max-width:900px){
-      .disc-split{grid-template-columns:1fr;gap:40px;}
-      .disc-split-img{aspect-ratio:16/9;}
-      .subprog-grid{grid-template-columns:1fr;}
       .benefits-grid{grid-template-columns:1fr 1fr;}
     }
     @media(max-width:600px){
@@ -142,12 +114,13 @@
         <div class="logo-words"><span class="lw-top">COCOON</span><span class="lw-bot">TRAINING ACADEMY</span></div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="classes.html" class="active">Classes</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
@@ -161,6 +134,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="classes.html">Classes</a></li>
+      <li><a href="learning.html">Learning Centre</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -183,9 +157,11 @@
   <div class="disc-filter-section">
     <div class="disc-filter-wrap">
       <button class="disc-tab active" data-filter="all">All Programs</button>
-      <button class="disc-tab" data-filter="zumba-adult">Zumba Fitness (Adults)</button>
+      <button class="disc-tab" data-filter="zumba-adult">Zumba Fitness</button>
+      <button class="disc-tab" data-filter="zumba-kids-jr">Zumba Kids Jr.</button>
       <button class="disc-tab" data-filter="zumba-kids">Zumba Kids</button>
-      <button class="disc-tab" data-filter="kids-learning">Kids Learning &amp; Dev</button>
+      <button class="disc-tab" data-filter="zumba-gold">Zumba Gold</button>
+      <button class="disc-tab" data-filter="zumba-aqua">Aqua Zumba</button>
     </div>
   </div>
 
@@ -199,132 +175,39 @@
         </div>
         <div class="disc-split-content" data-scroll-reveal>
           <span class="disc-tag">Feel the Rhythm, Feel the Joy</span>
-          <h2>ZUMBA<br>FITNESS</h2>
-          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">What's Special About Our Fitness Program?</h3>
-          <p>Our fitness program combines the best elements of aerobic training, interval training, resistance exercises, and body sculpting techniques to deliver a complete workout experience. Every session is designed to help participants burn calories, improve cardiovascular health, build stamina, and tone the entire body — all while having fun.</p>
+          <h2>ZUMBA®<br>FITNESS</h2>
+          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">Move Better. Feel Better. Live Better.</h3>
+          <p>Zumba Fitness combines aerobic, interval, and resistance-training principles with energetic music and easy-to-follow dance movements. This scientifically designed format helps improve cardiovascular health, increase calorie expenditure, and enhance overall fitness while making exercise enjoyable and sustainable.</p>
         </div>
       </div>
 
-      <!-- Sub-programs -->
-      <p class="subprog-heading">Our Zumba Programs</p>
-      <div class="subprog-grid">
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">🕺</span>
-          <p class="subprog-name">Zumba Fitness (All Levels)</p>
-          <p class="subprog-desc">The flagship class. High-energy Latin dance cardio for adults of all fitness levels. Burn calories without feeling like a workout.</p>
-          <span class="level-badge all">All Levels</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">🌟</span>
-          <p class="subprog-name">Zumba Kids (Ages 5–12)</p>
-          <p class="subprog-desc">Fun, age-appropriate choreography designed to build coordination, confidence, and a love of movement in children.</p>
-          <span class="level-badge kids">Ages 5–12</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">💛</span>
-          <p class="subprog-name">Zumba Gold (Seniors)</p>
-          <p class="subprog-desc">Low-impact Zumba tailored for active older adults. Same great music and moves, modified for joint health and balance.</p>
-          <span class="level-badge beginner">Low Impact</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">🏆</span>
-          <p class="subprog-name">Instructor Certification</p>
-          <p class="subprog-desc">Ready to lead? Our intensive ZIN™-aligned certification course trains you to teach Zumba professionally.</p>
-          <span class="level-badge cert">Certification</span>
-        </div>
-      </div>
-
-      <!-- Zumba Highlights: Why Zumba & Expected Outcomes -->
+      <!-- Zumba Highlights: Key Benefits & Science/Community -->
       <div class="zumba-highlights-row">
-        <!-- Why Zumba -->
+        <!-- Key Benefits -->
         <div class="zumba-highlight-col" data-scroll-reveal>
-          <h3>Why Zumba Fitness?</h3>
-          <p class="z-highlight-intro">Zumba is more than just a workout — it's a fitness party! 🎵💃 Unlike traditional exercise routines, Zumba blends energetic music with easy-to-follow dance movements, making fitness enjoyable and sustainable.</p>
+          <h3>Key Benefits</h3>
           <ul class="z-check-list">
-            <li><span class="z-check-icon">✔️</span> Suitable for beginners and experienced participants alike</li>
-            <li><span class="z-check-icon">✔️</span> No dance experience required</li>
-            <li><span class="z-check-icon">✔️</span> Fun, engaging, and stress-relieving</li>
-            <li><span class="z-check-icon">✔️</span> Keeps you motivated to exercise consistently</li>
-            <li><span class="z-check-icon">✔️</span> Ideal for all age groups and fitness levels</li>
+            <li><span class="z-check-icon">✔️</span> Burns calories and supports healthy weight management</li>
+            <li><span class="z-check-icon">✔️</span> Improves cardiovascular fitness and endurance</li>
+            <li><span class="z-check-icon">✔️</span> Enhances coordination, balance, and agility</li>
+            <li><span class="z-check-icon">✔️</span> Strengthens and tones the entire body</li>
+            <li><span class="z-check-icon">✔️</span> Reduces stress and improves mental well-being</li>
+            <li><span class="z-check-icon">✔️</span> Increases energy levels and self-confidence</li>
           </ul>
         </div>
 
-        <!-- Expected Outcomes -->
+        <!-- Science & Community -->
         <div class="zumba-highlight-col" data-scroll-reveal>
-          <h3>Expected Outcomes of the Program</h3>
-          <p class="z-highlight-intro">With regular participation and a balanced lifestyle, members can experience:</p>
-          <ul class="z-check-list success">
-            <li><span class="z-check-icon">✅</span> Weight loss (many participants lose 1–2 kg within a few weeks of consistent attendance)</li>
-            <li><span class="z-check-icon">✅</span> Increased stamina and energy levels</li>
-            <li><span class="z-check-icon">✅</span> Improved cardiovascular fitness</li>
-            <li><span class="z-check-icon">✅</span> Better flexibility, balance, and coordination</li>
-            <li><span class="z-check-icon">✅</span> Reduced stress and improved mood</li>
-            <li><span class="z-check-icon">✅</span> Enhanced confidence and overall well-being</li>
-          </ul>
-          <p class="z-outcome-disclaimer">*Individual results may vary depending on attendance, diet, lifestyle, and fitness levels.</p>
+          <h3>Science-Based Approach</h3>
+          <p class="z-highlight-intro" style="margin-bottom:30px;">Zumba utilizes aerobic conditioning, interval training, and functional movement patterns that support heart health, muscular endurance, and metabolic fitness.</p>
+          
+          <h3>Community & Well-being</h3>
+          <p class="z-highlight-intro">Group participation encourages motivation, social connection, accountability, and a sense of belonging, making fitness an enjoyable shared experience.</p>
         </div>
       </div>
-
-      <!-- How Does It Work? Section -->
-      <p class="subprog-heading" style="margin-top: 60px;">How Does It Work?</p>
-      <div class="work-steps-grid">
-        <div class="step-card" data-scroll-reveal>
-          <span class="step-icon">🔹</span>
-          <h4>Cardio Dance</h4>
-          <p>Cardio-based dance routines to boost heart health and burn calories.</p>
-        </div>
-        <div class="step-card" data-scroll-reveal>
-          <span class="step-icon">🔹</span>
-          <h4>Interval Training</h4>
-          <p>Interval training to improve endurance and metabolism.</p>
-        </div>
-        <div class="step-card" data-scroll-reveal>
-          <span class="step-icon">🔹</span>
-          <h4>Resistance Toning</h4>
-          <p>Resistance and body-toning exercises to strengthen muscles.</p>
-        </div>
-        <div class="step-card" data-scroll-reveal>
-          <span class="step-icon">🔹</span>
-          <h4>Flexibility & Recovery</h4>
-          <p>Stretching and mobility movements to improve flexibility and recovery.</p>
-        </div>
-      </div>
-      <p class="z-post-workout-burn-text" data-scroll-reveal>The combination of these elements helps your body continue burning calories even after the workout is over.</p>
-
-      <!-- Body Sculpting Section -->
-      <p class="subprog-heading" style="margin-top: 60px;">Body Sculpting Benefits</p>
-      <p class="section-desc-center" data-scroll-reveal>Our program specifically targets key muscle groups:</p>
-      <div class="sculpt-targets-grid">
-        <div class="sculpt-card" data-scroll-reveal>
-          <span class="sculpt-icon">🔥</span>
-          <h4>Glutes</h4>
-          <p>Targeted squat-heavy routines and dance lifts.</p>
-        </div>
-        <div class="sculpt-card" data-scroll-reveal>
-          <span class="sculpt-icon">🔥</span>
-          <h4>Legs & Thighs</h4>
-          <p>Salsa steps and lunges for lower-body power.</p>
-        </div>
-        <div class="sculpt-card" data-scroll-reveal>
-          <span class="sculpt-icon">🔥</span>
-          <h4>Arms & Shoulders</h4>
-          <p>Rhythmic arm drives and light-weight toning.</p>
-        </div>
-        <div class="sculpt-card" data-scroll-reveal>
-          <span class="sculpt-icon">🔥</span>
-          <h4>Core & Abdominals</h4>
-          <p>Twists, hip isolations, and stabilizer holds.</p>
-        </div>
-        <div class="sculpt-card" data-scroll-reveal>
-          <span class="sculpt-icon">🔥</span>
-          <h4>Full-Body Toning</h4>
-          <p>Aerobic movements for a leaner, fitter physique.</p>
-        </div>
-      </div>
-      <p class="z-post-workout-burn-text" data-scroll-reveal>Regular participation helps strengthen muscles, improve posture, and create a leaner, fitter physique.</p>
 
       <!-- Success Section -->
-      <div class="motivational-success-card" data-scroll-reveal>
+      <div class="motivational-success-card" data-scroll-reveal style="margin-top: 60px;">
         <span class="sparkle-icon">✨</span>
         <h3>THE SECRET TO SUCCESS</h3>
         <p class="success-text">The more you participate, the better you feel! Consistency is the key to achieving fitness goals. Because Zumba is fun, energetic, and easy to follow, it helps participants stay committed to an active and healthy lifestyle.</p>
@@ -345,163 +228,206 @@
           <img src="images/about_community.png" alt="Zumba Kids Class" />
         </div>
         <div class="disc-split-content" data-scroll-reveal style="direction: ltr;">
-          <span class="disc-tag">Dance. Play. Sweat. Smile.</span>
-          <h2>ZUMBA<br>KIDS</h2>
-          <p class="disc-desc" style="max-width: none;">Let's Move, Groove &amp; Grow! Zumba Kids classes are high-energy fitness parties packed with kid-friendly routines, choreographies, and active play. We combine movement, music, and games to make exercise fun, healthy, and engaging for children ages 5–12.</p>
-          <p class="disc-desc" style="max-width: none; font-style: italic; color: var(--gold);">"Fit Body • Sharp Mind • Happy Child" &mdash; Led by Certified Instructors. Available Online &amp; Offline.</p>
+          <span class="disc-tag">Cocoon Learning Center</span>
+          <h2>ZUMBA®<br>KIDS (AGES 7–11)</h2>
+          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">Fitness, Fun, and Life Skills</h3>
+          <p>Zumba Kids combines energetic dance routines with interactive activities that promote physical fitness, personal development, and healthy lifestyle habits.</p>
         </div>
       </div>
 
-      <!-- Pillars -->
-      <p class="subprog-heading">The 3 Pillars of Zumba Kids</p>
-      <div class="subprog-grid">
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">💃</span>
-          <p class="subprog-name">1. Zumba &amp; Dance</p>
-          <p class="subprog-desc">Interactive dance steps and choreographies set to Latin and international rhythms. Dance, groove, and have fun with other kids!</p>
-          <span class="level-badge beginner">Dance &amp; Fun</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">🧘</span>
-          <p class="subprog-name">2. Yoga &amp; Asanas</p>
-          <p class="subprog-desc">Basic yoga stretches and breathing techniques modified for kids. Focuses on body alignment, muscle stretch, balance, and mental calm.</p>
-          <span class="level-badge intermediate">Balance &amp; Calm</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">⚡</span>
-          <p class="subprog-name">3. Fitness &amp; Strength</p>
-          <p class="subprog-desc">Energetic strength drills, posture corrections, and bodyweight exercises. Builds stronger muscles, healthier habits, and a happier state of mind.</p>
-          <span class="level-badge advanced">Stronger &amp; Happier</span>
-        </div>
-        <div class="subprog-card" data-scroll-reveal>
-          <span class="subprog-icon">🌟</span>
-          <p class="subprog-name">Certified Coaching</p>
-          <p class="subprog-desc">Led by licensed ZIN™ Kids Instructors. Safe environment focusing on physical coordination, motor skills development, and creative play.</p>
-          <span class="level-badge cert">Licensed Coach</span>
-        </div>
-      </div>
+      <!-- Zumba Kids Highlights: Benefits & Science/Community -->
+      <div class="zumba-highlights-row">
+        <!-- Educational & Physical Benefits -->
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Educational Value</h3>
+          <ul class="z-check-list" style="margin-bottom: 30px;">
+            <li><span class="z-check-icon">✔️</span> Improves focus and concentration</li>
+            <li><span class="z-check-icon">✔️</span> Enhances memory and cognitive function</li>
+            <li><span class="z-check-icon">✔️</span> Encourages creativity and problem-solving</li>
+            <li><span class="z-check-icon">✔️</span> Builds leadership and teamwork skills</li>
+            <li><span class="z-check-icon">✔️</span> Develops self-confidence and communication skills</li>
+          </ul>
 
-      <!-- Benefits Checklist -->
-      <p class="benefits-heading">Benefits of Zumba Kids</p>
-      <div class="benefits-grid">
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">🎯</span>
-          <div class="benefit-text"><strong>Improves Focus &amp; Concentration</strong><span>Helps children pay attention and improves school task focus.</span></div>
+          <h3>Physical Benefits</h3>
+          <ul class="z-check-list">
+            <li><span class="z-check-icon">✔️</span> Improves cardiovascular fitness and endurance</li>
+            <li><span class="z-check-icon">✔️</span> Enhances coordination, balance, and flexibility</li>
+            <li><span class="z-check-icon">✔️</span> Supports healthy growth and development</li>
+            <li><span class="z-check-icon">✔️</span> Encourages lifelong active habits</li>
+          </ul>
         </div>
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">🏃</span>
-          <div class="benefit-text"><strong>Boosts Coordination &amp; Motor Skills</strong><span>Develops motor skills, balance, rhythm, and body agility.</span></div>
-        </div>
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">🧠</span>
-          <div class="benefit-text"><strong>Enhances Brain Development</strong><span>Combining movement with patterns stimulates brain connections.</span></div>
-        </div>
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">💪</span>
-          <div class="benefit-text"><strong>Builds Strength &amp; Fitness</strong><span>Strengthens muscles, improves respiratory stamina, and physical endurance.</span></div>
-        </div>
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">🛡️</span>
-          <div class="benefit-text"><strong>Strengthens Immunity</strong><span>Active cardiorespiratory exercises boost the child's natural defense systems.</span></div>
-        </div>
-        <div class="benefit-item" data-scroll-reveal>
-          <span class="benefit-icon">👥</span>
-          <div class="benefit-text"><strong>Confidence &amp; Social Skills</strong><span>Improves team building, communication, and builds self-esteem.</span></div>
+
+        <!-- Science & Community -->
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Science-Based Approach</h3>
+          <p class="z-highlight-intro" style="margin-bottom:30px;">Regular physical activity has been shown to support brain function, academic performance, emotional well-being, and overall child development.</p>
+          
+          <h3>Community & Well-being</h3>
+          <p class="z-highlight-intro">Children develop social skills, cultural awareness, respect for diversity, and a sense of belonging through group participation and shared experiences.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 4b. KIDS LEARNING & DEVELOPMENT PROGRAM DEEP DIVE -->
-  <section class="discipline-block" id="kids-learning" data-disc="kids-learning" style="background:var(--bg2);">
+  <!-- 4. ZUMBA KIDS JR DEEP DIVE -->
+  <section class="discipline-block" id="zumba-kids-jr" data-disc="zumba-kids-jr" style="background:var(--bg2);">
     <div class="disc-inner">
-      <!-- Split -->
       <div class="disc-split">
         <div class="disc-split-img" data-scroll-reveal>
-          <img src="images/contact_bg.png" alt="Kids Learning and Development Program" />
+          <img src="images/zumba_kids_junior.png" alt="Zumba Kids Jr Class" />
         </div>
         <div class="disc-split-content" data-scroll-reveal>
-          <span class="disc-tag" style="color:#81c784;">The Cocoon Learning Center</span>
-          <h2>KIDS LEARNING &amp;<br><span style="color:#81c784;">DEVELOPMENT</span></h2>
-          <p class="disc-desc">Empower yourself with knowledge, creativity, and practical skills through our Skill Development Program. Admissions are open for our structured Kids Learning &amp; Development Program. Dedicated to nurturing vocabulary, reading comprehension, writing creativity, and speech confidence in children. Designed as a modular curriculum to guide kids through essential developmental milestones.</p>
-          <div class="combo-price-teaser" style="border-color:#4caf50; background:var(--bg3); display:inline-flex; width:100%; max-width:480px; margin-bottom:0; text-align:left;">
-            <div style="flex:1;">
-              <div class="cpt-label" style="font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Age Group</div>
-              <div class="cpt-price" style="font-size:1.8rem; color:#81c784;">4 &ndash; 10 Years</div>
-              <div class="cpt-period">Batch Size: 6-12 students</div>
-            </div>
-            <div style="width:1px; height:48px; background:var(--g3);"></div>
-            <div style="flex:1; padding-left:10px;">
-              <div class="cpt-label" style="font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Batch Time</div>
-              <div class="cpt-price" style="font-size:1.8rem; color:#81c784;">5:00 - 6:00 PM</div>
-              <div class="cpt-period">Online &amp; Offline Classes</div>
-            </div>
-          </div>
+          <span class="disc-tag" style="color:#81c784;">Cocoon Learning Center</span>
+          <h2>ZUMBA® KIDS JR.<br><span style="color:#81c784;">(AGES 4–6)</span></h2>
+          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">Learning Through Movement, Music, and Play</h3>
+          <p>Zumba Kids Jr. introduces young children to physical activity through age-appropriate dance, games, and interactive movement experiences. The program supports early childhood development while nurturing a positive relationship with fitness.</p>
         </div>
       </div>
 
-      <!-- Age Splits -->
-      <p class="subprog-heading">Program Levels by Age Group</p>
-      <div class="subprog-grid">
-        <div class="subprog-card" data-scroll-reveal style="border-color: rgba(76, 175, 80, 0.2);">
-          <span class="subprog-icon">🟢</span>
-          <p class="subprog-name">Junior Group (Ages 4 &ndash; 7 Years)</p>
-          <ul class="disc-list" style="margin-bottom:0; font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px;">
-            <li><strong>Phonetic Awareness:</strong> Learning letter sounds, decoding, and pronunciation.</li>
-            <li><strong>Reading Skills:</strong> Early stage vocabulary development and basic reading comprehension.</li>
-            <li><strong>Storytelling:</strong> Expressive speaking, creative imagination, and language logic.</li>
-            <li><strong>Spoken English:</strong> Basic conversational skills, speech clarity, and verbal confidence.</li>
+      <div class="zumba-highlights-row">
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Educational Value</h3>
+          <ul class="z-check-list" style="margin-bottom:30px;">
+            <li><span class="z-check-icon">✔️</span> Develops listening and instruction-following skills</li>
+            <li><span class="z-check-icon">✔️</span> Improves memory and concentration</li>
+            <li><span class="z-check-icon">✔️</span> Encourages creativity and imagination</li>
+            <li><span class="z-check-icon">✔️</span> Builds confidence and self-expression</li>
+            <li><span class="z-check-icon">✔️</span> Supports social interaction and teamwork</li>
           </ul>
-          <span class="level-badge junior" style="margin-top:15px;">Junior Group</span>
+
+          <h3>Physical Benefits</h3>
+          <ul class="z-check-list">
+            <li><span class="z-check-icon">✔️</span> Develops motor skills and body awareness</li>
+            <li><span class="z-check-icon">✔️</span> Improves balance, coordination, and flexibility</li>
+            <li><span class="z-check-icon">✔️</span> Enhances physical literacy and movement confidence</li>
+          </ul>
         </div>
-        
-        <div class="subprog-card" data-scroll-reveal style="border-color: rgba(33, 150, 243, 0.2);">
-          <span class="subprog-icon">🔵</span>
-          <p class="subprog-name">Senior Group (Ages 7 &ndash; 10 Years)</p>
-          <ul class="disc-list" style="margin-bottom:0; font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px;">
-            <li><strong>Vocabulary Building:</strong> Advanced vocabulary, idioms, context synonyms, and sentence logic.</li>
-            <li><strong>Sentence Formation:</strong> Syntactic styling, correct grammar usage, and phrase logic.</li>
-            <li><strong>Creative Writing:</strong> Essay compositions, paragraph structures, and story crafting.</li>
-            <li><strong>Reading Comprehension:</strong> Complex paragraph analysis, context logic, and summary reviews.</li>
-          </ul>
-          <span class="level-badge senior" style="margin-top:15px;">Senior Group</span>
+
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Science-Based Approach</h3>
+          <p class="z-highlight-intro" style="margin-bottom:30px;">Research shows that movement-based learning improves cognitive development, motor skill acquisition, attention span, and emotional regulation in young children.</p>
+          
+          <h3>Community & Well-being</h3>
+          <p class="z-highlight-intro">Children learn cooperation, respect, sharing, and positive social behaviors while building friendships in a fun and supportive environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.5 ZUMBA GOLD DEEP DIVE -->
+  <section class="discipline-block" id="zumba-gold" data-disc="zumba-gold" style="background:var(--bg);">
+    <div class="disc-inner">
+      <div class="disc-split" style="direction: rtl;">
+        <div class="disc-split-img" data-scroll-reveal>
+          <img src="images/zumba_gold.png" alt="Zumba Gold Class" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal style="direction: ltr;">
+          <span class="disc-tag" style="color:var(--gold2);">Cocoon Learning Center</span>
+          <h2>ZUMBA® GOLD<br><span style="color:var(--gold2);">ACTIVE SENIORS</span></h2>
+          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">Active Aging for a Healthier Life</h3>
+          <p>Zumba Gold is specially designed for older adults and beginners seeking a safe, effective, and enjoyable way to stay physically active. The program modifies traditional Zumba movements to suit varying fitness levels while maintaining all the fun and energy.</p>
         </div>
       </div>
 
-      <!-- The 6 Cartoon pillars -->
-      <p class="benefits-heading" style="text-align:center;">Core Program Pillars &mdash; Let's Move, Groove &amp; Grow!</p>
-      <div class="learning-features-grid">
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">🗣️</span>
-          <h4 class="lfc-title">I speak...</h4>
-          <p class="lfc-desc">Interactive exercises to improve spoken English skills, articulation, and public speaking confidence.</p>
+      <div class="zumba-highlights-row">
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Key Benefits</h3>
+          <ul class="z-check-list">
+            <li><span class="z-check-icon">✔️</span> Improves mobility and functional fitness</li>
+            <li><span class="z-check-icon">✔️</span> Enhances balance and stability</li>
+            <li><span class="z-check-icon">✔️</span> Supports cardiovascular health</li>
+            <li><span class="z-check-icon">✔️</span> Increases flexibility and range of motion</li>
+            <li><span class="z-check-icon">✔️</span> Promotes independence and quality of life</li>
+            <li><span class="z-check-icon">✔️</span> Boosts mood and emotional well-being</li>
+          </ul>
         </div>
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">📖</span>
-          <h4 class="lfc-title">I read...</h4>
-          <p class="lfc-desc">Daily guided reading to master phonetics, paragraph comprehension, and vocabulary decoding.</p>
-        </div>
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">👂</span>
-          <h4 class="lfc-title">I listen...</h4>
-          <p class="lfc-desc">Attention drills and active storytelling listening to build verbal comprehension and listening skills.</p>
-        </div>
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">🧩</span>
-          <h4 class="lfc-title">I apply...</h4>
-          <p class="lfc-desc">Problem-solving exercises, grammar puzzles, and context word drills to test logic integration.</p>
-        </div>
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">✍️</span>
-          <h4 class="lfc-title">I write...</h4>
-          <p class="lfc-desc">Creative journal structures, compositions, spelling cards, and sentence builders.</p>
-        </div>
-        <div class="learning-feature-card" data-scroll-reveal>
-          <span class="lfc-icon">🏆</span>
-          <h4 class="lfc-title">EB Club</h4>
-          <p class="lfc-desc">The exclusive English Builders Club. Interactive group games, speech contests, and spelling bees.</p>
+
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Science-Based Approach</h3>
+          <p class="z-highlight-intro" style="margin-bottom:30px;">Regular movement helps maintain muscle strength, balance, bone health, cognitive function, and overall physical independence as we age.</p>
+          
+          <h3>Community & Well-being</h3>
+          <p class="z-highlight-intro">Social engagement is one of the strongest predictors of healthy aging. Zumba Gold provides opportunities to connect, stay active, and build meaningful relationships within the community.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 4.6 AQUA ZUMBA DEEP DIVE -->
+  <section class="discipline-block" id="zumba-aqua" data-disc="zumba-aqua" style="background:var(--bg2);">
+    <div class="disc-inner">
+      <div class="disc-split">
+        <div class="disc-split-img" data-scroll-reveal>
+          <img src="images/zumba_aqua.png" alt="Aqua Zumba Class" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag" style="color:#00bcd4;">Cocoon Learning Center</span>
+          <h2>AQUA ZUMBA®<br><span style="color:#00bcd4;">WATER FITNESS</span></h2>
+          <h3 style="font-family:var(--ff-display); font-size:1.8rem; color:var(--white); margin-top:20px; margin-bottom:12px; letter-spacing:1px;">Low Impact on Joints. High Impact on Results.</h3>
+          <p>Aqua Zumba combines the excitement of Zumba with the natural resistance and support of water, creating a refreshing full-body workout that is gentle on the joints while delivering excellent fitness results.</p>
+        </div>
+      </div>
+
+      <div class="zumba-highlights-row">
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Key Benefits</h3>
+          <ul class="z-check-list">
+            <li><span class="z-check-icon">✔️</span> Burns calories effectively</li>
+            <li><span class="z-check-icon">✔️</span> Improves cardiovascular fitness and stamina</li>
+            <li><span class="z-check-icon">✔️</span> Enhances muscle strength and endurance</li>
+            <li><span class="z-check-icon">✔️</span> Supports total-body toning</li>
+            <li><span class="z-check-icon">✔️</span> Improves flexibility and mobility</li>
+            <li><span class="z-check-icon">✔️</span> Reduces impact on knees, hips, and joints</li>
+          </ul>
+        </div>
+
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <h3>Science-Based Approach</h3>
+          <p class="z-highlight-intro" style="margin-bottom:30px;">Water provides natural resistance in every direction of movement, increasing muscle engagement while reducing joint stress. This makes Aqua Zumba an effective and accessible exercise option for a wide range of participants.</p>
+          
+          <h3>Community & Well-being</h3>
+          <p class="z-highlight-intro">The supportive group environment promotes motivation, enjoyment, and social interaction while helping participants build healthy habits and improve overall well-being.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.7 OUR COMMITMENT SECTION -->
+  <section class="discipline-block" id="our-commitment" data-disc="all" style="background:var(--bg3); border-top:1px solid var(--g3);">
+    <div class="disc-inner" style="text-align:center;">
+      <span class="disc-tag" style="color:var(--gold2);">Our Foundation</span>
+      <h2 style="font-family:var(--ff-display); font-size:clamp(3rem, 5vw, 4.5rem); color:var(--white); margin-bottom:24px;">OUR COMMITMENT</h2>
+      <p style="font-family:'Inter',sans-serif; font-size:1.1rem; color:var(--g1); line-height:1.75; max-width:800px; margin:0 auto 60px;">
+        At our fitness center, we believe that movement is more than exercise—it's a pathway to better health, lifelong learning, personal growth, and community well-being. Our evidence-based programs are designed to improve physical fitness, mental wellness, confidence, and social connection while creating healthy habits that last a lifetime.
+      </p>
+
+      <div class="learning-features-grid" style="margin-top:40px;">
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">💪</span>
+          <h4 class="lfc-title">Fitness</h4>
+          <p class="lfc-desc">Improving strength, endurance, mobility, and overall health.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">📚</span>
+          <h4 class="lfc-title">Education</h4>
+          <p class="lfc-desc">Developing physical literacy, body awareness, life skills, and healthy habits.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">🔬</span>
+          <h4 class="lfc-title">Science</h4>
+          <p class="lfc-desc">Applying evidence-based principles of movement, exercise, and wellness.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">🤝</span>
+          <h4 class="lfc-title">Community Well-being</h4>
+          <p class="lfc-desc">Creating inclusive environments that foster social connection, confidence, belonging, and lifelong wellness.</p>
+        </div>
+      </div>
+      
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.4rem; color:var(--gold2); margin-top:60px; text-align:center;">
+        "Because true fitness is not just about adding years to life—it's about adding life to years."
+      </p>
     </div>
   </section>
 
@@ -595,23 +521,57 @@
           <div class="logo-mark">C</div>
           <div class="logo-words"><span class="lw-top">COCOON</span><span class="lw-bot">TRAINING ACADEMY</span></div>
         </a>
-        <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
-        <div class="social-links"><a href="#">IG</a><a href="#">FB</a><a href="#">YT</a><a href="#">WA</a></div>
+        <p>Transforming lives through fitness and child development. Leading programs in Coimbatore and Kuthalam.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
       </div>
-      <div class="fg-col"><h5>Classes</h5><ul><li><a href="classes.html">Zumba Fitness</a></li><li><a href="classes.html">Zumba Kids</a></li><li><a href="classes.html">Zumba Toning</a></li><li><a href="classes.html">Zumba Step</a></li></ul></div>
-      <div class="fg-col"><h5>Academy</h5><ul><li><a href="about.html">Our Story</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
-      <div class="fg-col"><h5>Contact</h5>
-            <ul>
-              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
-              <li>No. 7, Arunachalam Street, 641001</li>
-              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
-              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
-              <li>No. 19, Nadu Chetty Street, 609801</li>
-              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
-              <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
-            </ul></div>
+      <div class="fg-col">
+        <h5>Zumba Academy</h5>
+        <ul>
+          <li><a href="classes.html">Zumba® Fitness</a></li>
+          <li><a href="classes.html">Zumba® Kids Jr.</a></li>
+          <li><a href="classes.html">Zumba® Kids</a></li>
+          <li><a href="classes.html">Zumba® Gold</a></li>
+          <li><a href="classes.html">Aqua Zumba®</a></li>
+        </ul>
+      </div>
+      <div class="fg-col">
+        <h5>Learning Centre</h5>
+        <ul>
+          <li><a href="learning.html">Preschool Enrichment</a></li>
+          <li><a href="learning.html">After-School &amp; STEM</a></li>
+          <li><a href="learning.html">Language &amp; Communication</a></li>
+          <li><a href="learning.html">Abacus Arithmetic</a></li>
+          <li><a href="learning.html">Teacher Training</a></li>
+        </ul>
+      </div>
+      <div class="fg-col">
+        <h5>Our Locations</h5>
+        <ul>
+          <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
+          <li>No. 7, Arunachalam Street, 641001</li>
+          <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+          <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
+          <li>No. 19, Nadu Chetty Street, 609801</li>
+          <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+          <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+        </ul>
+      </div>
     </div></div></div>
-    <div class="footer-bottom"><div class="wrap footer-bottom-inner"><p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy.</p><div class="footer-badges"><span>&#11088; 4.9 Rating</span><span>&#127891; Zumba Certified</span></div></div></div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>⭐ 4.9 Google Rating</span>
+          <span>🎓 Licensed ZIN™ Coaches</span>
+          <span>🦋 Child Development Centre</span>
+        </div>
+      </div>
+    </div>
   </footer>
   <a href="#" class="back-to-top" id="backToTop">&uarr;</a>
 

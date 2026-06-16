@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Centre – Cocoon Academy</title>
+  <meta name="description" content="Discover The Cocoon Learning Centre in Kuthalam. High-quality preschool education, daycare, after-school learning, STEM, abacus, and Montessori teacher training." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PAGE HERO ─────────────────────────────────────── */
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('images/about_community.png') center/cover no-repeat; filter: brightness(.35); }
+    .page-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 0%, transparent 60%); }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .page-hero-eyebrow { font-family: 'Inter', sans-serif; font-size: .75rem; font-weight: 600; letter-spacing: .2em; color: #81c784; text-transform: uppercase; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 7rem); line-height: .95; color: var(--white); margin-bottom: 20px; }
+    .page-hero h1 em { color: #81c784; font-style: normal; }
+    .page-hero p { font-family: 'Inter', sans-serif; font-size: 1.1rem; color: var(--g1); max-width: 560px; line-height: 1.65; }
+
+    /* Green accents overrides for this page */
+    .sec-tag.green-tag { background: rgba(76, 175, 80, 0.12); color: #81c784; border-color: rgba(76, 175, 80, 0.25); }
+    .color-green { color: #81c784 !important; }
+    .btn-green { background: #4caf50 !important; color: var(--white) !important; }
+    .btn-green:hover { background: #66bb6a !important; box-shadow: 0 10px 28px rgba(76,175,80,0.35) !important; }
+    .subprog-card.green-border:hover { border-color: #4caf50 !important; }
+    .learning-feature-card:hover { border-color: #4caf50 !important; }
+    
+    .promise-strip { background: var(--bg3); padding: 60px 0; border-top: 1px solid var(--g3); border-bottom: 1px solid var(--g3); text-align: center; position: relative; }
+    .promise-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.5rem, 4vw, 2.5rem); color: #81c784; font-weight: 600; }
+  </style>
+</head>
+<body data-page="learning">
+
+  <div class="page-transition" id="pageTransition"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-words">
+          <span class="lw-top">COCOON</span>
+          <span class="lw-bot">TRAINING ACADEMY</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="learning.html">Learning Centre</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
+    </ul>
+  </div>
+
+  <!-- ── PAGE HERO ────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <p class="page-hero-eyebrow">Kuthalam Branch</p>
+      <h1>COCOON<br><em>LEARNING CENTRE</em></h1>
+      <p>Where learning begins, confidence grows, and potential takes flight. Our child-centered enrichment programs prepare children for academic success and for life.</p>
+    </div>
+  </section>
+
+  <!-- ── 1. INTRODUCTION SECTION ──────────────────────────── -->
+  <section class="discipline-block" style="background:var(--bg); padding-bottom:60px;">
+    <div class="disc-inner">
+      <div class="disc-split">
+        <div class="disc-split-img" data-scroll-reveal>
+          <img src="images/contact_bg.png" alt="Children playing at Cocoon Learning Centre" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag" style="color:#81c784;">About The Cocoon Learning Centre</span>
+          <h2>NURTURING GROWTH,<br><span style="color:#81c784;">INSPIRING POTENTIAL</span></h2>
+          <p class="disc-desc">
+            The Cocoon Learning Centre is a nurturing space where children learn, grow, move, explore, and develop essential life skills in a safe and supportive environment. Inspired by the remarkable transformation of a cocoon into a butterfly, our center is dedicated to creating an environment where children develop the confidence, skills, and curiosity needed to thrive in an ever-changing world.
+          </p>
+          <p class="disc-desc" style="margin-top:-16px;">
+            Through a combination of academic enrichment, skill development, fitness programs, creative expression, and experiential learning, we help children build confidence, independence, communication skills, and a lifelong love for learning. We focus on developing the whole child—intellectually, physically, emotionally, socially, and creatively.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="zumba-highlights-row" style="margin-top:60px;">
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <span class="sec-tag green-tag" style="margin-bottom:12px;">Our Vision</span>
+          <h3 style="margin-bottom:16px;">Leading Tomorrow</h3>
+          <p class="z-highlight-intro">To create a vibrant learning community where every child is empowered to discover their strengths, develop essential life skills, embrace lifelong learning, and grow into a confident, responsible, and compassionate individual.</p>
+        </div>
+        <div class="zumba-highlight-col" data-scroll-reveal>
+          <span class="sec-tag green-tag" style="margin-bottom:12px;">Our Mission</span>
+          <h3 style="margin-bottom:16px;">Meaningful Experiences</h3>
+          <p class="z-highlight-intro" style="margin-bottom:10px;">To provide engaging, accessible, and meaningful learning experiences that support the overall development of children. We strive to:</p>
+          <ul class="z-check-list">
+            <li><span class="z-check-icon" style="color:#81c784;">✔️</span> Strengthen literacy, communication, and language skills</li>
+            <li><span class="z-check-icon" style="color:#81c784;">✔️</span> Foster creativity, critical thinking, and problem-solving</li>
+            <li><span class="z-check-icon" style="color:#81c784;">✔️</span> Encourage confidence, self-expression, and leadership</li>
+            <li><span class="z-check-icon" style="color:#81c784;">✔️</span> Promote healthy lifestyles through movement &amp; fitness</li>
+            <li><span class="z-check-icon" style="color:#81c784;">✔️</span> Create a safe, inclusive, and supportive environment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. CORE PROGRAMS SECTION ─────────────────────────── -->
+  <section class="discipline-block" style="background:var(--bg2);">
+    <div class="disc-inner">
+      <div style="text-align:center; margin-bottom:60px;">
+        <span class="sec-tag green-tag">Structured Learning &amp; Care</span>
+        <h2 style="font-family:var(--ff-display); font-size:clamp(2.5rem, 5vw, 4.5rem); color:var(--white); margin-top:12px;">OUR CORE PROGRAMS</h2>
+      </div>
+
+      <!-- Program 1: Preschool -->
+      <div class="disc-split" style="margin-bottom:80px; align-items:center;">
+        <div class="disc-split-img" data-scroll-reveal style="aspect-ratio:16/10; height:auto;">
+          <img src="images/about_community.png" alt="Preschool Class" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag" style="color:#81c784;">Montessori &amp; Play-Way</span>
+          <h3 style="font-family:var(--ff-display); font-size:2.2rem; color:var(--white); margin-bottom:16px;">1. HOLISTIC PRESCHOOL EDUCATION</h3>
+          <p class="disc-desc">Our Preschool Program is designed to nurture young learners during their most formative years. By blending Montessori principles with Play-Way learning methods, we create a joyful environment where children learn through exploration, discovery, and hands-on experiences.</p>
+          <ul class="z-check-list" style="margin-bottom:20px; font-size:0.9rem;">
+            <li><strong>Approach:</strong> Child-centered, activity-based and experiential education.</li>
+            <li><strong>Focus:</strong> Development of literacy, numeracy, and social-emotional learning.</li>
+            <li><strong>Outcome:</strong> Strong academic, emotional, and behavioral foundations for future success.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Program 2: Enrichment -->
+      <div class="disc-split" style="margin-bottom:80px; align-items:center; direction:rtl;">
+        <div class="disc-split-img" data-scroll-reveal style="aspect-ratio:16/10; height:auto;">
+          <img src="images/contact_bg.png" alt="Enrichment Lab" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal style="direction:ltr;">
+          <span class="disc-tag" style="color:#81c784;">Beyond the Classroom</span>
+          <h3 style="font-family:var(--ff-display); font-size:2.2rem; color:var(--white); margin-bottom:16px;">2. ENRICHMENT &amp; SKILL DEVELOPMENT</h3>
+          <p class="disc-desc">Our Enrichment Programs help children identify their interests, develop new skills, and build confidence through engaging, hands-on learning experiences. We teach critical thinking, collaboration, communication, and adaptability—essential 21st-century skills.</p>
+          <ul class="z-check-list" style="margin-bottom:20px; font-size:0.9rem;">
+            <li><strong>Modules:</strong> English Lab, STEAM (Science &amp; Math), Public Speaking, Creative Arts.</li>
+            <li><strong>Benefits:</strong> Promotes curiosity, innovation, problem-solving, and self-expression.</li>
+            <li><strong>Outcome:</strong> Confident learners equipped with practical skills that complement academic study.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Program 3: After-School -->
+      <div class="disc-split" style="margin-bottom:80px; align-items:center;">
+        <div class="disc-split-img" data-scroll-reveal style="aspect-ratio:16/10; height:auto;">
+          <img src="images/hero_bg.png" alt="After-School Program" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag" style="color:#81c784;">Structured &amp; Productive</span>
+          <h3 style="font-family:var(--ff-display); font-size:2.2rem; color:var(--white); margin-bottom:16px;">3. AFTER-SCHOOL LEARNING CENTER</h3>
+          <p class="disc-desc">Our After-School Program provides a structured and supportive environment where children can continue learning, complete homework assignments, and participate in meaningful enrichment activities after school hours.</p>
+          <ul class="z-check-list" style="margin-bottom:20px; font-size:0.9rem;">
+            <li><strong>Features:</strong> Homework support, guided learning, reading checks, and personal mentoring.</li>
+            <li><strong>Benefits:</strong> Keeps children productive, engaged, and motivated while assisting working parents.</li>
+            <li><strong>Outcome:</strong> Improved academic performance, study habits, and balanced development.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Program 4: Daycare -->
+      <div class="disc-split" style="margin-bottom:80px; align-items:center; direction:rtl;">
+        <div class="disc-split-img" data-scroll-reveal style="aspect-ratio:16/10; height:auto;">
+          <img src="images/zumba_class.png" alt="Safe Daycare" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal style="direction:ltr;">
+          <span class="disc-tag" style="color:#81c784;">A Home Away from Home</span>
+          <h3 style="font-family:var(--ff-display); font-size:2.2rem; color:var(--white); margin-bottom:16px;">4. COMPREHENSIVE DAYCARE</h3>
+          <p class="disc-desc">Our Daycare Program offers a safe, caring, and stimulating child-friendly environment where children feel secure, valued, and supported throughout the day. We focus on emotional well-being while supporting social and physical growth.</p>
+          <ul class="z-check-list" style="margin-bottom:20px; font-size:0.9rem;">
+            <li><strong>Structure:</strong> Attentive supervision, storytelling, relaxation time, and active play.</li>
+            <li><strong>Values:</strong> Developing independence, emotional security, and healthy daily routines.</li>
+            <li><strong>Outcome:</strong> Happy, confident, and well-adjusted children thriving in a warm environment.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Program 5: Teacher Training -->
+      <div class="disc-split" style="margin-bottom:0; align-items:center;">
+        <div class="disc-split-img" data-scroll-reveal style="aspect-ratio:16/10; height:auto;">
+          <img src="images/hero_main.png" alt="Teacher Training" />
+        </div>
+        <div class="disc-split-content" data-scroll-reveal>
+          <span class="disc-tag" style="color:#81c784;">Shaping the Educators of Tomorrow</span>
+          <h3 style="font-family:var(--ff-display); font-size:2.2rem; color:var(--white); margin-bottom:16px;">5. TEACHER TRAINING &amp; PROFESSIONAL DEV</h3>
+          <p class="disc-desc">Quality education begins with quality educators. Our Teacher Training Programs are designed to equip aspiring and practicing teachers with modern teaching methodologies, classroom management, and child-centered educational practices.</p>
+          <ul class="z-check-list" style="margin-bottom:20px; font-size:0.9rem;">
+            <li><strong>Areas:</strong> Early Childhood Education, Montessori Principles, Child Psychology, Lesson Planning.</li>
+            <li><strong>Benefits:</strong> Training educators to create highly engaging and positive classroom environments.</li>
+            <li><strong>Outcome:</strong> Competent, compassionate educators ready to make a meaningful professional impact.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. SPECIALIZED PROGRAM DETAILS ───────────────────── -->
+  <section class="discipline-block" style="background:var(--bg);">
+    <div class="disc-inner">
+      <div style="text-align:center; margin-bottom:60px;">
+        <span class="sec-tag green-tag">Specialized Subjects</span>
+        <h2 style="font-family:var(--ff-display); font-size:clamp(2.5rem, 5vw, 4.5rem); color:var(--white); margin-top:12px;">LEARNING &amp; DEVELOPMENT PATHS</h2>
+      </div>
+
+      <div class="subprog-grid">
+        <!-- Path 1: Language -->
+        <div class="subprog-card green-border" data-scroll-reveal>
+          <span class="subprog-icon">🗣️</span>
+          <p class="subprog-name">Language &amp; Communication Lab</p>
+          <p class="subprog-desc">Helping children become confident readers, listeners, speakers, and writers through structured modules:</p>
+          <ul class="disc-list" style="font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px; list-style:circle; padding-left:15px;">
+            <li>Phonetic Awareness &amp; Reading Skills</li>
+            <li>Interactive Storytelling &amp; Vocabulary Building</li>
+            <li>Sentence Formation &amp; Reading Comprehension</li>
+            <li>Creative Writing &amp; Spoken English Skills</li>
+          </ul>
+        </div>
+
+        <!-- Path 2: STEM -->
+        <div class="subprog-card green-border" data-scroll-reveal>
+          <span class="subprog-icon">🔬</span>
+          <p class="subprog-name">STEM &amp; Future Skills</p>
+          <p class="subprog-desc">Hands-on learning experiences designed to prepare children for the future through scientific exploration:</p>
+          <ul class="disc-list" style="font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px; list-style:circle; padding-left:15px;">
+            <li>Logical &amp; Analytical Thinking</li>
+            <li>Creative Engineering &amp; Problem Solving</li>
+            <li>Innovative Design Tasks &amp; Exploration</li>
+            <li>Hands-on Scientific Experiments</li>
+          </ul>
+        </div>
+
+        <!-- Path 3: Abacus -->
+        <div class="subprog-card green-border" data-scroll-reveal>
+          <span class="subprog-icon">🧮</span>
+          <p class="subprog-name">Abacus &amp; Mental Math</p>
+          <p class="subprog-desc">Cognitive calculation programs that strengthen mental arithmetic and focus capabilities:</p>
+          <ul class="disc-list" style="font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px; list-style:circle; padding-left:15px;">
+            <li>High Speed Mental Calculation</li>
+            <li>Memory Retention &amp; Spatial Arithmetic</li>
+            <li>Numerical Confidence &amp; Analytical Logic</li>
+            <li>Concentration &amp; Focus exercises</li>
+          </ul>
+        </div>
+
+        <!-- Path 4: Fitness -->
+        <div class="subprog-card green-border" data-scroll-reveal>
+          <span class="subprog-icon">🏃</span>
+          <p class="subprog-name">Fitness &amp; Wellness Programs</p>
+          <p class="subprog-desc">Physical activity programs designed to help children develop strong bodies and alert minds:</p>
+          <ul class="disc-list" style="font-size:0.8rem; border-top:1px solid var(--g3); margin-top:10px; padding-top:10px; list-style:circle; padding-left:15px;">
+            <li>Zumba Kids (Rhythm, Cardio &amp; Coordination)</li>
+            <li>Yoga &amp; Mindfulness (Stretch, Balance &amp; Calm)</li>
+            <li>Fitness &amp; Strength Drills for general health</li>
+            <li>Recreational Movement &amp; Teamwork Games</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROMISE STRIP ────────────────────────────────────── -->
+  <div class="promise-strip">
+    <div class="wrap">
+      <div class="promise-text">"Learn. Grow. Move. Explore. Thrive."</div>
+      <p style="font-family:'Inter',sans-serif; color:var(--g2); font-size:0.9rem; margin-top:10px;">At The Cocoon Learning Centre, we transform children's potential into possibilities.</p>
+    </div>
+  </div>
+
+  <!-- ── 4. WHAT MAKES US DIFFERENT & VALUES ──────────────── -->
+  <section class="discipline-block" style="background:var(--bg3);">
+    <div class="disc-inner">
+      <div style="text-align:center; margin-bottom:60px;">
+        <span class="sec-tag green-tag">The Cocoon Standards</span>
+        <h2 style="font-family:var(--ff-display); font-size:clamp(2.5rem, 5vw, 4.5rem); color:var(--white); margin-top:12px;">WHAT MAKES US DIFFERENT?</h2>
+      </div>
+
+      <div class="learning-features-grid">
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">🎯</span>
+          <h4 class="lfc-title">Holistic Development</h4>
+          <p class="lfc-desc">We focus on academic excellence, life skills, physical fitness, creative arts, and emotional well-being.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">👥</span>
+          <h4 class="lfc-title">Small Group Learning</h4>
+          <p class="lfc-desc">Smaller batch sizes ensure highly personalized attention and meaningful individual learning experiences.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">🧠</span>
+          <h4 class="lfc-title">Active Proximity</h4>
+          <p class="lfc-desc">Children learn best when they are actively involved, curious, motivated, and having fun during classes.</p>
+        </div>
+        <div class="learning-feature-card" data-scroll-reveal>
+          <span class="lfc-icon">⚡</span>
+          <h4 class="lfc-title">Fitness Meets Learning</h4>
+          <p class="lfc-desc">Our unique approach combines cognitive development with movement, improving focus and concentration.</p>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="motivational-success-card" data-scroll-reveal style="margin-top:80px; border-color:rgba(76,175,80,0.2);">
+        <span class="sparkle-icon" style="color:#81c784;">🌱</span>
+        <h3 style="color:#81c784;">OUR CORE VALUES</h3>
+        <p class="success-text" style="max-width:640px; margin:0 auto 20px;">We believe that character building is just as important as intelligence. Our daily instruction models and guides children through our core values:</p>
+        <div class="slogan-badge" style="background:rgba(76,175,80,0.06); color:#81c784; border-color:rgba(76,175,80,0.15);">
+          <span>Honesty</span> &bull; <span>Responsibility</span> &bull; <span>Respect</span> &bull; <span>Kindness</span> &bull; <span>Inclusiveness</span> &bull; <span>Lifelong Learning</span>
+        </div>
+        <p class="join-us-call" style="margin-top:20px; font-size:1.1rem; color:var(--white);">Learn &bull; Explore &bull; Grow &bull; Transform</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ & CTA ────────────────────────────────────────── -->
+  <section class="classes-faq" style="background:var(--bg);">
+    <div class="faq-inner">
+      <p class="section-label" style="color:#81c784;">Enrollment</p>
+      <h2 class="section-title">READY TO START?</h2>
+      <div style="text-align:center;">
+        <p style="font-family:'Inter',sans-serif; color:var(--g1); font-size:1.1rem; margin-bottom:40px; line-height:1.65;">
+          Join The Cocoon Learning Center and watch your child grow, discover, and thrive. Book a visit or request a free consultation session today.
+        </p>
+        <div class="page-cta-btns">
+          <a href="contact.html" class="btn-primary btn-green">Book Free Consultation →</a>
+          <a href="about.html" class="btn-ghost">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark">C</div>
+              <div class="logo-words">
+                <span class="lw-top">COCOON</span>
+                <span class="lw-bot">TRAINING ACADEMY</span>
+              </div>
+            </a>
+            <p>Transforming lives through fitness and child development. Leading programs in Coimbatore and Kuthalam.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Zumba Academy</h5>
+            <ul>
+              <li><a href="classes.html">Zumba® Fitness</a></li>
+              <li><a href="classes.html">Zumba® Kids Jr.</a></li>
+              <li><a href="classes.html">Zumba® Kids</a></li>
+              <li><a href="classes.html">Zumba® Gold</a></li>
+              <li><a href="classes.html">Aqua Zumba®</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Learning Centre</h5>
+            <ul>
+              <li><a href="learning.html">Preschool Enrichment</a></li>
+              <li><a href="learning.html">After-School &amp; STEM</a></li>
+              <li><a href="learning.html">Language &amp; Communication</a></li>
+              <li><a href="learning.html">Abacus Arithmetic</a></li>
+              <li><a href="learning.html">Teacher Training</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Our Locations</h5>
+            <ul>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
+              <li>No. 7, Arunachalam Street, 641001</li>
+              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
+              <li>No. 19, Nadu Chetty Street, 609801</li>
+              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>⭐ 4.9 Google Rating</span>
+          <span>🎓 Licensed ZIN™ Coaches</span>
+          <span>🦋 Child Development Centre</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <script src="script.js"></script>
+</body>
+</html>

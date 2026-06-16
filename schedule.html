@@ -122,6 +122,11 @@
     }
     .sch-card.card-zumba::before { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
     .sch-card.card-toning::before { background: linear-gradient(90deg, var(--gold3), var(--gold)); }
+    .sch-card.card-step::before { background: linear-gradient(90deg, var(--gold2), var(--gold3)); }
+    .sch-card.card-junior::before { background: linear-gradient(90deg, #4caf50, #81c784); }
+    .sch-card.card-kids::before { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+    .sch-card.card-gold::before { background: linear-gradient(90deg, #ffb300, #ffe082); }
+    .sch-card.card-aqua::before { background: linear-gradient(90deg, #00bcd4, #4dd0e1); }
     @keyframes cardIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform: translateY(0); } }
 
     .sc-type {
@@ -131,6 +136,11 @@
     }
     .sch-card.card-zumba .sc-type { color: var(--gold); }
     .sch-card.card-toning .sc-type { color: var(--gold3); }
+    .sch-card.card-step .sc-type { color: var(--gold2); }
+    .sch-card.card-junior .sc-type { color: #81c784; }
+    .sch-card.card-kids .sc-type { color: #ff9800; }
+    .sch-card.card-gold .sc-type { color: #ffb300; }
+    .sch-card.card-aqua .sc-type { color: #00bcd4; }
 
     .sc-name {
       font-size: 1rem; font-weight: 700; color: var(--white);
@@ -281,6 +291,7 @@
         <li><a href="index.html" data-page="home">Home</a></li>
         <li><a href="about.html" data-page="about">About</a></li>
         <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
         <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
         <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
@@ -301,6 +312,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="classes.html">Classes</a></li>
+      <li><a href="learning.html">Learning Centre</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -339,10 +351,13 @@
       <div class="sch-filter-legend-wrap">
         <div class="type-filters" role="group" aria-label="Class type filter">
           <button class="type-btn active" data-type="all">All</button>
-          <button class="type-btn" data-type="Zumba">💃 Zumba Classic</button>
-          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning &amp; Step</button>
-          <button class="type-btn" data-type="Zumba Kids">🌟 Zumba Kids &amp; Gold</button>
-          <button class="type-btn" data-type="Kids Learning">📚 Kids Learning</button>
+          <button class="type-btn" data-type="Zumba">💃 Zumba Fitness</button>
+          <button class="type-btn" data-type="Zumba Toning">🏋️ Zumba Toning</button>
+          <button class="type-btn" data-type="Zumba Step">🪜 Zumba Step</button>
+          <button class="type-btn" data-type="Zumba Kids Jr.">👶 Zumba Kids Jr.</button>
+          <button class="type-btn" data-type="Zumba Kids">🌟 Zumba Kids</button>
+          <button class="type-btn" data-type="Zumba Gold">💛 Zumba Gold</button>
+          <button class="type-btn" data-type="Aqua Zumba">💧 Aqua Zumba</button>
         </div>
         <div class="sch-legend" aria-label="Spot availability legend">
           <div class="legend-item"><div class="legend-dot" style="background:#4CAF50;"></div>Available</div>
@@ -382,7 +397,7 @@
                 <span class="lw-bot">TRAINING ACADEMY</span>
               </div>
             </a>
-            <p>Coimbatore's premier Zumba fitness studio. Transforming lives since 2014.</p>
+            <p>Transforming lives through fitness and child development. Leading programs in Coimbatore and Kuthalam.</p>
             <div class="social-links">
               <a href="#" aria-label="Instagram">IG</a>
               <a href="#" aria-label="Facebook">FB</a>
@@ -391,26 +406,27 @@
             </div>
           </div>
           <div class="fg-col">
-            <h5>Classes</h5>
+            <h5>Zumba Academy</h5>
             <ul>
-              <li><a href="classes.html">Zumba Fitness</a></li>
-              <li><a href="classes.html">Zumba Kids</a></li>
-              <li><a href="classes.html">Zumba Gold</a></li>
-              <li><a href="classes.html">Zumba Toning</a></li>
-              <li><a href="classes.html">Zumba Step</a></li>
+              <li><a href="classes.html">Zumba® Fitness</a></li>
+              <li><a href="classes.html">Zumba® Kids Jr.</a></li>
+              <li><a href="classes.html">Zumba® Kids</a></li>
+              <li><a href="classes.html">Zumba® Gold</a></li>
+              <li><a href="classes.html">Aqua Zumba®</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Academy</h5>
+            <h5>Learning Centre</h5>
             <ul>
-              <li><a href="about.html">Our Story</a></li>
-              <li><a href="about.html">Coaches</a></li>
-              <li><a href="schedule.html">Schedule</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="learning.html">Preschool Enrichment</a></li>
+              <li><a href="learning.html">After-School &amp; STEM</a></li>
+              <li><a href="learning.html">Language &amp; Communication</a></li>
+              <li><a href="learning.html">Abacus Arithmetic</a></li>
+              <li><a href="learning.html">Teacher Training</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Contact</h5>
+            <h5>Our Locations</h5>
             <ul>
               <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
               <li>No. 7, Arunachalam Street, 641001</li>
@@ -428,9 +444,9 @@
       <div class="wrap footer-bottom-inner">
         <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
         <div class="footer-badges">
-          <span>&#11088; 4.9 Rating</span>
-          <span>&#127891; Zumba Certified</span>
-          <span>&#127941; Zumba Masterclasses</span>
+          <span>⭐ 4.9 Google Rating</span>
+          <span>🎓 Licensed ZIN™ Coaches</span>
+          <span>🦋 Child Development Centre</span>
         </div>
       </div>
     </div>
@@ -448,10 +464,29 @@
       const board = document.getElementById('schBoard');
 
       function makeCard(cls, delay) {
-        const isZumba = cls.class === 'Zumba' || cls.class === 'Zumba Gold' || cls.class === 'Zumba Kids';
-        const isLearning = cls.class === 'Kids Learning';
-        const typeClass = isLearning ? 'card-learning' : (isZumba ? 'card-zumba' : 'card-toning');
-        const typeIcon  = isLearning ? '📚' : (isZumba ? '💃' : '🏋️');
+        let typeClass = 'card-zumba';
+        let typeIcon = '💃';
+        
+        if (cls.class === 'Zumba Toning') {
+          typeClass = 'card-toning';
+          typeIcon = '🏋️';
+        } else if (cls.class === 'Zumba Step') {
+          typeClass = 'card-step';
+          typeIcon = '🪜';
+        } else if (cls.class === 'Zumba Kids Jr.') {
+          typeClass = 'card-junior';
+          typeIcon = '👶';
+        } else if (cls.class === 'Zumba Kids') {
+          typeClass = 'card-kids';
+          typeIcon = '🌟';
+        } else if (cls.class === 'Zumba Gold') {
+          typeClass = 'card-gold';
+          typeIcon = '💛';
+        } else if (cls.class === 'Aqua Zumba') {
+          typeClass = 'card-aqua';
+          typeIcon = '💧';
+        }
+
         const spotClass = { open: 'open', few: 'few', full: 'full' }[cls.spots] || 'open';
         const spotLabel = { open: 'Available', few: 'Few spots left', full: 'Full' }[cls.spots] || 'Available';
 
@@ -489,8 +524,6 @@
           ['morning', 'evening'].forEach(slot => {
             const classes = (dayData[slot] || []).filter(c => {
               if (activeType === 'all') return true;
-              if (activeType === 'Zumba Toning') return c.class === 'Zumba Toning' || c.class === 'Zumba Step';
-              if (activeType === 'Zumba Kids') return c.class === 'Zumba Kids' || c.class === 'Zumba Gold';
               return c.class === activeType;
             });
             if (!classes.length) return;

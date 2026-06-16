@@ -33,12 +33,13 @@
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="classes.html">Classes</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="btn-primary nav-cta">Free Trial</a>
@@ -58,6 +59,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="classes.html">Classes</a></li>
+      <li><a href="learning.html">Learning Centre</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -129,14 +131,19 @@
             <div class="fg">
               <label for="classInterest">Class Interest</label>
               <select id="classInterest" name="classInterest" required>
-                <option value="">Choose a program...</option>
-                <option value="zumba-fitness">Zumba Fitness Classic (Adults)</option>
-                <option value="zumba-toning">Zumba Toning (Body Sculpting)</option>
-                <option value="zumba-step">Zumba Step (Cardio &amp; Tone)</option>
-                <option value="zumba-kids">Zumba Kids (Dance, Fitness &amp; Fun)</option>
-                <option value="kids-learning">Kids Learning &amp; Dev Program (Ages 4–10)</option>
-                <option value="zumba-gold">Zumba Gold (Active Seniors)</option>
-                <option value="zumba-unlimited">Zumba Unlimited Access Pass</option>
+                 <option value="">Choose a program...</option>
+                 <option value="zumba-fitness">Zumba® Fitness (Adults)</option>
+                 <option value="zumba-toning">Zumba® Toning (Body Sculpting)</option>
+                 <option value="zumba-step">Zumba® Step (Cardio &amp; Tone)</option>
+                 <option value="zumba-kids-jr">Zumba® Kids Jr. (Ages 4–6)</option>
+                 <option value="zumba-kids">Zumba® Kids (Ages 7–11)</option>
+                 <option value="zumba-gold">Zumba® Gold (Active Seniors)</option>
+                 <option value="aqua-zumba">Aqua Zumba® (Water Fitness)</option>
+                 <option value="zumba-unlimited">Zumba® Unlimited Access Pass</option>
+                 <option value="preschool-enrichment">Preschool &amp; Child Development (Kuthalam)</option>
+                 <option value="afterschool-stem">After-School &amp; STEM / Abacus (Kuthalam)</option>
+                 <option value="daycare-playgroup">Daycare &amp; Playgroup (Kuthalam)</option>
+                 <option value="teacher-training">Montessori Teacher Training (Kuthalam)</option>
               </select>
             </div>
             <div class="fg">
@@ -354,7 +361,7 @@
                 <span class="lw-bot">TRAINING ACADEMY</span>
               </div>
             </a>
-            <p>Coimbatore's premier Zumba fitness studio. Since 2014.</p>
+            <p>Transforming lives through fitness and child development. Leading programs in Coimbatore and Kuthalam.</p>
             <div class="social-links">
               <a href="#" aria-label="Instagram">IG</a>
               <a href="#" aria-label="Facebook">FB</a>
@@ -363,23 +370,27 @@
             </div>
           </div>
           <div class="fg-col">
-            <h5>Classes</h5>
+            <h5>Zumba Academy</h5>
             <ul>
-              <li><a href="classes.html">Zumba Fitness</a></li>
-              <li><a href="classes.html">Zumba Toning</a></li>
-              <li><a href="classes.html">Zumba Step</a></li>
+              <li><a href="classes.html">Zumba® Fitness</a></li>
+              <li><a href="classes.html">Zumba® Kids Jr.</a></li>
+              <li><a href="classes.html">Zumba® Kids</a></li>
+              <li><a href="classes.html">Zumba® Gold</a></li>
+              <li><a href="classes.html">Aqua Zumba®</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Academy</h5>
+            <h5>Learning Centre</h5>
             <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="schedule.html">Schedule</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="learning.html">Preschool Enrichment</a></li>
+              <li><a href="learning.html">After-School &amp; STEM</a></li>
+              <li><a href="learning.html">Language &amp; Communication</a></li>
+              <li><a href="learning.html">Abacus Arithmetic</a></li>
+              <li><a href="learning.html">Teacher Training</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Contact</h5>
+            <h5>Our Locations</h5>
             <ul>
               <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
               <li>No. 7, Arunachalam Street, 641001</li>
@@ -397,8 +408,9 @@
       <div class="wrap footer-bottom-inner">
         <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
         <div class="footer-badges">
-          <span>&#11088; 4.9 Rating</span>
-          <span>&#127891; Zumba Certified</span>
+          <span>⭐ 4.9 Google Rating</span>
+          <span>🎓 Licensed ZIN™ Coaches</span>
+          <span>🦋 Child Development Centre</span>
         </div>
       </div>
     </div>
