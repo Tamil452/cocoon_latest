@@ -630,7 +630,7 @@
       plans.forEach(plan => {
         const data = prices[period][plan];
         // Find the price-amount element within each card
-        const amountEl = document.querySelector(`.pricing-grid:first-of-type .pricing-card:nth-child(${plans.indexOf(plan)+1}) .price-amount`);
+        const amountEl = document.querySelector(`.pricing-grid .pricing-card:nth-child(${plans.indexOf(plan)+1}) .price-amount`);
         const periodEl = document.getElementById(`period-label-${plan}`);
         const savingsEl = document.getElementById(`savings-${plan}`);
         if (amountEl) {

@@ -208,7 +208,7 @@ body:has(button:hover) #curOuter {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 60px 0;
   position: relative;
   z-index: 1;
 }
@@ -1024,8 +1024,36 @@ body:has(button:hover) #curOuter {
 
 .disc-panels {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr;
   height: 650px;
+}
+
+
+/* ── Disc Badge & Panel Rebranding Accents ── */
+.disc-badge {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.disc-badge.primary-badge {
+  background: rgba(76, 175, 80, 0.15);
+  color: #81c784;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+.disc-badge.secondary-badge {
+  background: rgba(200, 151, 63, 0.15);
+  color: var(--gold2);
+  border: 1px solid var(--goldb);
+}
+.disc-panel.disc-learning .disc-desc {
+  max-width: 480px;
 }
 
 .disc-panel {
@@ -1252,6 +1280,22 @@ body:has(button:hover) #curOuter {
   z-index: 2;
 }
 
+.cta-banner p {
+  font-size: 1.1rem;
+  color: var(--g1);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.cta-fine {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--g2);
+  margin-top: 20px;
+}
+
+
 .cta-banner h2 {
   font-family: var(--ff-display);
   font-size: clamp(2.5rem, 5vw, 5rem);
@@ -1407,7 +1451,7 @@ body:has(button:hover) #curOuter {
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 20px;
 }
 
@@ -1552,7 +1596,7 @@ body:has(button:hover) #curOuter {
 .dft.active { background: var(--gold); color: var(--bg); border-color: var(--gold); }
 
 .discipline-block {
-  padding: 80px 0;
+  padding: 50px 0;
   position: relative;
 }
 
@@ -1850,7 +1894,7 @@ body:has(button:hover) #curOuter {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 20px;
   align-items: center;
 }
@@ -3140,7 +3184,7 @@ body:has(button:hover) #curOuter {
 /* Price cards (home) */
 .price-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 20px;
   align-items: center;
 }
@@ -3686,7 +3730,35 @@ body:has(button:hover) #curOuter {
   .hero-visual { display: none; }
 
   .disc-panels { grid-template-columns: 1fr; height: auto; }
-  .disc-panel { height: auto; min-height: 600px; }
+  
+/* ── Disc Badge & Panel Rebranding Accents ── */
+.disc-badge {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.disc-badge.primary-badge {
+  background: rgba(76, 175, 80, 0.15);
+  color: #81c784;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+.disc-badge.secondary-badge {
+  background: rgba(200, 151, 63, 0.15);
+  color: var(--gold2);
+  border: 1px solid var(--goldb);
+}
+.disc-panel.disc-learning .disc-desc {
+  max-width: 480px;
+}
+
+.disc-panel { height: auto; min-height: 600px; }
 
   .story-grid { grid-template-columns: 1fr; gap: 40px; }
   .story-img { height: 320px; }
@@ -3755,7 +3827,35 @@ body:has(button:hover) #curOuter {
   .dt { padding: 8px 14px; font-size: 0.68rem; }
 
   .disc-panels { grid-template-columns: 1fr; }
-  .disc-panel { height: auto; min-height: 540px; }
+  
+/* ── Disc Badge & Panel Rebranding Accents ── */
+.disc-badge {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.disc-badge.primary-badge {
+  background: rgba(76, 175, 80, 0.15);
+  color: #81c784;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+.disc-badge.secondary-badge {
+  background: rgba(200, 151, 63, 0.15);
+  color: var(--gold2);
+  border: 1px solid var(--goldb);
+}
+.disc-panel.disc-learning .disc-desc {
+  max-width: 480px;
+}
+
+.disc-panel { height: auto; min-height: 540px; }
   .disc-content { padding: 28px; }
 
   .stats-band { padding: 48px 0; }
@@ -4148,9 +4248,9 @@ body:has(button:hover) #curOuter {
 .disc-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 50px;
   align-items: start;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 .disc-split-img {
   position: relative;
@@ -4225,8 +4325,9 @@ body:has(button:hover) #curOuter {
   }
   .disc-split {
     grid-template-columns: 1fr;
-    gap: 32px;
-    margin-bottom: 60px !important;
+    gap: 24px;
+    margin-bottom: 40px !important;
+  }
   }
   .disc-split-img {
     aspect-ratio: 16/10;
@@ -4457,7 +4558,7 @@ body:has(button:hover) #curOuter {
 
 @media(max-width: 1024px) {
   .sculpt-targets-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1.6fr 1fr 1fr;
   }
   .work-steps-grid {
     grid-template-columns: repeat(2, 1fr);
