@@ -3736,6 +3736,25 @@ body:has(button:hover) #curOuter {
 
 /* ── 1024px ─ */
 @media (max-width: 1024px) {
+  .nav-wrap { padding: 0 20px; }
+
+  #nav {
+    padding: 12px 0 !important;
+    background: rgba(7,7,7,0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--goldb) !important;
+  }
+  .nav-cta {
+    display: none !important;
+  }
+  .nav-right {
+    margin-left: auto;
+  }
+
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 120px 40px 60px;
@@ -3804,24 +3823,6 @@ body:has(button:hover) #curOuter {
 /* ── 768px ─ */
 @media (max-width: 768px) {
   .wrap, .disc-inner { padding: 0 20px; }
-  .nav-wrap { padding: 0 20px; }
-
-  #nav {
-    padding: 12px 0 !important;
-    background: rgba(7,7,7,0.92) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-bottom: 1px solid var(--goldb) !important;
-  }
-  .nav-cta {
-    display: none !important;
-  }
-  .nav-right {
-    margin-left: auto;
-  }
-
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
 
   .section { padding: 60px 0; }
   .section.section-sm { padding: 40px 0; }
