@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cocoon Academy — Preschool, Skill Development &amp; Zumba | Coimbatore &amp; Kuthalam</title>
-  <meta name="description" content="Coimbatore &amp; Kuthalam's premier center for preschool education, daycare, creative skill development programs, and certified Zumba® fitness classes." />
+  <title>The COCOON Learning Centre — Early Childhood Education, STEAM &amp; Zumba | Chennai &amp; Kuthalam</title>
+  <meta name="description" content="Chennai &amp; Kuthalam's premier centre for Early Childhood Education, STEAM Learning, daycare, creative skill development programs, and certified Zumba® fitness classes." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,31 +17,215 @@
   <style>
     /* ---- Index-specific overrides ------------------------ */
 
-
-
-    /* Hero visual gradient overlay at left edge */
-    .hero-visual::before {
-      content: '';
-      position: absolute; top: 0; left: 0; bottom: 0;
-      width: 120px;
-      background: linear-gradient(to right, var(--bg), transparent);
-      z-index: 3;
-      pointer-events: none;
+    /* ── NEW FULL-WIDTH COLLAGE HERO ───────────────────── */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 0;
+      margin-top: 0;
     }
 
-    /* Hero visual collage */
-    .hv-collage {
+    /* Full-bleed background image */
+    .hero-bg-rect {
       position: absolute;
       inset: 0;
-      border-radius: var(--r2);
-      overflow: hidden;
-      border: 1px solid var(--goldb);
-      animation: floatA 8s ease-in-out infinite;
-    }
-    .hv-collage img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.5) saturate(1.1);
+      transition: transform 10s ease;
+    }
+
+    .hero:hover .hero-bg-rect { transform: scale(1.04); }
+
+    /* Gradient overlay: elegant dark on the left side to support left-aligned text */
+    .hero-rect-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7,7,7,0.95) 0%, rgba(7,7,7,0.85) 35%, rgba(7,7,7,0.2) 100%);
+    }
+
+    /* Content positioned cleanly in center-left */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 150px 40px 60px; /* Added 150px top padding to clear nav entirely */
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Left align to look more dynamic and less 'normal' */
+      text-align: left;
+    }
+
+    /* Floating badge top-right */
+    .hero-float-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212,175,55,0.4);
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: 8px 18px;
+      margin-bottom: 24px;
+    }
+
+    .hero-float-badge strong {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero-float-badge span {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Location pills row */
+    .hero-location-pills {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hero-loc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.3);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* Big display title */
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      line-height: 0.9;
+      color: var(--white);
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title .ht-accent { color: var(--gold); }
+
+    .hero-title .ht-outline {
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.4);
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Sub paragraph */
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--g1);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    /* CTA row */
+    .hero-ctas {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    /* Stats strip */
+    .hero-stats {
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .hs-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .hs-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hs-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--g2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Scroll cue */
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-scroll-cue span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--g2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 100vh; }
+      .hero-content { padding: 80px 20px 40px; }
+      .hero-title { font-size: clamp(3rem, 14vw, 5rem); }
+      .hero-stats { gap: 20px; flex-wrap: wrap; }
+      .hero-scroll-cue { display: none; }
     }
 
     /* Disciplines headings centering */
@@ -50,6 +234,50 @@
     /* CTA banner bg */
     .cta-banner-bg::after {
       background: linear-gradient(135deg, rgba(7,7,7,0.88) 60%, rgba(7,7,7,0.72) 100%);
+    }
+
+    @media (max-width: 991px) {
+      .hero-collage-container {
+        flex-direction: column;
+        padding-top: 40px;
+        gap: 30px;
+      }
+      .hero-collage-left {
+        align-items: center;
+        text-align: center;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-ctas {
+        justify-content: center;
+      }
+      .collage-grid {
+        height: 420px;
+      }
+      .hero-float-badge {
+        align-self: center;
+      }
+      .hero-scroll-cue {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-collage-container {
+        padding: 0 20px;
+      }
+      .hero-title {
+        font-size: clamp(2.5rem, 10vw, 3.8rem);
+      }
+      .collage-grid {
+        height: 320px;
+        gap: 8px;
+      }
+      .collage-item {
+        border-radius: 10px;
+      }
     }
   </style>
 </head>
@@ -69,10 +297,10 @@
   <nav id="nav">
     <div class="nav-wrap">
       <a href="index.html" class="logo">
-        <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The Cocoon Logo" /></div>
+        <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The COCOON Logo" /></div>
         <div class="logo-words">
           <span class="lw-top">THE COCOON</span>
-          <span class="lw-bot">TRAINING ACADEMY</span>
+          <span class="lw-bot">LEARNING CENTRE</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -81,6 +309,7 @@
         <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
         <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
         <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
         <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
@@ -102,6 +331,7 @@
       <li><a href="fitness.html">Fitness</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
       <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
@@ -109,35 +339,50 @@
   </div>
   <div class="drawer-overlay" id="nav-drawer-overlay"></div>
 
-  <!-- ===================== HERO ========================= -->
+  <!-- ===================== HERO — FULL-WIDTH COLLAGE ====================== -->
   <section class="hero" aria-label="Hero">
+    <!-- Full-bleed background image -->
+    <img class="hero-bg-rect" src="images/hero_dynamic_blend.png" alt="The COCOON Learning Centre Campus" loading="eager" />
+    <!-- Gradient overlay -->
+    <div class="hero-rect-overlay"></div>
+
+    <!-- Main content -->
     <div class="hero-content">
 
-      <!-- Eyebrow -->
-      <div class="hero-eyebrow">
-        <span class="pulse-dot"></span>
-        <span>EST. 2015 &middot; COIMBATORE &amp; KUTHALAM</span>
+      <!-- Floating rating badge -->
+      <div class="hero-float-badge" aria-label="Google Rating 4.9 stars">
+        <strong>4.9★</strong>
+        <span>Google Rating</span>
       </div>
 
-      <!-- Title -->
+      <!-- Location pills -->
+      <div class="hero-location-pills">
+        <span class="hero-loc-pill">📍 Chennai</span>
+        <span class="hero-loc-pill">📍 Chennai</span>
+        <span class="hero-loc-pill">📍 Kuthalam</span>
+      </div>
+
+      <!-- Big display title -->
       <h1 class="hero-title">
-        <div class="ht-line ht-1"><span>LEARN.</span></div>
-        <div class="ht-line ht-2"><span>GROW.</span></div>
-        <div class="ht-line ht-3"><span>TRANSFORM.</span></div>
+        <span class="ht-outline">THE COCOON</span><br>
+        <span>LEARNING</span><span class="ht-accent"> CENTRE.</span>
       </h1>
 
-      <!-- Sub -->
+      <!-- Sub-paragraph -->
+      <p class="hero-sub" style="font-size:1.4rem; color:var(--gold); font-family:var(--ff-display); letter-spacing:1px; margin-bottom:10px;">
+        Welcome to an Ecosystem of Excellence
+      </p>
       <p class="hero-sub">
-        Welcome to Cocoon Academy. Coimbatore &amp; Kuthalam's premier center dedicated to child-centered preschool education, daycare, creative skill development programs, and premium Zumba® fitness classes for all ages.
+        Infinite Potential, Nurtured Under One Roof. Welcome to The <span class="cocoon-brand">COCOON</span> Learning Centre, a vanguard of holistic education. From foundational early education to advanced academic tuitions, enrichment, and premium Zumba® fitness.
       </p>
 
       <!-- CTAs -->
       <div class="hero-ctas">
-        <a href="learning.html" class="btn-primary">Explore Learning Centre &rarr;</a>
-        <a href="fitness.html" class="btn-ghost">Zumba Fitness</a>
+        <a href="learning.html" class="btn-primary">Explore Programs &rarr;</a>
+        <a href="infrastructure.html" class="btn-ghost">View Infrastructure</a>
       </div>
 
-      <!-- Stats -->
+      <!-- Stats strip -->
       <div class="hero-stats">
         <div class="hs-item">
           <span class="hs-num">
@@ -153,20 +398,12 @@
         </div>
         <div class="hs-item">
           <span class="hs-num">
-            <span class="count" data-to="2">0</span>
+            <span class="count" data-to="3">0</span>
           </span>
           <span class="hs-label">Locations</span>
         </div>
       </div>
     </div><!-- /hero-content -->
-
-    <!-- Visual -->
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hv-collage">
-        <img src="images/hero_collage.png" alt="Zumba and Learning Centre collage at Cocoon Academy" loading="eager" />
-      </div>
-      <div class="hv-badge"><strong>4.9★</strong><span>Google Rating</span></div>
-    </div>
 
     <!-- Scroll cue -->
     <div class="hero-scroll-cue" aria-hidden="true">
@@ -178,31 +415,34 @@
   <!-- ===================== MARQUEE ====================== -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
-      <span class="mt-text">PRESCHOOL EDUCATION</span><span class="mt-sep">◆</span>
+      <span class="mt-text">EARLY CHILDHOOD EDUCATION</span><span class="mt-sep">◆</span>
       <span class="mt-text">SKILL DEVELOPMENT</span><span class="mt-sep">◆</span>
       <span class="mt-text">HOLISTIC DAYCARE</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® FITNESS</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® KIDS</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® GOLD</span><span class="mt-sep">◆</span>
       <span class="mt-text">LANGUAGE ENRICHMENT PROGRAM</span><span class="mt-sep">◆</span>
-      <span class="mt-text">STEM LEARNING</span><span class="mt-sep">◆</span>
+      <span class="mt-text">STEAM LEARNING</span><span class="mt-sep">◆</span>
       
       <!-- Duplicated for seamless infinity scroll -->
-      <span class="mt-text">PRESCHOOL EDUCATION</span><span class="mt-sep">◆</span>
+      <span class="mt-text">EARLY CHILDHOOD EDUCATION</span><span class="mt-sep">◆</span>
       <span class="mt-text">SKILL DEVELOPMENT</span><span class="mt-sep">◆</span>
       <span class="mt-text">HOLISTIC DAYCARE</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® FITNESS</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® KIDS</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® GOLD</span><span class="mt-sep">◆</span>
       <span class="mt-text">LANGUAGE ENRICHMENT PROGRAM</span><span class="mt-sep">◆</span>
-      <span class="mt-text">STEM LEARNING</span><span class="mt-sep">◆</span>
+      <span class="mt-text">STEAM LEARNING</span><span class="mt-sep">◆</span>
     </div>
   </div>
 
   <!-- ===================== TAGLINE STRIP ================= -->
   <div class="tagline-strip" aria-label="Tagline">
     <div class="wrap text-center" data-reveal>
-      <p class="tagline-text">"Empower yourself with knowledge, creativity, and practical skills through our Skill Development Program"</p>
+      <p class="tagline-text" style="color:var(--gold);">"Our Guiding Philosophy: Learn &bull; Explore &bull; Create &bull; Grow"</p>
+      <p style="color:var(--g1); max-width:900px; margin:20px auto 0; font-size:1.15rem; line-height:1.7;">
+        We do not simply impart knowledge; we design bespoke learning journeys. Through an immersive, child-centric curriculum, premium infrastructure, and innovative pedagogy, we empower young minds to discover their unique brilliance and build an unshakable foundation for lifelong success.
+      </p>
     </div>
   </div>
 
@@ -212,12 +452,12 @@
       <div class="section-head" data-reveal>
         <div class="sec-tag">Our Programs</div>
         <h2>EXPLORE OUR <em>CORE DISCIPLINES</em></h2>
-        <p>Holistic preschool education, daycare and creative skill development programs, alongside certified Zumba® fitness classes.</p>
+        <p>Inspired by the meticulous transformation of a caterpillar into a butterfly, our institution serves as a premium sanctuary for growth. A complete, 360-degree educational ecosystem alongside our certified Zumba® fitness academy.</p>
       </div>
 
       <div class="disc-panels">
 
-        <!-- Kids Learning Center Panel -->
+        <!-- Kids Learning Centre Panel -->
         <div class="disc-panel disc-learning" data-reveal data-reveal-delay="1">
           <div class="disc-panel-bg">
             <img src="images/contact_bg.png" alt="Kids Learning Program" />
@@ -226,7 +466,7 @@
             <span class="disc-badge primary-badge">PRIMARY FOCUS</span>
             <div class="disc-num">01</div>
             <h3 class="disc-title">COCOON LEARNING CENTRE</h3>
-            <p class="disc-desc">Empower yourself with knowledge, creativity, and practical skills through our Skill Development Program. Cocoon Learning Centre in Kuthalam is a nurturing space offering holistic preschool, daycare, and after-school enrichment programs.</p>
+            <p class="disc-desc">Empower yourself with knowledge, creativity, and practical skills through our Skill Development Program. COCOON Learning Centre in Kuthalam is a nurturing space offering holistic preschool, daycare, and after-school enrichment programs.</p>
             <ul class="disc-list">
               <li>Holistic Preschool Education</li>
               <li>Enrichment &amp; Skill Development</li>
@@ -357,13 +597,13 @@
         <div class="footer-grid">
           <div class="fg-brand">
             <a href="index.html" class="logo">
-              <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The Cocoon Logo" /></div>
+              <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The COCOON Logo" /></div>
               <div class="logo-words">
                 <span class="lw-top">THE COCOON</span>
-                <span class="lw-bot">TRAINING ACADEMY</span>
+                <span class="lw-bot">LEARNING CENTRE</span>
               </div>
             </a>
-            <p>Transforming lives through fitness and child development. Leading programs in Coimbatore and Kuthalam.</p>
+            <p>Transforming lives through fitness and child development. The <span class="cocoon-brand">COCOON</span> Learning Centre — now in Chennai &amp; Kuthalam.</p>
             <div class="social-links">
               <a href="#" aria-label="Instagram">IG</a>
               <a href="#" aria-label="Facebook">FB</a>
@@ -394,11 +634,11 @@
           <div class="fg-col">
             <h5>Our Locations</h5>
             <ul>
-              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Coimbatore HQ:</li>
-              <li>No. 7, Arunachalam Street, 641001</li>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Branch:</li>
+              <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
               <li><a href="tel:+919843012345">+91 98430 12345</a></li>
-              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
-              <li>No. 19, Nadu Chetty Street, 609801</li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
+              <li>No. 19, Nadu Chetty Street, Kuthalam - 609801<br>Mayiladuthurai District</li>
               <li><a href="tel:+919382722445">+91 93827 22445</a></li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
             </ul>
@@ -408,7 +648,7 @@
     </div>
     <div class="footer-bottom">
       <div class="wrap footer-bottom-inner">
-        <p>&copy; <span id="footer-year">2026</span> The Cocoon Training Academy. All rights reserved.</p>
+        <p>&copy; <span id="footer-year">2026</span> The <span class="cocoon-brand">COCOON</span> Learning Centre. All rights reserved.</p>
         <div class="footer-badges">
           <span>⭐ 4.9 Google Rating</span>
           <span>🎓 Licensed ZIN™ Coaches</span>

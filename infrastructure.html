@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infrastructure — The COCOON Learning Centre | World-Class Facilities</title>
+  <meta name="description" content="Explore the world-class infrastructure of The COCOON Learning Centre. STEAM Labs, child-safe play areas, modern classrooms, reading libraries, and more across our Chennai and Kuthalam campuses." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── INFRASTRUCTURE PAGE STYLES ─────────────────────── */
+
+    /* Page hero with wide rectangular banner */
+    .infra-hero {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .infra-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.4);
+      transition: transform 8s ease;
+    }
+
+    .infra-hero:hover .infra-hero-img { transform: scale(1.03); }
+
+    .infra-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, rgba(7,7,7,0.3) 60%, transparent 100%);
+    }
+
+    .infra-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      width: 100%;
+    }
+
+    .infra-hero-tag {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.25);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .infra-hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .infra-hero-title em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .infra-hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--g1);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    /* Location switcher tabs */
+    .location-switcher {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px 0;
+    }
+
+    .loc-tab {
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: 1px solid rgba(212,175,55,0.3);
+      background: transparent;
+      color: var(--g1);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .loc-tab:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .loc-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #000;
+    }
+
+    /* Facility intro bar */
+    .facility-intro {
+      background: var(--bg2);
+      border-top: 1px solid var(--g3);
+      border-bottom: 1px solid var(--g3);
+      padding: 48px 0;
+    }
+
+    .facility-intro-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (min-width: 768px) {
+      .facility-intro-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .facility-stat {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--bg3);
+      border-radius: 12px;
+      border: 1px solid var(--g3);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .facility-stat:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .facility-stat-icon { font-size: 2rem; margin-bottom: 10px; }
+
+    .facility-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .facility-stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--g1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Facility showcase — alternating layout */
+    .facility-block {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--g3);
+    }
+
+    .facility-block:nth-child(even) { background: var(--bg2); }
+    .facility-block:nth-child(odd)  { background: var(--bg);  }
+
+    .facility-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .facility-inner { grid-template-columns: 1fr 1fr; align-items: center; }
+      .facility-block:nth-child(even) .facility-inner { direction: rtl; }
+      .facility-block:nth-child(even) .facility-text  { direction: ltr; }
+    }
+
+    .facility-img-wrap {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .facility-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .facility-img-wrap:hover img { transform: scale(1.05); }
+
+    .facility-img-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(7,7,7,0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 14px;
+      border-radius: 4px;
+    }
+
+    .facility-text { display: flex; flex-direction: column; gap: 16px; }
+
+    .facility-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: rgba(212,175,55,0.08);
+      line-height: 1;
+      margin-bottom: -20px;
+    }
+
+    .facility-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .facility-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      line-height: 1.05;
+    }
+
+    .facility-name em { color: var(--gold); font-style: normal; }
+
+    .facility-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--g1);
+      line-height: 1.7;
+    }
+
+    .facility-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
+
+    .facility-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--g1);
+    }
+
+    .facility-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.6rem;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .facility-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    .badge-chennai {
+      background: rgba(33,150,243,0.1);
+      border: 1px solid rgba(33,150,243,0.3);
+      color: #64b5f6;
+    }
+
+    .badge-kuthalam {
+      background: rgba(76,175,80,0.1);
+      border: 1px solid rgba(76,175,80,0.3);
+      color: #81c784;
+    }
+
+    .badge-both {
+      background: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.3);
+      color: var(--gold);
+    }
+
+    /* Amenities grid */
+    .amenities-section {
+      padding: 80px 0;
+      background: var(--bg);
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    @media (min-width: 600px) { .amenities-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px) { .amenities-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .amenity-card {
+      background: var(--bg2);
+      border: 1px solid var(--g3);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+
+    .amenity-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      background: var(--bg3);
+    }
+
+    .amenity-icon { font-size: 2rem; margin-bottom: 10px; }
+
+    .amenity-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .amenity-loc {
+      font-size: 0.72rem;
+      color: var(--g2);
+    }
+
+    /* Safety section */
+    .safety-strip {
+      background: linear-gradient(135deg, #0a1628 0%, #0c1f12 100%);
+      border-top: 1px solid rgba(76,175,80,0.2);
+      border-bottom: 1px solid rgba(76,175,80,0.2);
+      padding: 60px 0;
+    }
+
+    .safety-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .safety-inner { grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+    }
+
+    .safety-text h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .safety-text h2 em { color: #81c784; font-style: normal; }
+
+    .safety-text p {
+      font-size: 0.95rem;
+      color: var(--g1);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .safety-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .safety-feature {
+      background: rgba(76,175,80,0.06);
+      border: 1px solid rgba(76,175,80,0.2);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sf-icon { font-size: 1.5rem; }
+
+    .sf-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .sf-desc {
+      font-size: 0.74rem;
+      color: var(--g2);
+    }
+
+    /* CTA section */
+    .infra-cta {
+      padding: 80px 0;
+      background: var(--bg2);
+      text-align: center;
+    }
+
+    .infra-cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .infra-cta h2 em { color: var(--gold); font-style: normal; }
+
+    .infra-cta p {
+      font-size: 1rem;
+      color: var(--g1);
+      max-width: 500px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+
+    .infra-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .infra-hero { height: 360px; }
+      .infra-hero-content { padding: 0 20px 40px; }
+      .facility-inner { padding: 0 20px; }
+      .amenities-grid { padding: 0 20px; }
+      .safety-inner { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body data-page="infrastructure">
+
+  <div class="page-transition" id="pageTransition"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div id="curOuter"></div>
+  <div id="curInner"></div>
+
+  <!-- ── NAVIGATION ───────────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The COCOON Logo" /></div>
+        <div class="logo-words">
+          <span class="lw-top">THE COCOON</span>
+          <span class="lw-bot">LEARNING CENTRE</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="about.html" data-page="about">About</a></li>
+        <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
+        <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
+        <li><a href="infrastructure.html" data-page="infrastructure" class="active">Infrastructure</a></li>
+        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="btn-primary nav-cta">Book a Visit</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">&times;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
+      <li><a href="learning.html">Learning Centre</a></li>
+      <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="drawer-cta">Book a Visit &rarr;</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ── HERO — WIDE RECTANGULAR BANNER ───────────────────── -->
+  <section class="infra-hero" aria-label="Infrastructure Hero">
+    <img class="infra-hero-img" src="images/infra_banner_hero.png" alt="The COCOON Learning Centre Campus" />
+    <div class="infra-hero-overlay"></div>
+    <div class="infra-hero-content">
+      <div class="infra-hero-tag">The Campus Experience</div>
+      <h1 class="infra-hero-title">INFRASTRUCTURE<br><em>&amp; SAFETY</em></h1>
+      <p class="infra-hero-sub">A premium education demands an environment engineered for greatness. Our campus is more than just a building; it is a meticulously designed pedagogical tool.</p>
+    </div>
+  </section>
+
+  <!-- ── FACILITY STATS BAR ──────────────────────────────── -->
+  <section class="facility-intro" data-reveal>
+    <div class="facility-intro-grid">
+      <div class="facility-stat">
+        <div class="facility-stat-icon">🏫</div>
+        <div class="facility-stat-num">2</div>
+        <div class="facility-stat-label">Campuses</div>
+      </div>
+      <div class="facility-stat">
+        <div class="facility-stat-icon">🔬</div>
+        <div class="facility-stat-num">2</div>
+        <div class="facility-stat-label">STEAM Labs</div>
+      </div>
+      <div class="facility-stat">
+        <div class="facility-stat-icon">📚</div>
+        <div class="facility-stat-num">500+</div>
+        <div class="facility-stat-label">Books in Library</div>
+      </div>
+      <div class="facility-stat">
+        <div class="facility-stat-icon">🛡️</div>
+        <div class="facility-stat-num">100%</div>
+        <div class="facility-stat-label">Safe & Certified</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FACILITY 1: SMART CLASSROOMS ─────────────────────── -->
+  <section class="facility-block">
+    <div class="facility-inner">
+      <div class="facility-img-wrap" data-reveal>
+        <img src="images/infra_classroom.png" alt="Smart Classrooms at The <span class="cocoon-brand">COCOON</span> Learning Centre" loading="lazy" />
+        <span class="facility-img-tag">Smart Classroom</span>
+      </div>
+      <div class="facility-text" data-reveal>
+        <div class="facility-num">01</div>
+        <span class="facility-tag">Core Learning Space</span>
+        <h2 class="facility-name">SMART <em>CLASSROOMS</em></h2>
+        <p class="facility-desc">Naturally lit, climate-controlled, smart-board integrated classrooms with ergonomic, child-safe furniture. Our classrooms are bright, airy, and purpose-designed for Early Childhood Education to create a setting where curiosity thrives naturally every single day.</p>
+        <ul class="facility-features">
+          <li>Montessori-inspired furniture and shelving designed for independence</li>
+          <li>Interactive smart boards with multi-media learning tools</li>
+          <li>Dedicated activity corners — art, language, math, and dramatic play</li>
+          <li>Optimal natural lighting and child-safe ventilation systems</li>
+          <li>Stimulating Architecture that supports focused learning</li>
+        </ul>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+          <span class="facility-location-badge badge-chennai">📍 Chennai — Velachery</span>
+          <span class="facility-location-badge badge-kuthalam">📍 Kuthalam</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FACILITY 2: STEAM LAB ─────────────────────────────── -->
+  <section class="facility-block">
+    <div class="facility-inner">
+      <div class="facility-img-wrap" data-reveal>
+        <img src="images/infra_steam_lab.png" alt="STEAM Lab at The <span class="cocoon-brand">COCOON</span> Learning Centre" loading="lazy" />
+        <span class="facility-img-tag">STEAM Innovation Lab</span>
+      </div>
+      <div class="facility-text" data-reveal>
+        <div class="facility-num">02</div>
+        <span class="facility-tag">Science · Technology · Engineering · Arts · Maths</span>
+        <h2 class="facility-name">STEAM <em>INNOVATION LAB</em></h2>
+        <p class="facility-desc">Our dedicated STEAM Lab is where future innovators are born. Equipped with hands-on science kits, basic robotics, electronics exploration tools, building systems, and creative design stations — children learn by doing, experimenting, and discovering the world around them.</p>
+        <ul class="facility-features">
+          <li>Age-appropriate science experimentation kits and chemistry sets</li>
+          <li>Robotics and coding introduction tools for primary grades</li>
+          <li>Creative engineering challenges with building blocks and circuits</li>
+          <li>Large display screen for collaborative project presentations</li>
+          <li>Dedicated arts integration zone for creative expression</li>
+        </ul>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+          <span class="facility-location-badge badge-both">✦ Both Campuses</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FACILITY 3: INDOOR PLAY AREA ─────────────────────── -->
+  <section class="facility-block">
+    <div class="facility-inner">
+      <div class="facility-img-wrap" data-reveal>
+        <img src="images/infra_play_area.png" alt="Indoor Play Area at The <span class="cocoon-brand">COCOON</span> Learning Centre" loading="lazy" />
+        <span class="facility-img-tag">Safe Play Zone</span>
+      </div>
+      <div class="facility-text" data-reveal>
+        <div class="facility-num">03</div>
+        <span class="facility-tag">Physical Development</span>
+        <h2 class="facility-name">DYNAMIC <em>PLAY ZONES</em></h2>
+        <p class="facility-desc">Sensory-rich indoor and outdoor arenas equipped with premium, non-toxic developmental infrastructure to support physical vitality. Physical play is fundamental to childhood development, promoting gross motor development, coordination, and social play in a fully supervised environment.</p>
+        <ul class="facility-features">
+          <li>Certified child-safe climbing frames and balance structures</li>
+          <li>Soft rubber flooring with impact-absorbing tiles throughout</li>
+          <li>Sensory play stations, sandboxes, and creative activity zones</li>
+          <li>Fully covered, weather-proof indoor space for year-round play</li>
+          <li>Dedicated toddler area for our youngest learners (ages 1.5–3)</li>
+        </ul>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+          <span class="facility-location-badge badge-both">✦ Both Campuses</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FACILITY 4: READING LIBRARY ──────────────────────── -->
+  <section class="facility-block">
+    <div class="facility-inner">
+      <div class="facility-img-wrap" data-reveal>
+        <img src="images/infra_library.png" alt="Children's Reading Library at The <span class="cocoon-brand">COCOON</span> Learning Centre" loading="lazy" />
+        <span class="facility-img-tag">Reading Corner</span>
+      </div>
+      <div class="facility-text" data-reveal>
+        <div class="facility-num">04</div>
+        <span class="facility-tag">Literacy &amp; Language</span>
+        <h2 class="facility-name">CHILDREN'S <em>READING LIBRARY</em></h2>
+        <p class="facility-desc">A love for reading is one of the greatest gifts we can give a child. Our cosy reading corners and mini-libraries are stocked with 500+ curated picture books, storybooks, educational comics, bilingual texts, and interactive activity books — creating a warm, inviting space where children choose to read for joy.</p>
+        <ul class="facility-features">
+          <li>500+ hand-curated books spanning fiction, non-fiction, and bilingual titles</li>
+          <li>Comfortable bean bags, floor cushions, and cosy reading nooks</li>
+          <li>Illustrated wall murals creating an imaginative reading environment</li>
+          <li>Weekly storytelling sessions and read-aloud programs</li>
+          <li>Take-home book lending system for continued learning</li>
+        </ul>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+          <span class="facility-location-badge badge-both">✦ Both Campuses</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AMENITIES GRID ────────────────────────────────────── -->
+  <section class="amenities-section">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:48px;" data-reveal>
+        <div class="sec-tag">Everything Your Child Needs</div>
+        <h2 style="font-family:var(--ff-display); font-size:clamp(2rem,5vw,4rem); color:var(--white); margin-top:12px;">CAMPUS <em style="color:var(--gold); font-style:normal;">AMENITIES</em></h2>
+        <p style="color:var(--g1); max-width:500px; margin:16px auto 0; font-size:0.95rem; line-height:1.6;">Every detail is thoughtfully considered. From safety to comfort, our facilities are built around what children and parents truly need.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🚌</div>
+          <div class="amenity-name">Safe Transport</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🍱</div>
+          <div class="amenity-name">Nutrition Kitchen</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">📹</div>
+          <div class="amenity-name">CCTV Surveillance</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🌐</div>
+          <div class="amenity-name">High-Speed Wi-Fi</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🎶</div>
+          <div class="amenity-name">Music &amp; Movement Room</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">💃</div>
+          <div class="amenity-name">Zumba Fitness Studio</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🖨️</div>
+          <div class="amenity-name">Digital Resource Centre</div>
+          <div class="amenity-loc">Chennai Campus</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🌿</div>
+          <div class="amenity-name">Nature &amp; Garden Learning</div>
+          <div class="amenity-loc">Kuthalam Campus</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🛁</div>
+          <div class="amenity-name">Hygienic Child Restrooms</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">🧑‍⚕️</div>
+          <div class="amenity-name">First Aid &amp; Medical Room</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">📱</div>
+          <div class="amenity-name">Parent Progress App</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+        <div class="amenity-card" data-reveal>
+          <div class="amenity-icon">♿</div>
+          <div class="amenity-name">Accessible Facilities</div>
+          <div class="amenity-loc">Both Campuses</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SAFETY SECTION ────────────────────────────────────── -->
+  <section class="safety-strip">
+    <div class="safety-inner">
+      <div class="safety-text" data-reveal>
+        <h2>UNCOMPROMISING <em>SECURITY</em><br>PROTOCOLS</h2>
+        <p>We take no shortcuts when it comes to child safety and well-being. Our security features include 24/7 high-definition CCTV surveillance, strictly restricted campus access, rigorous sanitisation routines, and heavily vetted, background-checked staff.</p>
+        <a href="contact.html" class="btn-primary" style="width:fit-content;">Book a Campus Tour &rarr;</a>
+      </div>
+      <div class="safety-features-grid" data-reveal>
+        <div class="safety-feature">
+          <div class="sf-icon">📹</div>
+          <div class="sf-name">24/7 CCTV</div>
+          <div class="sf-desc">Full campus surveillance with remote parent viewing access</div>
+        </div>
+        <div class="safety-feature">
+          <div class="sf-icon">🔐</div>
+          <div class="sf-name">Secure Entry</div>
+          <div class="sf-desc">Biometric entry system with verified pickup protocols</div>
+        </div>
+        <div class="safety-feature">
+          <div class="sf-icon">🧼</div>
+          <div class="sf-name">Daily Sanitisation</div>
+          <div class="sf-desc">All surfaces, equipment, and play areas sanitised daily</div>
+        </div>
+        <div class="safety-feature">
+          <div class="sf-icon">🧑‍⚕️</div>
+          <div class="sf-name">First Aid Trained</div>
+          <div class="sf-desc">Every staff member certified in paediatric first aid</div>
+        </div>
+        <div class="safety-feature">
+          <div class="sf-icon">🚨</div>
+          <div class="sf-name">Emergency Plans</div>
+          <div class="sf-desc">Clear evacuation routes, drills, and emergency contacts</div>
+        </div>
+        <div class="safety-feature">
+          <div class="sf-icon">🌡️</div>
+          <div class="sf-name">Health Monitoring</div>
+          <div class="sf-desc">Daily wellness checks and illness prevention protocols</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCATION CARDS ─────────────────────────────────────── -->
+  <section class="section" style="padding:80px 0; background:var(--bg2);">
+    <div class="wrap">
+      <div style="text-align:center; margin-bottom:48px;" data-reveal>
+        <div class="sec-tag">Visit Us</div>
+        <h2 style="font-family:var(--ff-display); font-size:clamp(2rem,5vw,4rem); color:var(--white); margin-top:12px;">OUR <em style="color:var(--gold); font-style:normal;">CAMPUSES</em></h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr; gap:24px; max-width:900px; margin:0 auto;" data-reveal>
+
+        <!-- Chennai Campus -->
+        <div style="background:var(--bg3); border:1px solid rgba(33,150,243,0.3); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div style="width:48px; height:48px; border-radius:50%; background:rgba(33,150,243,0.1); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">🏙️</div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#64b5f6; margin-bottom:4px;">Chennai Campus</div>
+              <div style="font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--white); line-height:1.1;">VELACHERY, CHENNAI</div>
+            </div>
+          </div>
+          <p style="font-size:0.9rem; color:var(--g1); line-height:1.6; margin:0;">7D, SIS Meridian, Velachery, Chennai – 600042, Tamil Nadu<br>Our newest flagship campus in the heart of Chennai, serving families across Velachery, Pallikaranai, and surrounding areas.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://maps.google.com/?q=SIS+Meridian+Velachery+Chennai" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.82rem; padding:10px 20px;">Get Directions &rarr;</a>
+            <a href="contact.html" class="btn-ghost" style="font-size:0.82rem; padding:10px 20px;">Book a Tour</a>
+          </div>
+        </div>
+
+        <!-- Kuthalam Campus -->
+        <div style="background:var(--bg3); border:1px solid rgba(76,175,80,0.3); border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div style="width:48px; height:48px; border-radius:50%; background:rgba(76,175,80,0.1); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">🌿</div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#81c784; margin-bottom:4px;">Kuthalam Headquarters</div>
+              <div style="font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--white); line-height:1.1;">KUTHALAM, MAYILADUTHURAI</div>
+            </div>
+          </div>
+          <p style="font-size:0.9rem; color:var(--g1); line-height:1.6; margin:0;">Mayiladuthurai District, Tamil Nadu, India<br>Our founding campus where The COCOON story began. Nestled in a serene environment ideal for holistic learning, nature education, and focused child development.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://maps.google.com/?q=Kuthalam+Mayiladuthurai+District+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:0.82rem; padding:10px 20px;">Get Directions &rarr;</a>
+            <a href="contact.html" class="btn-ghost" style="font-size:0.82rem; padding:10px 20px;">Book a Tour</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────────── -->
+  <div class="infra-cta" data-reveal>
+    <div class="sec-tag" style="margin-bottom:16px;">See It For Yourself</div>
+    <h2>BOOK A <em>CAMPUS TOUR</em></h2>
+    <p>Words can only say so much. Come walk through our spaces, meet our educators, and feel the Cocoon difference for yourself. Campus tours are free and available on request.</p>
+    <div class="infra-cta-btns">
+      <a href="contact.html" class="btn-primary">Schedule a Visit &rarr;</a>
+      <a href="learning.html" class="btn-ghost">Explore Programs</a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="fg-brand">
+            <a href="index.html" class="logo">
+              <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The COCOON Logo" /></div>
+              <div class="logo-words">
+                <span class="lw-top">THE COCOON</span>
+                <span class="lw-bot">LEARNING CENTRE</span>
+              </div>
+            </a>
+            <p>Transforming lives through fitness and child development. The <span class="cocoon-brand">COCOON</span> Learning Centre &mdash; now in Chennai &amp; Kuthalam.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="YouTube">YT</a>
+              <a href="#" aria-label="WhatsApp">WA</a>
+            </div>
+          </div>
+          <div class="fg-col">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="learning.html">Learning Centre</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+              <li><a href="fitness.html">Fitness Programs</a></li>
+              <li><a href="schedule.html">Class Schedule</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Programs</h5>
+            <ul>
+              <li><a href="learning.html">Early Childhood Education</a></li>
+              <li><a href="learning.html">STEAM Learning</a></li>
+              <li><a href="learning.html">Language &amp; Communication</a></li>
+              <li><a href="learning.html">Abacus Arithmetic</a></li>
+              <li><a href="fitness.html">Zumba® Fitness</a></li>
+            </ul>
+          </div>
+          <div class="fg-col">
+            <h5>Our Locations</h5>
+            <ul>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Branch:</li>
+              <li>7D, SIS Meridian, Velachery<br/>Chennai &ndash; 600042</li>
+              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
+              <li>No. 19, Nadu Chetty Street, Kuthalam - 609801<br>Mayiladuthurai District</li>
+              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap footer-bottom-inner">
+        <p>&copy; <span id="footer-year">2026</span> The <span class="cocoon-brand">COCOON</span> Learning Centre. All rights reserved.</p>
+        <div class="footer-badges">
+          <span>⭐ 4.9 Google Rating</span>
+          <span>🎓 Licensed ZIN™ Coaches</span>
+          <span>🦋 Child Development Centre</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
