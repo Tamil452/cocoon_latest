@@ -1,5 +1,5 @@
 /* ============================================================
-   COCOON TRAINING ACADEMY — COMPLETE SHARED JAVASCRIPT
+   THE COCOON TRAINING ACADEMY — COMPLETE SHARED JAVASCRIPT
    script.js | v1.0 | ES6+ Vanilla, No Dependencies
    ============================================================ */
 

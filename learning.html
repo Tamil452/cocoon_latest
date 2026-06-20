@@ -14,7 +14,7 @@
     .page-hero { position: relative; min-height: 56vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; }
     .page-hero-bg { position: absolute; inset: 0; background: url('images/preschool_class.png') center/cover no-repeat; filter: brightness(.35); }
     .page-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 0%, transparent 60%); }
-    .page-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 40px; width: 100%; text-align: left; }
     .page-hero-eyebrow { font-family: 'Inter', sans-serif; font-size: .75rem; font-weight: 600; letter-spacing: .2em; color: #81c784; text-transform: uppercase; margin-bottom: 16px; }
     .page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 7rem); line-height: .95; color: var(--white); margin-bottom: 20px; }
     .page-hero h1 em { color: #81c784; font-style: normal; }
@@ -30,6 +30,10 @@
     
     .promise-strip { background: var(--bg3); padding: 60px 0; border-top: 1px solid var(--g3); border-bottom: 1px solid var(--g3); text-align: center; position: relative; }
     .promise-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.5rem, 4vw, 2.5rem); color: #81c784; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .page-hero-content { padding: 0 20px; }
+    }
   </style>
 </head>
 <body data-page="learning">
@@ -43,16 +47,16 @@
   <nav id="nav">
     <div class="nav-wrap">
       <a href="index.html" class="logo">
-        <div class="logo-mark">C</div>
+        <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The Cocoon Logo" /></div>
         <div class="logo-words">
-          <span class="lw-top">COCOON</span>
+          <span class="lw-top">THE COCOON</span>
           <span class="lw-bot">TRAINING ACADEMY</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" data-page="home">Home</a></li>
         <li><a href="about.html" data-page="about">About</a></li>
-        <li><a href="classes.html" data-page="classes">Classes</a></li>
+        <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
         <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
         <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
         <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
@@ -73,7 +77,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="classes.html">Classes</a></li>
+      <li><a href="fitness.html">Fitness</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="pricing.html">Pricing</a></li>
@@ -369,9 +373,9 @@
         <div class="footer-grid">
           <div class="fg-brand">
             <a href="index.html" class="logo">
-              <div class="logo-mark">C</div>
+              <div class="logo-mark img-mark"><img src="images/logo.jpg" alt="The Cocoon Logo" /></div>
               <div class="logo-words">
-                <span class="lw-top">COCOON</span>
+                <span class="lw-top">THE COCOON</span>
                 <span class="lw-bot">TRAINING ACADEMY</span>
               </div>
             </a>
@@ -386,11 +390,11 @@
           <div class="fg-col">
             <h5>Zumba Academy</h5>
             <ul>
-              <li><a href="classes.html">Zumba® Fitness</a></li>
-              <li><a href="classes.html">Zumba® Kids Jr.</a></li>
-              <li><a href="classes.html">Zumba® Kids</a></li>
-              <li><a href="classes.html">Zumba® Gold</a></li>
-              <li><a href="classes.html">Aqua Zumba®</a></li>
+              <li><a href="fitness.html">Zumba® Fitness</a></li>
+              <li><a href="fitness.html">Zumba® Kids Jr.</a></li>
+              <li><a href="fitness.html">Zumba® Kids</a></li>
+              <li><a href="fitness.html">Zumba® Gold</a></li>
+              <li><a href="fitness.html">Aqua Zumba®</a></li>
             </ul>
           </div>
           <div class="fg-col">
@@ -420,7 +424,7 @@
     </div>
     <div class="footer-bottom">
       <div class="wrap footer-bottom-inner">
-        <p>&copy; <span id="footer-year">2026</span> Cocoon Training Academy. All rights reserved.</p>
+        <p>&copy; <span id="footer-year">2026</span> The Cocoon Training Academy. All rights reserved.</p>
         <div class="footer-badges">
           <span>⭐ 4.9 Google Rating</span>
           <span>🎓 Licensed ZIN™ Coaches</span>
