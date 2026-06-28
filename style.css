@@ -207,13 +207,31 @@ body:has(button:hover) #curOuter {
   padding: 0 40px;
 }
 
-.section {
-  padding: 60px 0;
+.section,
+.story-section,
+.timeline-section,
+.values-section,
+.achievements-section,
+.pricing-section,
+.included-section,
+.pricing-faq,
+.sch-board-section,
+.facility-block,
+.amenities-section,
+.safety-strip,
+.facility-intro,
+.testi-feature,
+.cta-banner,
+.discipline-block,
+.combo-block,
+.classes-faq,
+.page-cta {
+  padding: 100px 0;
   position: relative;
   z-index: 1;
 }
 
-.section.section-sm { padding: 60px 0; }
+.section.section-sm { padding: 70px 0; }
 .section.section-dark { background: var(--bg2); }
 
 .text-center { text-align: center; }
@@ -261,6 +279,7 @@ body:has(button:hover) #curOuter {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin: 5px;
   margin-bottom: 20px;
 }
 
@@ -297,6 +316,14 @@ body:has(button:hover) #curOuter {
   font-size: 1rem;
   line-height: 1.8;
   max-width: 560px;
+}
+
+.text-center .sec-subtitle,
+.map-header .sec-subtitle,
+.section-head.text-center .sec-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .section-head {
@@ -406,6 +433,7 @@ body:has(button:hover) #curOuter {
               border-color 0.4s var(--ease),
               padding 0.4s var(--ease);
   border-bottom: 1px solid transparent;
+  margin: 5px;
 }
 
 #nav.scrolled {
@@ -1049,7 +1077,8 @@ body:has(button:hover) #curOuter {
 /* ── 15. DISCIPLINES SECTION (HOME) ──────────────────────── */
 .disciplines-section {
   overflow: hidden;
-  padding: 0;
+  padding-top: 140px;
+  padding-bottom: 0;
 }
 
 .disc-panels {
@@ -2544,7 +2573,7 @@ body:has(button:hover) #curOuter {
 
 .mas-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 0.82rem;
   color: var(--g2);
@@ -3841,8 +3870,29 @@ body:has(button:hover) #curOuter {
 @media (max-width: 768px) {
   .wrap, .disc-inner { padding: 0 20px; }
 
-  .section { padding: 60px 0; }
-  .section.section-sm { padding: 40px 0; }
+  .section,
+  .story-section,
+  .timeline-section,
+  .values-section,
+  .achievements-section,
+  .pricing-section,
+  .included-section,
+  .pricing-faq,
+  .sch-board-section,
+  .facility-block,
+  .amenities-section,
+  .safety-strip,
+  .facility-intro,
+  .testi-feature,
+  .cta-banner,
+  .discipline-block,
+  .combo-block,
+  .classes-faq,
+  .page-cta {
+    padding: 70px 0;
+  }
+  .section.section-sm { padding: 50px 0; }
+  .disciplines-section { padding-top: 90px; padding-bottom: 0; }
 
   .hero { padding: 100px 20px 60px; gap: 32px; }
 
@@ -4623,3 +4673,67 @@ body:has(button:hover) #curOuter {
     font-size: 2.2rem;
   }
 }
+
+/* ── 21. VIDEO SECTION STYLES ────────────────────────── */
+.video-section {
+  background: var(--bg2);
+  padding: 80px 0;
+  border-top: 1px solid var(--g3);
+  border-bottom: 1px solid var(--g3);
+  position: relative;
+}
+.video-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+.video-inner .sec-tag {
+  margin-bottom: 16px;
+}
+.video-inner h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 0.95;
+}
+.video-inner h2 em {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+.video-subtitle {
+  font-family: var(--ff-body);
+  color: var(--g1);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+.video-container {
+  position: relative;
+  border-radius: var(--r2);
+  overflow: hidden;
+  border: 1px solid var(--goldb);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  background: #000;
+  line-height: 0;
+}
+.video-player {
+  width: 100%;
+  max-height: 540px;
+  display: block;
+  border-radius: var(--r2);
+}
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 60px 0;
+  }
+  .video-inner {
+    padding: 0 20px;
+  }
+}
+

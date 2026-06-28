@@ -17,51 +17,80 @@
   <style>
     /* ---- Index-specific overrides ------------------------ */
 
-    /* ── NEW FULL-WIDTH COLLAGE HERO ───────────────────── */
+    /* ── ASYMMETRIC GLASS PANEL HERO WITH VIDEO BG ──────── */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 95vh;
+      height: 100vh;
+      min-height: 750px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       overflow: hidden;
       padding: 0;
       margin-top: 0;
+      background: var(--bg);
     }
-
-    /* Full-bleed background image */
-    .hero-bg-rect {
+    
+    /* Background video styling */
+    .hero-bg-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center;
+      z-index: 1;
       filter: brightness(0.5) saturate(1.1);
-      transition: transform 10s ease;
     }
 
-    .hero:hover .hero-bg-rect { transform: scale(1.04); }
-
-    /* Gradient overlay: elegant dark on the left side to support left-aligned text */
-    .hero-rect-overlay {
+    /* Gradient overlay: dark on the left side, fading to transparent on the right */
+    .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(7,7,7,0.95) 0%, rgba(7,7,7,0.85) 35%, rgba(7,7,7,0.2) 100%);
+      background: linear-gradient(90deg, rgba(7,7,7,0.85) 0%, rgba(7,7,7,0.5) 50%, rgba(7,7,7,0.2) 100%);
+      z-index: 2;
     }
 
-    /* Content positioned cleanly in center-left */
-    .hero-content {
+    .hero-wrap {
       position: relative;
       z-index: 3;
-      max-width: 1300px;
+      max-width: var(--max-w);
       margin: 0 auto;
-      padding: 150px 40px 60px; /* Added 150px top padding to clear nav entirely */
+      padding: 180px 40px 40px;
       width: 100%;
       display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .hero-content {
+      display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Left align to look more dynamic and less 'normal' */
-      text-align: left;
+      align-items: flex-start;
+      max-width: 680px;
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      animation: heroPanelFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes heroPanelFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-content .hero-title {
+      margin-bottom: 20px;
+    }
+
+    .hero-content .hero-sub {
+      margin-bottom: 30px;
     }
 
     /* Floating badge top-right */
@@ -74,7 +103,7 @@
       backdrop-filter: blur(12px);
       border-radius: 50px;
       padding: 8px 18px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
 
     .hero-float-badge strong {
@@ -98,7 +127,7 @@
       justify-content: flex-start;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     .hero-loc-pill {
@@ -116,14 +145,14 @@
       letter-spacing: 0.12em;
     }
 
-    /* Big display title */
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(4rem, 9vw, 8.5rem);
-      line-height: 0.9;
+      line-height: 0.85;
       color: var(--white);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       letter-spacing: -0.01em;
+      gap: 0;
     }
 
     .hero-title .ht-accent { color: var(--gold); }
@@ -220,12 +249,52 @@
       50% { opacity: 1; transform: scaleY(1.2); }
     }
 
+    @media (max-width: 991px) {
+      .hero-wrap {
+        padding-top: 140px;
+        padding-bottom: 40px;
+        justify-content: center;
+      }
+      .hero-content {
+        max-width: 620px;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-location-pills {
+        justify-content: center;
+      }
+      .hero-ctas {
+        justify-content: center;
+        width: 100%;
+      }
+      .hero-stats {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 768px) {
-      .hero { min-height: 100vh; }
-      .hero-content { padding: 80px 20px 40px; }
-      .hero-title { font-size: clamp(3rem, 14vw, 5rem); }
-      .hero-stats { gap: 20px; flex-wrap: wrap; }
-      .hero-scroll-cue { display: none; }
+      .hero {
+        height: auto;
+        min-height: 100vh;
+      }
+      .hero-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-title {
+        font-size: clamp(2.8rem, 10vw, 4.2rem);
+      }
+      .hero-stats {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .hero-scroll-cue {
+        display: none;
+      }
     }
 
     /* Disciplines headings centering */
@@ -234,50 +303,6 @@
     /* CTA banner bg */
     .cta-banner-bg::after {
       background: linear-gradient(135deg, rgba(7,7,7,0.88) 60%, rgba(7,7,7,0.72) 100%);
-    }
-
-    @media (max-width: 991px) {
-      .hero-collage-container {
-        flex-direction: column;
-        padding-top: 40px;
-        gap: 30px;
-      }
-      .hero-collage-left {
-        align-items: center;
-        text-align: center;
-      }
-      .hero-sub {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero-ctas {
-        justify-content: center;
-      }
-      .collage-grid {
-        height: 420px;
-      }
-      .hero-float-badge {
-        align-self: center;
-      }
-      .hero-scroll-cue {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-collage-container {
-        padding: 0 20px;
-      }
-      .hero-title {
-        font-size: clamp(2.5rem, 10vw, 3.8rem);
-      }
-      .collage-grid {
-        height: 320px;
-        gap: 8px;
-      }
-      .collage-item {
-        border-radius: 10px;
-      }
     }
   </style>
 </head>
@@ -339,70 +364,66 @@
   </div>
   <div class="drawer-overlay" id="nav-drawer-overlay"></div>
 
-  <!-- ===================== HERO — FULL-WIDTH COLLAGE ====================== -->
+  <!-- ===================== HERO — BACKGROUND VIDEO + GLASS PANEL ====================== -->
   <section class="hero" aria-label="Hero">
-    <!-- Full-bleed background image -->
-    <img class="hero-bg-rect" src="images/hero_dynamic_blend.png" alt="The Cocoon Learning Centre Campus" loading="eager" />
-    <!-- Gradient overlay -->
-    <div class="hero-rect-overlay"></div>
+    <!-- Full-bleed background video -->
+    <video class="hero-bg-video" autoplay loop muted playsinline poster="images/hero_dynamic_blend.png">
+      <source src="images/hero_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <!-- Gradient overlay for readability -->
+    <div class="hero-overlay"></div>
 
-    <!-- Main content -->
-    <div class="hero-content">
-
-      <!-- Floating rating badge -->
-      <div class="hero-float-badge" aria-label="Google Rating 4.9 stars">
-        <strong>4.9★</strong>
-        <span>Google Rating</span>
-      </div>
-
-      <!-- Location pills -->
-      <div class="hero-location-pills">
-        <span class="hero-loc-pill">📍 Chennai</span>
-        <span class="hero-loc-pill">📍 Kuthalam</span>
-      </div>
-
-      <!-- Big display title -->
-      <h1 class="hero-title">
-        <span class="ht-outline">The Cocoon</span><br>
-        <span>LEARNING</span><span class="ht-accent"> CENTRE.</span>
-      </h1>
-
-      <!-- Sub-paragraph -->
-      <p class="hero-sub" style="font-size:1.4rem; color:var(--gold); font-family:var(--ff-display); letter-spacing:1px; margin-bottom:10px;">
-        Welcome to an Ecosystem of Excellence
-      </p>
-      <p class="hero-sub">
-        Infinite Potential, Nurtured Under One Roof. Welcome to The <span class="cocoon-brand">Cocoon</span> Learning Centre, a vanguard of holistic education. From foundational early education to advanced academic tuitions, enrichment, and premium Zumba® fitness.
-      </p>
-
-      <!-- CTAs -->
-      <div class="hero-ctas">
-        <a href="learning.html" class="btn-primary">Explore Programs &rarr;</a>
-        <a href="infrastructure.html" class="btn-ghost">View Infrastructure</a>
-      </div>
-
-      <!-- Stats strip -->
-      <div class="hero-stats">
-        <div class="hs-item">
-          <span class="hs-num">
-            <span class="count" data-to="800" data-suffix="+">0+</span>
-          </span>
-          <span class="hs-label">Students Trained</span>
+    <div class="hero-wrap">
+      <!-- Left: Content -->
+      <div class="hero-content" data-reveal>
+        <!-- Floating rating badge -->
+        <div class="hero-float-badge" aria-label="Google Rating 4.9 stars">
+          <strong>4.9★</strong>
+          <span>Google Rating</span>
         </div>
-        <div class="hs-item">
-          <span class="hs-num">
-            <span class="count" data-to="10" data-suffix="+">0+</span>
-          </span>
-          <span class="hs-label">Years of Excellence</span>
+
+        <!-- Location pills -->
+        <div class="hero-location-pills">
+          <span class="hero-loc-pill">📍 Chennai</span>
+          <span class="hero-loc-pill">📍 Kuthalam</span>
         </div>
-        <div class="hs-item">
-          <span class="hs-num">
-            <span class="count" data-to="3">0</span>
-          </span>
-          <span class="hs-label">Locations</span>
+
+        <h1 class="hero-title">
+          <span class="ht-outline">The Cocoon</span>
+          <span>LEARNING <span class="ht-accent">CENTRE.</span></span>
+        </h1>
+
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="learning.html" class="btn-primary">Explore Programs &rarr;</a>
+          <a href="infrastructure.html" class="btn-ghost">View Infrastructure</a>
         </div>
-      </div>
-    </div><!-- /hero-content -->
+
+        <!-- Stats strip -->
+        <div class="hero-stats">
+          <div class="hs-item">
+            <span class="hs-num">
+              <span class="count" data-to="800" data-suffix="+">0+</span>
+            </span>
+            <span class="hs-label">Students Trained</span>
+          </div>
+          <div class="hs-item">
+            <span class="hs-num">
+              <span class="count" data-to="10" data-suffix="+">0+</span>
+            </span>
+            <span class="hs-label">Years of Excellence</span>
+          </div>
+          <div class="hs-item">
+            <span class="hs-num">
+              <span class="count" data-to="3">0</span>
+            </span>
+            <span class="hs-label">Locations</span>
+          </div>
+        </div>
+      </div><!-- /hero-content -->
+    </div><!-- /hero-wrap -->
 
     <!-- Scroll cue -->
     <div class="hero-scroll-cue" aria-hidden="true">

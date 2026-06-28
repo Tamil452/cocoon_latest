@@ -290,20 +290,35 @@
         <h3 class="sec-title" style="font-size:clamp(2rem,4vw,3.5rem);margin-bottom:8px">OUR <em>LOCATIONS</em></h3>
         <p class="sec-subtitle" style="margin-bottom:32px">We're centrally located in Chennai, easily accessible from all parts of the city.</p>
       </div>
-      <div class="map-container reveal" style="--delay:0.1s">
+
+      <!-- Dual location map tabs (Centered, above map) -->
+      <div class="dual-map-tabs reveal" style="display:flex; justify-content:center; gap:12px; margin-bottom:24px; flex-wrap:wrap; width:100%;">
+        <button class="map-tab-btn active" data-map="chennai" onclick="switchMap('chennai', this)" style="padding:10px 24px; border-radius:24px; border:1px solid var(--gold); background:var(--gold); color:#000; font-weight:700; font-size:0.85rem; cursor:pointer; transition:all 0.3s ease;">📍 Chennai Branch — Velachery</button>
+        <button class="map-tab-btn" data-map="kuthalam" onclick="switchMap('kuthalam', this)" style="padding:10px 24px; border-radius:24px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:#fff; font-weight:600; font-size:0.85rem; cursor:pointer; transition:all 0.3s ease;">📍 Kuthalam HQ — Mayiladuthurai</button>
+      </div>
+
+      <div class="map-container reveal" style="--delay:0.1s; margin-bottom:30px;">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62645.25!2d76.9558!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8931557995303!2d80.2205!3d12.9790!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d97ffffffff%3A0x6b8a8bbf4b3eb0b!2sSIS%20Meridian!5e0!3m2!1sen!2sin!4v1"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="The Cocoon Learning Centre Location — Chennai"
+          class="map-iframe"
+          id="map-chennai"
+        ></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.487050519128!2d79.5855!3d11.0559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a552f483758b7ef%3A0xc0fb19487c6999a4!2sKuthalam%2C%20Tamil%20Nadu%20609801!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="The Cocoon Learning Centre Location — Kuthalam"
+          class="map-iframe"
+          id="map-kuthalam"
+          style="display:none;"
         ></iframe>
       </div>
-      <!-- Dual location map tabs -->
-      <div class="dual-map-tabs" style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
-        <button class="map-tab-btn active" data-map="chennai" onclick="switchMap('chennai', this)" style="padding:10px 24px; border-radius:24px; border:1px solid var(--gold); background:var(--gold); color:#000; font-weight:700; font-size:0.85rem; cursor:pointer;">📍 Chennai Branch — Velachery</button>
-        <button class="map-tab-btn" data-map="kuthalam" onclick="switchMap('kuthalam', this)" style="padding:10px 24px; border-radius:24px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:#fff; font-weight:600; font-size:0.85rem; cursor:pointer;">📍 Kuthalam HQ — Mayiladuthurai</button>
-      </div>
+
       <div class="map-address-strip reveal" style="--delay:0.2s">
         <div class="mas-item">
           <span class="mas-icon">📍</span>
