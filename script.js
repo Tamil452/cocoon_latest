@@ -82,6 +82,16 @@ const SCHEDULE_DATA = {
    DOM READY
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Pre-select program from URL query params
+  const urlParams = new URLSearchParams(window.location.search);
+  const interestParam = urlParams.get('interest');
+  if (interestParam) {
+    const selectEl = document.getElementById('classInterest');
+    if (selectEl) {
+      selectEl.value = interestParam;
+    }
+  }
+
   initPageTransition();
   initScrollProgress();
   initCustomCursor();

@@ -496,14 +496,18 @@
           <span class="lw-bot">LEARNING CENTRE</span>
         </div>
       </a>
-      <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks">
         <li><a href="index.html" data-page="home">Home</a></li>
         <li><a href="about.html" data-page="about">About</a></li>
-        <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
         <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
-        <li><a href="infrastructure.html" data-page="infrastructure" class="active">Infrastructure</a></li>
-        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
-        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+        <li class="nav-dropdown">
+          <a href="fitness-studio.html" data-page="fitness-studio" class="dropdown-toggle">Fitness Studio <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+            <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+          </ul>
+        </li>
+        <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -516,16 +520,20 @@
   </nav>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer">
     <button class="drawer-close" id="drawerClose">&times;</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="fitness.html">Fitness</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
+      <li class="mobile-dropdown">
+        <a href="fitness-studio.html" style="pointer-events: none;">Fitness Studio</a>
+        <ul class="mobile-submenu">
+          <li><a href="schedule.html">&bull; Schedule</a></li>
+          <li><a href="pricing.html">&bull; Pricing</a></li>
+        </ul>
+      </li>
       <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book a Visit &rarr;</a></li>
     </ul>
@@ -872,7 +880,7 @@
             <ul>
               <li><a href="learning.html">Learning Centre</a></li>
               <li><a href="infrastructure.html">Infrastructure</a></li>
-              <li><a href="fitness.html">Fitness Programs</a></li>
+              <li><a href="fitness-studio.html">Fitness Programs</a></li>
               <li><a href="schedule.html">Class Schedule</a></li>
               <li><a href="pricing.html">Pricing</a></li>
             </ul>
@@ -884,19 +892,22 @@
               <li><a href="learning.html">STEAM Learning</a></li>
               <li><a href="learning.html">Language &amp; Communication</a></li>
               <li><a href="learning.html">Abacus Arithmetic</a></li>
-              <li><a href="fitness.html">Zumba® Fitness</a></li>
+              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
             </ul>
           </div>
           <div class="fg-col">
             <h5>Our Locations</h5>
             <ul>
-              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Branch:</li>
-              <li>7D, SIS Meridian, Velachery<br/>Chennai &ndash; 600042</li>
-              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+            <h5>Our Locations</h5>
+            <ul>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Office:</li>
+              <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
               <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
-              <li>No. 19, Nadu Chetty Street, Kuthalam - 609801<br>Mayiladuthurai District</li>
-              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li>No. 19-A, Nadu Chetty Street, Kuthalam – 609801</li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
+              <li>No. 19, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
             </ul>
           </div>
         </div>

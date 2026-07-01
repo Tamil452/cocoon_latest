@@ -328,14 +328,18 @@
           <span class="lw-bot">LEARNING CENTRE</span>
         </div>
       </a>
-      <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks">
         <li><a href="index.html" data-page="home">Home</a></li>
         <li><a href="about.html" data-page="about">About</a></li>
-        <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
         <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
-        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li class="nav-dropdown">
+          <a href="fitness-studio.html" data-page="fitness-studio" class="dropdown-toggle">Fitness Studio <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+            <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+          </ul>
+        </li>
         <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
-        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -348,16 +352,20 @@
   </nav>
 
   <!-- MOBILE DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer">
     <button class="drawer-close" id="drawerClose">&times;</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="fitness.html">Fitness</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
+      <li class="mobile-dropdown">
+        <a href="fitness-studio.html" style="pointer-events: none;">Fitness Studio</a>
+        <ul class="mobile-submenu">
+          <li><a href="schedule.html">&bull; Schedule</a></li>
+          <li><a href="pricing.html">&bull; Pricing</a></li>
+        </ul>
+      </li>
       <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
     </ul>
@@ -436,6 +444,7 @@
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
       <span class="mt-text">EARLY CHILDHOOD EDUCATION</span><span class="mt-sep">◆</span>
+      <span class="mt-text">TUITION</span><span class="mt-sep">◆</span>
       <span class="mt-text">SKILL DEVELOPMENT</span><span class="mt-sep">◆</span>
       <span class="mt-text">HOLISTIC DAYCARE</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® FITNESS</span><span class="mt-sep">◆</span>
@@ -446,6 +455,7 @@
       
       <!-- Duplicated for seamless infinity scroll -->
       <span class="mt-text">EARLY CHILDHOOD EDUCATION</span><span class="mt-sep">◆</span>
+      <span class="mt-text">TUITION</span><span class="mt-sep">◆</span>
       <span class="mt-text">SKILL DEVELOPMENT</span><span class="mt-sep">◆</span>
       <span class="mt-text">HOLISTIC DAYCARE</span><span class="mt-sep">◆</span>
       <span class="mt-text">ZUMBA® FITNESS</span><span class="mt-sep">◆</span>
@@ -465,6 +475,49 @@
       </p>
     </div>
   </div>
+
+  <!-- ===================== LAUNCH PROMO BANNER ======================= -->
+  <section class="section launch-promo-section" style="padding: 40px 0;">
+    <div class="wrap">
+      <div class="launch-promo-box" data-scroll-reveal>
+        <span class="promo-badge">🎉 Launch Announcement</span>
+        <h2 class="promo-title">Weekday Online General <em>Zumba Batch</em> is Open!</h2>
+        <p class="promo-subtitle">Looking to stay fit from the comfort of your home?</p>
+        
+        <div class="promo-features">
+          <div class="promo-feat-item">
+            <span class="promo-feat-icon">💻</span>
+            <span>8 Live Online Sessions Every Month</span>
+          </div>
+          <div class="promo-feat-item">
+            <span class="promo-feat-icon">✨</span>
+            <span>Beginner-Friendly Framework</span>
+          </div>
+          <div class="promo-feat-item">
+            <span class="promo-feat-icon">🔥</span>
+            <span>Fun, Energetic, and Effective Workouts</span>
+          </div>
+        </div>
+        
+        <div class="promo-offer-card">
+          <div class="promo-offer-info">
+            <span class="promo-offer-label">Launch Offer</span>
+            <span class="promo-offer-price">₹999<span>/month (8 classes)</span></span>
+          </div>
+          <div class="promo-offer-cta">
+            <span class="promo-limited-badge">⚠️ Limited Seats Available</span>
+            <a href="contact.html?interest=online-zumba" class="btn-primary">Reserve Your Spot &rarr;</a>
+          </div>
+        </div>
+        
+        <p style="margin-top: 24px; font-size: 0.9rem; color: var(--g2); text-align: center; font-weight: 600;">
+          Let us know which weekday and time work best for you. Once we receive your preferences, we'll finalize the schedule and get started!
+        </p>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- ===================== DISCIPLINES ================== -->
   <section class="disciplines-section" id="disciplines">
@@ -513,7 +566,7 @@
               <li>Rhythm, Play &amp; Coordination</li>
               <li>Movement-Based Early Learning</li>
             </ul>
-            <a href="fitness.html" class="btn-ghost">Explore Kids Zumba &rarr;</a>
+            <a href="fitness-studio.html" class="btn-ghost">Explore Kids Zumba &rarr;</a>
           </div>
         </div>
 
@@ -533,7 +586,7 @@
               <li>Aqua Zumba® (Water Fitness)</li>
               <li>Full-Body Aerobic Dance</li>
             </ul>
-            <a href="fitness.html" class="btn-ghost">Explore Adult Zumba &rarr;</a>
+            <a href="fitness-studio.html" class="btn-ghost">Explore Adult Zumba &rarr;</a>
           </div>
         </div>
 
@@ -634,11 +687,11 @@
           <div class="fg-col">
             <h5>Zumba Academy</h5>
             <ul>
-              <li><a href="fitness.html">Zumba® Fitness</a></li>
-              <li><a href="fitness.html">Zumba® Kids Jr.</a></li>
-              <li><a href="fitness.html">Zumba® Kids</a></li>
-              <li><a href="fitness.html">Zumba® Gold</a></li>
-              <li><a href="fitness.html">Aqua Zumba®</a></li>
+              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids Jr.</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
+              <li><a href="fitness-studio.html">Zumba® Gold</a></li>
+              <li><a href="fitness-studio.html">Aqua Zumba®</a></li>
             </ul>
           </div>
           <div class="fg-col">
@@ -654,13 +707,16 @@
           <div class="fg-col">
             <h5>Our Locations</h5>
             <ul>
-              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Branch:</li>
+            <h5>Our Locations</h5>
+            <ul>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Office:</li>
               <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
-              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
               <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
-              <li>No. 19, Nadu Chetty Street, Kuthalam - 609801<br>Mayiladuthurai District</li>
-              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li>No. 19-A, Nadu Chetty Street, Kuthalam – 609801</li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
+              <li>No. 19, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
             </ul>
           </div>
         </div>

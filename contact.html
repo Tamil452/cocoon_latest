@@ -32,14 +32,18 @@
           <span class="lw-bot">LEARNING CENTRE</span>
         </div>
       </a>
-      <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks">
         <li><a href="index.html" data-page="home">Home</a></li>
         <li><a href="about.html" data-page="about">About</a></li>
-        <li><a href="fitness.html" data-page="fitness">Fitness</a></li>
         <li><a href="learning.html" data-page="learning">Learning Centre</a></li>
-        <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+        <li class="nav-dropdown">
+          <a href="fitness-studio.html" data-page="fitness-studio" class="dropdown-toggle">Fitness Studio <span class="arrow">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="schedule.html" data-page="schedule">Schedule</a></li>
+            <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
+          </ul>
+        </li>
         <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
-        <li><a href="pricing.html" data-page="pricing">Pricing</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -54,16 +58,20 @@
   </nav>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer">
     <button class="drawer-close" id="drawerClose">&times;</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="fitness.html">Fitness</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
+      <li class="mobile-dropdown">
+        <a href="fitness-studio.html" style="pointer-events: none;">Fitness Studio</a>
+        <ul class="mobile-submenu">
+          <li><a href="schedule.html">&bull; Schedule</a></li>
+          <li><a href="pricing.html">&bull; Pricing</a></li>
+        </ul>
+      </li>
       <li><a href="infrastructure.html">Infrastructure</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
     </ul>
@@ -133,6 +141,7 @@
             <div class="fg">
               <label for="classInterest">Class Interest</label>
               <select id="classInterest" name="classInterest" required>
+                  <option value="online-zumba">Online General Zumba Batch (Weekday)</option>
                  <option value="">Choose a program...</option>
                  <option value="zumba-fitness">Zumba® Fitness (Adults)</option>
                  <option value="zumba-kids-jr">Zumba® Kids Jr. (Ages 4–6)</option>
@@ -192,26 +201,37 @@
           <h3 class="contact-info-heading">GET IN TOUCH</h3>
           <p class="sec-subtitle" style="margin-bottom:28px">Drop by, call us, or send us a message. We're always happy to help you start your fitness journey.</p>
 
-          <div class="info-cards">
-            <!-- Location 1 (Kuthalam HQ) -->
+                    <div class="info-cards">
+            <!-- Location 1 (Chennai Office) -->
             <div class="info-card">
               <div class="ic-icon">📍</div>
               <div class="ic-body">
-                <strong>Kuthalam HQ</strong>
-                <p>No. 19, Nadu Chetty Street, Kuthalam - 609801<br/>Mayiladuthurai District, Tamil Nadu</p>
+                <strong>Chennai Office</strong>
+                <p>7D, SIS Meridian, Velachery<br/>Chennai – 600042, Tamil Nadu</p>
+                <a href="tel:+919382722445" style="display:block; color:var(--white); font-weight:600; margin: 8px 0;">📞 +91 93827 22445</a>
+                <a href="https://maps.google.com/?q=7D+SIS+Meridian+Velachery+Chennai" target="_blank" rel="noopener noreferrer" class="ic-link">Directions &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Location 2 (Kuthalam HQ) -->
+            <div class="info-card">
+              <div class="ic-icon">📍</div>
+              <div class="ic-body">
+                <strong>Kuthalam HQ (Head Office)</strong>
+                <p>No. 19-A, Nadu Chetty Street, Kuthalam - 609801<br/>Mayiladuthurai District, Tamil Nadu</p>
                 <a href="tel:+919843012345" style="display:block; color:var(--white); font-weight:600; margin: 8px 0;">📞 +91 98430 12345</a>
                 <a href="https://maps.google.com/?q=Kuthalam+Mayiladuthurai+District+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="ic-link">Directions &rarr;</a>
               </div>
             </div>
 
-            <!-- Location 2 (Chennai Branch) -->
+            <!-- Location 3 (Kuthalam Branch) -->
             <div class="info-card">
               <div class="ic-icon">📍</div>
               <div class="ic-body">
-                <strong>Chennai Branch</strong>
-                <p>7D, SIS Meridian, Velachery<br/>Chennai – 600042, Tamil Nadu</p>
+                <strong>Kuthalam Branch</strong>
+                <p>No. 19, Nadu Chetty Street, Kuthalam - 609801<br/>Mayiladuthurai District, Tamil Nadu</p>
                 <a href="tel:+919382722445" style="display:block; color:var(--white); font-weight:600; margin: 8px 0;">📞 +91 93827 22445</a>
-                <a href="https://maps.google.com/?q=7D+SIS+Meridian+Velachery+Chennai" target="_blank" rel="noopener noreferrer" class="ic-link">Directions &rarr;</a>
+                <a href="https://maps.google.com/?q=Kuthalam+Mayiladuthurai+District+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="ic-link">Directions &rarr;</a>
               </div>
             </div>
 
@@ -319,14 +339,18 @@
         ></iframe>
       </div>
 
-      <div class="map-address-strip reveal" style="--delay:0.2s">
+            <div class="map-address-strip reveal" style="--delay:0.2s">
         <div class="mas-item">
           <span class="mas-icon">📍</span>
-          <span>Chennai Branch: 7D, SIS Meridian, Velachery, Chennai – 600042</span>
+          <span>Chennai Office: 7D, SIS Meridian, Velachery, Chennai – 600042</span>
         </div>
         <div class="mas-item">
           <span class="mas-icon">📍</span>
-          <span>Kuthalam HQ: No. 19, Nadu Chetty Street, Kuthalam - 609801, Mayiladuthurai District</span>
+          <span>Kuthalam HQ: No. 19-A, Nadu Chetty Street, Kuthalam – 609801</span>
+        </div>
+        <div class="mas-item">
+          <span class="mas-icon">📍</span>
+          <span>Kuthalam Branch: No. 19, Nadu Chetty Street, Kuthalam – 609801</span>
         </div>
         <div class="mas-item">
           <span class="mas-icon">📱</span>
@@ -336,7 +360,7 @@
     </div>
   </section>
 
-  <!-- ══════════ MINI CTA ══════════ -->
+<!-- ══════════ MINI CTA ══════════ -->
   <section class="section section-sm mini-cta-section">
     <div class="wrap text-center">
       <div class="mini-cta-inner reveal">
@@ -383,11 +407,11 @@
           <div class="fg-col">
             <h5>Zumba Academy</h5>
             <ul>
-              <li><a href="fitness.html">Zumba® Fitness</a></li>
-              <li><a href="fitness.html">Zumba® Kids Jr.</a></li>
-              <li><a href="fitness.html">Zumba® Kids</a></li>
-              <li><a href="fitness.html">Zumba® Gold</a></li>
-              <li><a href="fitness.html">Aqua Zumba®</a></li>
+              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids Jr.</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
+              <li><a href="fitness-studio.html">Zumba® Gold</a></li>
+              <li><a href="fitness-studio.html">Aqua Zumba®</a></li>
             </ul>
           </div>
           <div class="fg-col">
@@ -403,13 +427,16 @@
           <div class="fg-col">
             <h5>Our Locations</h5>
             <ul>
-              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Kuthalam HQ:</li>
-              <li>No. 7, Arunachalam Street, 641001</li>
-              <li><a href="tel:+919843012345">+91 98430 12345</a></li>
+            <h5>Our Locations</h5>
+            <ul>
+              <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Office:</li>
+              <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
+              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
+              <li>No. 19-A, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
-              <li>No. 19, Nadu Chetty Street, 609801</li>
-              <li><a href="tel:+919382722445">+91 93827 22445</a></li>
+              <li>No. 19, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
+            </ul>
             </ul>
           </div>
         </div>

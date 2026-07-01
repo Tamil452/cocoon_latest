@@ -4737,3 +4737,264 @@ body:has(button:hover) #curOuter {
   }
 }
 
+/* ── 12. NAVIGATION DROPDOWN MENU ──────────────────────── */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(13, 13, 13, 0.95);
+  border: 1px solid var(--goldb);
+  border-radius: 8px;
+  min-width: 160px;
+  padding: 10px 0;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-menu li {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  color: var(--g2);
+  transition: color 0.2s ease, background 0.2s ease;
+  text-align: center;
+  border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+  color: var(--gold);
+  background: var(--goldt);
+}
+
+/* Show on hover */
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Arrow styling */
+.nav-dropdown .arrow {
+  font-size: 0.65rem;
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* Mobile submenu drawer styles */
+.mobile-submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-left: 1px solid var(--goldb);
+}
+
+.mobile-submenu li {
+  margin-bottom: 8px !important;
+}
+
+.mobile-submenu a {
+  font-size: 0.85rem !important;
+  color: var(--g2) !important;
+  font-weight: 500 !important;
+  padding: 4px 0 !important;
+}
+
+.mobile-submenu a:hover {
+  color: var(--gold) !important;
+}
+
+
+/* ── 13. LAUNCH PROMO BANNER STYLES ────────────────────── */
+.launch-promo-box {
+  background: linear-gradient(135deg, rgba(200, 151, 63, 0.12), rgba(13, 13, 13, 0.98));
+  border: 2px solid var(--gold);
+  border-radius: var(--r2);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(200, 151, 63, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.launch-promo-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(200, 151, 63, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.promo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: promo-pulse-glow 2s infinite;
+}
+
+@keyframes promo-pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(200, 151, 63, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(200, 151, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(200, 151, 63, 0); }
+}
+
+.promo-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.promo-title em {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.promo-subtitle {
+  font-size: 1.1rem;
+  color: var(--g1);
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+
+.promo-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.promo-feat-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(200, 151, 63, 0.15);
+  border-radius: var(--r);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.promo-feat-icon {
+  font-size: 1.25rem;
+}
+
+.promo-offer-card {
+  background: rgba(200, 151, 63, 0.08);
+  border: 1px dashed var(--gold);
+  border-radius: var(--r);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.promo-offer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.promo-offer-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.promo-offer-price {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.promo-offer-price span {
+  font-size: 0.9rem;
+  font-family: var(--ff-body);
+  color: var(--g2);
+  margin-left: 4px;
+}
+
+.promo-offer-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.promo-limited-badge {
+  font-size: 0.8rem;
+  color: #ff4d4d;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: promo-blink 1s infinite alternate;
+}
+
+@keyframes promo-blink {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .launch-promo-box {
+    padding: 24px;
+  }
+  .promo-offer-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .promo-offer-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
