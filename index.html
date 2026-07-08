@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Cocoon Learning Centre — Early Childhood Education, STEAM &amp; Zumba | Chennai &amp; Kuthalam</title>
-  <meta name="description" content="Chennai &amp; Kuthalam's premier centre for Early Childhood Education, STEAM Learning, daycare, creative skill development programs, and certified Zumba® fitness classes." />
+  <title>The Cocoon Learning Centre (TCLC) — Tuition Centre, Learning Centre &amp; Fitness Studio | Chennai &amp; Kuthalam</title>
+  <meta name="description" content="TCLC is Chennai &amp; Kuthalam's premium Tuition Centre, Learning Centre, and Fitness Studio. We offer Spoken English, Personality Development, Zumba fitness, and holistic skill development programs." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,8 +56,9 @@
       z-index: 3;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 180px 40px 40px;
+      padding: 120px 40px 60px;
       width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -147,10 +148,10 @@
 
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(4rem, 9vw, 8.5rem);
-      line-height: 0.85;
+      font-size: clamp(3rem, 7.5vw, 6.2rem);
+      line-height: 0.95;
       color: var(--white);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       letter-spacing: -0.01em;
       gap: 0;
     }
@@ -168,8 +169,9 @@
       font-size: 1.15rem;
       line-height: 1.6;
       color: var(--g1);
-      max-width: 600px;
-      margin-bottom: 40px;
+      max-width: 650px;
+      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     /* CTA row */
@@ -179,18 +181,17 @@
       gap: 16px;
       flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 60px;
+      margin-bottom: 36px;
     }
 
     /* Stats strip */
     .hero-stats {
-      display: flex;
-      justify-content: flex-start;
-      gap: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 750px;
       border-top: 1px solid rgba(255,255,255,0.1);
       padding-top: 28px;
       width: 100%;
-      max-width: 650px;
     }
 
     .hs-item {
@@ -271,6 +272,10 @@
         justify-content: center;
         width: 100%;
       }
+      .hs-item {
+        align-items: center;
+        text-align: center;
+      }
     }
 
     @media (max-width: 768px) {
@@ -291,6 +296,7 @@
       .hero-stats {
         gap: 20px;
         flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
       }
       .hero-scroll-cue {
         display: none;
@@ -340,6 +346,7 @@
           </ul>
         </li>
         <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
+        <li><a href="gallery.html" data-page="gallery">Gallery</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -359,13 +366,14 @@
       <li><a href="about.html">About</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
       <li class="mobile-dropdown">
-        <a href="fitness-studio.html" style="pointer-events: none;">Fitness Studio</a>
+        <a href="fitness-studio.html">Fitness Studio</a>
         <ul class="mobile-submenu">
           <li><a href="schedule.html">&bull; Schedule</a></li>
           <li><a href="pricing.html">&bull; Pricing</a></li>
         </ul>
       </li>
       <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
     </ul>
@@ -399,35 +407,46 @@
         </div>
 
         <h1 class="hero-title">
-          <span class="ht-outline">The Cocoon</span>
-          <span>LEARNING <span class="ht-accent">CENTRE.</span></span>
+          <span class="ht-outline">Empowering Every</span>
+          <span>Learner to <span class="ht-accent">Excel.</span></span>
         </h1>
+
+        <p class="hero-sub">
+          Education &bull; Tuition &bull; Skill Development &bull; Fitness &bull; Holistic Development – All Under One Roof
+        </p>
 
         <!-- CTAs -->
         <div class="hero-ctas">
-          <a href="learning.html" class="btn-primary">Explore Programs &rarr;</a>
-          <a href="infrastructure.html" class="btn-ghost">View Infrastructure</a>
+          <a href="contact.html?interest=enrol" class="btn-primary">Enrol Now</a>
+          <a href="contact.html?interest=counselling" class="btn-primary" style="background: var(--white); color: var(--bg); border-color: var(--white);">Book a Free Counselling</a>
+          <a href="contact.html" class="btn-ghost">Contact Us</a>
         </div>
 
         <!-- Stats strip -->
         <div class="hero-stats">
           <div class="hs-item">
             <span class="hs-num">
-              <span class="count" data-to="800" data-suffix="+">0+</span>
+              <span class="count" data-to="500" data-suffix="+">0+</span>
             </span>
             <span class="hs-label">Students Trained</span>
           </div>
           <div class="hs-item">
             <span class="hs-num">
-              <span class="count" data-to="10" data-suffix="+">0+</span>
+              <span class="count" data-to="20" data-suffix="+">0+</span>
             </span>
-            <span class="hs-label">Years of Excellence</span>
+            <span class="hs-label">Courses Offered</span>
           </div>
           <div class="hs-item">
             <span class="hs-num">
-              <span class="count" data-to="3">0</span>
+              <span class="count" data-to="15" data-suffix="+">0+</span>
             </span>
-            <span class="hs-label">Locations</span>
+            <span class="hs-label">Expert Faculty</span>
+          </div>
+          <div class="hs-item">
+            <span class="hs-num">
+              <span class="count" data-to="100" data-suffix="%">0%</span>
+            </span>
+            <span class="hs-label">Flexible Timings</span>
           </div>
         </div>
       </div><!-- /hero-content -->
@@ -476,6 +495,50 @@
     </div>
   </div>
 
+  <!-- ===================== WHY CHOOSE TCLC? ===================== -->
+  <section class="why-choose-section" id="why-choose">
+    <div class="wrap">
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">Our Strengths</div>
+        <h2>WHY CHOOSE <em>TCLC?</em></h2>
+        <p class="sec-subtitle" style="margin: 0 auto; max-width: 700px; color: var(--g1);">We combine academic rigor, creative skills, and physical fitness to nurture well-rounded individuals ready for academic and life success.</p>
+      </div>
+
+      <div class="why-choose-grid">
+        <div class="why-card" data-reveal data-reveal-delay="1">
+          <span class="why-icon">🎓</span>
+          <h3>Expert Faculty</h3>
+          <p>Learn from certified, highly qualified educators and licensed fitness coaches who are pioneers in their respective fields.</p>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="2">
+          <span class="why-icon">🎯</span>
+          <h3>Personalized Learning</h3>
+          <p>We maintain small batch sizes to ensure each student receives tailored coaching matched to their pace and learning style.</p>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="3">
+          <span class="why-icon">🦋</span>
+          <h3>Holistic Development</h3>
+          <p>A structured combination of academic excellence, communication enhancement, and physical well-being under one roof.</p>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="4">
+          <span class="why-icon">💻</span>
+          <h3>Modern Teaching Methods</h3>
+          <p>We leverage interactive, activity-based pedagogies, language labs, and STEAM learning to make discovery joyful.</p>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="5">
+          <span class="why-icon">💪</span>
+          <h3>Fitness &amp; Wellness Integration</h3>
+          <p>Certified Zumba® Fitness, functional movements, and healthy lifestyle habits are integrated directly into our routines.</p>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="6">
+          <span class="why-icon">🏷️</span>
+          <h3>Affordable Fee Structure</h3>
+          <p>Premium education, world-class infrastructure, and professional training offered at highly competitive rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== LAUNCH PROMO BANNER ======================= -->
   <section class="section launch-promo-section" style="padding: 40px 0;">
     <div class="wrap">
@@ -517,7 +580,85 @@
     </div>
   </section>
 
+  <!-- ===================== QUICK HIGHLIGHTS ===================== -->
+  <section class="highlights-section" id="highlights">
+    <div class="wrap">
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">At a Glance</div>
+        <h2>QUICK <em>HIGHLIGHTS</em></h2>
+        <p class="sec-subtitle" style="margin: 0 auto; max-width: 700px; color: var(--g1);">Explore the key pillars of academic and fitness excellence offered at our centres.</p>
+      </div>
 
+      <div class="highlights-grid">
+        <!-- Card 1 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="1">
+          <div class="highlight-img-wrap">
+            <img src="images/tuition_coaching.png" alt="Tuition Programmes" />
+          </div>
+          <div class="highlight-body">
+            <h3>Tuition Programmes</h3>
+            <p>Comprehensive, boards-aligned mentoring for classes VI–XII. Transform board exam preparation into strategic success.</p>
+            <a href="learning.html" class="highlight-link">Learn More &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="2">
+          <div class="highlight-img-wrap">
+            <img src="images/learning_center_about.png" alt="Learning Centre" />
+          </div>
+          <div class="highlight-body">
+            <h3>Learning Centre</h3>
+            <p>A nurturing space offering holistic preschool, daycare, STEAM learning, and after-school enrichment programs.</p>
+            <a href="learning.html" class="highlight-link">Explore Centre &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="3">
+          <div class="highlight-img-wrap">
+            <img src="images/zumba_class.png" alt="Fitness Studio" />
+          </div>
+          <div class="highlight-body">
+            <h3>Fitness Studio</h3>
+            <p>Exhilarating certified Zumba® fitness, Aqua Zumba®, and functional movements for weight management and health.</p>
+            <a href="fitness-studio.html" class="highlight-link">Join Studio &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="4">
+          <div class="highlight-img-wrap">
+            <img src="images/skill_dev.png" alt="Spoken English" />
+          </div>
+          <div class="highlight-body">
+            <h3>Spoken English</h3>
+            <p>Immersive language training, phonics, vocabulary enhancement, and public speaking coaching for outstanding fluency.</p>
+            <a href="learning.html" class="highlight-link">Read Details &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="5">
+          <div class="highlight-img-wrap">
+            <img src="images/preschool_class.png" alt="Personality Development" />
+          </div>
+          <div class="highlight-body">
+            <h3>Personality Development</h3>
+            <p>Cultivating self-esteem, critical thinking, emotional intelligence, leadership, and etiquette in learners of all ages.</p>
+            <a href="learning.html" class="highlight-link">Grow Now &rarr;</a>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="highlight-card" data-reveal data-reveal-delay="6">
+          <div class="highlight-img-wrap">
+            <img src="images/about_community.png" alt="Individual Attention" />
+          </div>
+          <div class="highlight-body">
+            <h3>Individual Attention</h3>
+            <p>Small batches, continuous feedback, and one-on-one academic mentoring to support each student's unique needs.</p>
+            <a href="contact.html" class="highlight-link">Book Consultation &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== DISCIPLINES ================== -->
   <section class="disciplines-section" id="disciplines">
@@ -614,7 +755,7 @@
         <div class="sb-sep" aria-hidden="true"></div>
         <div class="sb-item" data-reveal data-reveal-delay="2">
           <div class="sb-val">
-            <span class="count" data-to="2">0</span>
+            <span class="count" data-to="2" data-suffix="+">0</span>
           </div>
           <div class="sb-label">Branches</div>
         </div>
@@ -629,25 +770,66 @@
     </div>
   </div><!-- /stats-band -->
 
-  <!-- ===================== TESTIMONIAL ================== -->
-  <section class="testi-feature" aria-label="Parent testimonial">
-    <span class="tf-quote-mark" aria-hidden="true">&ldquo;</span>
+  <!-- ===================== TESTIMONIALS ================== -->
+  <section class="testimonials-section" aria-label="Testimonials">
     <div class="wrap">
-      <div class="testi-inner" data-reveal>
-        <div class="tf-stars" aria-label="5 stars">★★★★★</div>
-        <p class="tf-text">
-          &ldquo;We enrolled our daughter in the Cocoon Preschool &amp; Skill program. The Montessori approach and the language focus have done wonders for her confidence and reading skills. She absolutely loves going here!&rdquo;
-        </p>
-        <div class="tf-author">
-          <div class="tf-av">M</div>
-          <div class="tf-name">
-            <strong>Meenakshi Sundaram</strong>
-            <span>Parent of Dia (Montessori Senior) &mdash; Kuthalam Branch</span>
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">Trust &amp; Credibility</div>
+        <h2>WHAT OUR <em>COMMUNITY SAYS</em></h2>
+        <p class="sec-subtitle" style="margin: 0 auto; max-width: 700px; color: var(--g1);">Hear genuine testimonials from parents and students whose lives have been transformed through our programmes.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-reveal data-reveal-delay="1">
+          <span class="testi-quote-icon">&ldquo;</span>
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-content">
+            "We enrolled our daughter in the Cocoon Preschool &amp; Skill program. The Montessori approach and the language focus have done wonders for her confidence and reading skills. She absolutely loves going here!"
+          </p>
+          <div class="testi-user">
+            <div class="testi-avatar">M</div>
+            <div class="testi-info">
+              <strong>Meenakshi Sundaram</strong>
+              <span>Parent of Dia &bull; Kuthalam</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" data-reveal data-reveal-delay="2">
+          <span class="testi-quote-icon">&ldquo;</span>
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-content">
+            "The tuition coaching for Board exams at TCLC was exceptional. The teachers provided individualized attention, regular mock tests, and simplified complex concepts. My son scored 96% in his Science exam!"
+          </p>
+          <div class="testi-user">
+            <div class="testi-avatar">R</div>
+            <div class="testi-info">
+              <strong>Rajesh Kumar</strong>
+              <span>Parent of Aadhav &bull; Chennai</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" data-reveal data-reveal-delay="3">
+          <span class="testi-quote-icon">&ldquo;</span>
+          <div class="testi-rating">★★★★★</div>
+          <p class="testi-content">
+            "The Zumba Fitness Studio at TCLC has completely transformed my physical health. The sessions are energetic, motivating, and incredibly fun. My daughter and I both lost weight and feel so active!"
+          </p>
+          <div class="testi-user">
+            <div class="testi-avatar">P</div>
+            <div class="testi-info">
+              <strong>Priyadarshini R.</strong>
+              <span>Zumba Member &bull; Chennai</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section><!-- /testimonial -->
+  </section>
 
   <!-- ===================== CTA BANNER =================== -->
   <section class="cta-banner" aria-label="Call to action">
@@ -678,62 +860,42 @@
             </a>
             <p>Transforming lives through fitness and child development. The <span class="cocoon-brand">Cocoon</span> Learning Centre — now in Chennai &amp; Kuthalam.</p>
             <div class="social-links">
-              <a href="#" aria-label="Instagram">IG</a>
-              <a href="#" aria-label="Facebook">FB</a>
-              <a href="#" aria-label="YouTube">YT</a>
-              <a href="#" aria-label="WhatsApp">WA</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+              <a href="https://wa.me/919843012345" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
             </div>
           </div>
           <div class="fg-col">
-            <h5>Zumba Academy</h5>
+            <h5>Quick Links</h5>
             <ul>
-              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
-              <li><a href="fitness-studio.html">Zumba® Kids Jr.</a></li>
-              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
-              <li><a href="fitness-studio.html">Zumba® Gold</a></li>
-              <li><a href="fitness-studio.html">Aqua Zumba®</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy.html" style="opacity: 0.8; font-size: 0.78rem;">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Learning Centre</h5>
+            <h5>Courses</h5>
             <ul>
+              <li><a href="learning.html">Tuition Programmes</a></li>
               <li><a href="learning.html">Preschool Enrichment</a></li>
-              <li><a href="learning.html">After-School &amp; STEM</a></li>
-              <li><a href="learning.html">Language &amp; Communication</a></li>
-              <li><a href="learning.html">Abacus Arithmetic</a></li>
-              <li><a href="learning.html">Teacher Training</a></li>
+              <li><a href="learning.html">Spoken English</a></li>
+              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
+              <li><a href="learning.html">Montessori Teacher Training</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Our Locations</h5>
-            <ul>
-            <h5>Our Locations</h5>
+            <h5>Contact Details</h5>
             <ul>
               <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Office:</li>
               <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
               <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
               <li>No. 19-A, Nadu Chetty Street, Kuthalam – 609801</li>
-              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
-              <li>No. 19, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
-            </ul>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="wrap footer-bottom-inner">
-        <p>&copy; <span id="footer-year">2026</span> The <span class="cocoon-brand">Cocoon</span> Learning Centre. All rights reserved.</p>
-        <div class="footer-badges">
-          <span>⭐ 4.9 Google Rating</span>
-          <span>🎓 Licensed ZIN™ Coaches</span>
-          <span>🦋 Child Development Centre</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <!-- BACK TO TOP -->
   <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
 

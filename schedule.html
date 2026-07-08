@@ -350,6 +350,7 @@
           </ul>
         </li>
         <li><a href="infrastructure.html" data-page="infrastructure">Infrastructure</a></li>
+        <li><a href="gallery.html" data-page="gallery">Gallery</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
       <div class="nav-right">
@@ -369,16 +370,93 @@
       <li><a href="about.html">About</a></li>
       <li><a href="learning.html">Learning Centre</a></li>
       <li class="mobile-dropdown">
-        <a href="fitness-studio.html" style="pointer-events: none;">Fitness Studio</a>
+        <a href="fitness-studio.html">Fitness Studio</a>
         <ul class="mobile-submenu">
           <li><a href="schedule.html">&bull; Schedule</a></li>
           <li><a href="pricing.html">&bull; Pricing</a></li>
         </ul>
       </li>
       <li><a href="infrastructure.html">Infrastructure</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="drawer-cta">Book Free Trial &rarr;</a></li>
     </ul>
+  </div>
+  <div class="drawer-overlay" id="nav-drawer-overlay"></div>
+
+  <!-- ═══════ PAGE HERO ═══════ -->
+  <div class="sch-hero" style="position:relative; height:45vh; min-height:400px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; background:var(--bg);">
+    <div class="sch-hero-bg">
+      <img src="images/hero_main.png" alt="" aria-hidden="true" style="width:100%; height:100%; object-fit:cover; filter:brightness(0.25) saturate(1.2);"/>
+    </div>
+    <div style="position:absolute; inset:0; background:radial-gradient(circle at 50% 50%, rgba(200,151,63,0.1) 0%, transparent 70%);"></div>
+    <div class="sch-hero-content" style="position:relative; z-index:2; padding:0 40px; max-width:900px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+      <div class="sec-tag" style="display:inline-flex; align-items:center; gap:8px; background:rgba(212,175,55,0.15); border:1px solid rgba(212,175,55,0.3); padding:6px 16px; border-radius:20px; font-size:0.75rem; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:24px;">📅 Weekly Timetable</div>
+      <h1 class="sch-hero-title" style="font-family:var(--ff-display); font-size:clamp(3.5rem, 8vw, 6rem); color:var(--white); letter-spacing:0px; line-height:0.95; margin-bottom:20px;">
+        CLASS <span style="color:var(--gold);">SCHEDULE</span>
+      </h1>
+      <p class="sch-hero-sub" style="font-size:1.05rem; color:var(--g1); max-width:600px; line-height:1.6; margin:0 auto;">
+        Morning and evening batches across all 7 days. Find a slot that fits your life and start your journey with offline or live online classes.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════ STICKY CONTROLS ═══════ -->
+  <div class="sch-controls" role="navigation" aria-label="Schedule filters">
+    <div class="sch-controls-inner">
+      <!-- Day tabs -->
+      <div class="day-tabs" role="tablist" aria-label="Day selector">
+        <button class="day-tab active" role="tab" aria-selected="true" data-day="monday">Mon</button>
+        <button class="day-tab" role="tab" data-day="tuesday">Tue</button>
+        <button class="day-tab" role="tab" data-day="wednesday">Wed</button>
+        <button class="day-tab" role="tab" data-day="thursday">Thu</button>
+        <button class="day-tab" role="tab" data-day="friday">Fri</button>
+        <button class="day-tab" role="tab" data-day="saturday">Sat</button>
+        <button class="day-tab" role="tab" data-day="sunday">Sun</button>
+      </div>
+
+      <!-- Type + legend -->
+      <div class="sch-filter-legend-wrap">
+        <div class="type-filters" role="group" aria-label="Class type filter">
+          <button class="type-btn active" data-type="all">All</button>
+          <button class="type-btn" data-type="Zumba">💃 Zumba Fitness</button>
+          <button class="type-btn" data-type="Zumba Kids Jr.">👶 Zumba Kids Jr.</button>
+          <button class="type-btn" data-type="Zumba Kids">🌟 Zumba Kids</button>
+          <button class="type-btn" data-type="Zumba Gold">💛 Zumba Gold</button>
+          <button class="type-btn" data-type="Aqua Zumba">💧 Aqua Zumba</button>
+        </div>
+        <!-- Online / Offline mode filter -->
+        <div class="mode-filters" role="group" aria-label="Class mode filter" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+          <button class="mode-btn active" data-mode="all" style="padding:6px 16px; border-radius:20px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.08); color:#fff; font-size:0.78rem; font-weight:600; cursor:pointer; transition:all 0.2s;">🌐 All Modes</button>
+          <button class="mode-btn" data-mode="offline" style="padding:6px 16px; border-radius:20px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.04); color:#ccc; font-size:0.78rem; font-weight:600; cursor:pointer; transition:all 0.2s;">🏫 In-Person (Offline)</button>
+          <button class="mode-btn" data-mode="online" style="padding:6px 16px; border-radius:20px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.04); color:#ccc; font-size:0.78rem; font-weight:600; cursor:pointer; transition:all 0.2s;">💻 Live Online</button>
+        </div>
+        <div class="sch-legend" aria-label="Spot availability legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#4CAF50;"></div>Available</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Few spots</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#e53e3e;"></div>Full</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SCHEDULE BOARD ═══════ -->
+  <section class="sch-board-section">
+    <div class="wrap">
+      <!-- Mobile-only legend shown above the board -->
+      <div class="sch-branch-notice" style="text-align:center; margin-bottom:20px; font-size:0.85rem; color:#4dd0e1; font-family:var(--ff-body);">
+        ℹ️ <strong>Note:</strong> Aqua Zumba classes are conducted only at the <strong>Chennai</strong> branch (Velachery). Online sessions are available for select classes — use the Live Online filter above.
+      </div>
+      <div class="sch-legend-mobile-only" aria-label="Spot availability legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#4CAF50;"></div>Available</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Few spots</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e53e3e;"></div>Full</div>
+      </div>
+
+      <div id="schBoard" aria-live="polite" aria-atomic="true">
+        <!-- JS rendered -->
+      </div>
+    </div>
   </div>
   <div class="drawer-overlay" id="nav-drawer-overlay"></div>
 
@@ -477,62 +555,44 @@
                 <span class="lw-bot">LEARNING CENTRE</span>
               </div>
             </a>
-            <p>Transforming lives through fitness and child development. Leading programs in Chennai and Kuthalam.</p>
+            <p>Transforming lives through fitness and child development. The <span class="cocoon-brand">Cocoon</span> Learning Centre — now in Chennai &amp; Kuthalam.</p>
             <div class="social-links">
-              <a href="#" aria-label="Instagram">IG</a>
-              <a href="#" aria-label="Facebook">FB</a>
-              <a href="#" aria-label="YouTube">YT</a>
-              <a href="#" aria-label="WhatsApp">WA</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+              <a href="https://wa.me/919843012345" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
             </div>
           </div>
           <div class="fg-col">
-            <h5>Zumba Academy</h5>
+            <h5>Quick Links</h5>
             <ul>
-              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
-              <li><a href="fitness-studio.html">Zumba® Kids Jr.</a></li>
-              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
-              <li><a href="fitness-studio.html">Zumba® Gold</a></li>
-              <li><a href="fitness-studio.html">Aqua Zumba®</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="infrastructure.html">Infrastructure</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy.html" style="opacity: 0.8; font-size: 0.78rem;">Privacy Policy</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Learning Centre</h5>
+            <h5>Courses</h5>
             <ul>
+              <li><a href="learning.html">Tuition Programmes</a></li>
               <li><a href="learning.html">Preschool Enrichment</a></li>
-              <li><a href="learning.html">After-School &amp; STEM</a></li>
-              <li><a href="learning.html">Language &amp; Communication</a></li>
-              <li><a href="learning.html">Abacus Arithmetic</a></li>
-              <li><a href="learning.html">Teacher Training</a></li>
+              <li><a href="learning.html">Spoken English</a></li>
+              <li><a href="fitness-studio.html">Zumba® Fitness</a></li>
+              <li><a href="fitness-studio.html">Zumba® Kids</a></li>
+              <li><a href="learning.html">Montessori Teacher Training</a></li>
             </ul>
           </div>
           <div class="fg-col">
-            <h5>Our Locations</h5>
-            <ul>
-            <h5>Our Locations</h5>
+            <h5>Contact Details</h5>
             <ul>
               <li style="color:var(--gold);font-weight:700;margin-bottom:2px;">Chennai Office:</li>
               <li>7D, SIS Meridian, Velachery, Chennai – 600042</li>
               <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam HQ:</li>
               <li>No. 19-A, Nadu Chetty Street, Kuthalam – 609801</li>
-              <li style="color:var(--gold);font-weight:700;margin-top:10px;margin-bottom:2px;">Kuthalam Branch:</li>
-              <li>No. 19, Nadu Chetty Street, Kuthalam – 609801</li>
               <li style="margin-top:10px;"><a href="mailto:info@cocoonacademy.in">info@cocoonacademy.in</a></li>
-            </ul>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="wrap footer-bottom-inner">
-        <p>&copy; <span id="footer-year">2026</span> The <span class="cocoon-brand">Cocoon</span> Learning Centre. All rights reserved.</p>
-        <div class="footer-badges">
-          <span>⭐ 4.9 Google Rating</span>
-          <span>🎓 Licensed ZIN™ Coaches</span>
-          <span>🦋 Child Development Centre</span>
-        </div>
-      </div>
-    </div>
   </footer>
 
   <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</a>
