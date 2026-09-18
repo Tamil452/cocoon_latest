@@ -27,6 +27,100 @@
       .tl-item:nth-child(even) .tl-body { text-align: left; }
       .tl-item:nth-child(odd) .tl-desc  { margin-left: 0; }
     }
+
+    /* ---- New: Achievements / Faculty / Certifications placeholders ---- */
+    .placeholder-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold2);
+      background: var(--goldt);
+      border: 1px dashed var(--gold3);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 14px;
+    }
+    .placeholder-card { border-style: dashed !important; }
+
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .milestone-card {
+      background: var(--bg3);
+      border: 1px dashed var(--goldb);
+      border-radius: var(--r2);
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.35s, transform 0.35s var(--ease);
+    }
+    .milestone-card:hover { border-color: var(--gold3); transform: translateY(-6px); }
+    .milestone-icon { font-size: 2.2rem; display: block; margin-bottom: 16px; }
+    .milestone-card h3 { font-family: var(--ff-display); font-size: 1.25rem; letter-spacing: 1px; color: var(--white); margin-bottom: 10px; }
+    .milestone-card p { font-size: 0.8rem; color: var(--g2); line-height: 1.6; }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .faculty-card {
+      background: var(--bg3);
+      border: 1px dashed var(--goldb);
+      border-radius: var(--r2);
+      padding: 28px 24px;
+      text-align: center;
+      transition: border-color 0.35s, transform 0.35s var(--ease);
+    }
+    .faculty-card:hover { border-color: var(--gold3); transform: translateY(-6px); }
+    .faculty-photo-placeholder {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 1px dashed var(--gold3);
+      background: var(--goldt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+    .faculty-card h4 { font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .faculty-role { font-size: 0.65rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+    .faculty-card p.faculty-bio { font-size: 0.8rem; color: var(--g2); line-height: 1.6; margin-bottom: 0; }
+
+    .cert-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg3);
+      border: 1px solid var(--goldb);
+      border-radius: var(--r);
+      padding: 14px 20px;
+      font-size: 0.78rem;
+      color: var(--g1);
+    }
+    .cert-badge.is-placeholder { border-style: dashed; color: var(--g2); }
+    .cert-badge-icon { font-size: 1.3rem; }
+
+    @media (max-width: 991px) {
+      .milestones-grid { grid-template-columns: repeat(2, 1fr); }
+      .faculty-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .milestones-grid { grid-template-columns: 1fr; }
+      .faculty-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body data-page="about">
@@ -258,6 +352,109 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== ACHIEVEMENTS & MILESTONES (PLACEHOLDER — NEEDS REAL CONTENT) ===================== -->
+  <section class="section milestones-section" id="milestones" aria-label="Achievements and milestones">
+    <div class="wrap">
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">Recognition</div>
+        <h2>AWARDS &amp; <em>MILESTONES</em></h2>
+        <p class="sec-subtitle" style="margin:0 auto; max-width: 650px; color: var(--g1);">A dedicated space for TCLC's specific awards, press mentions, and milestones. The cards below are placeholders — pending verified details from the team.</p>
+      </div>
+
+      <div class="milestones-grid">
+        <div class="milestone-card placeholder-card" data-reveal data-reveal-delay="1">
+          <span class="placeholder-tag">Placeholder</span>
+          <span class="milestone-icon" aria-hidden="true">🏅</span>
+          <h3>Add Achievement Title</h3>
+          <p>Team: replace with a specific, verified achievement (award, milestone, press mention, etc.), including the date and source.</p>
+        </div>
+        <div class="milestone-card placeholder-card" data-reveal data-reveal-delay="2">
+          <span class="placeholder-tag">Placeholder</span>
+          <span class="milestone-icon" aria-hidden="true">📰</span>
+          <h3>Add Achievement Title</h3>
+          <p>Team: replace with a specific, verified achievement (award, milestone, press mention, etc.), including the date and source.</p>
+        </div>
+        <div class="milestone-card placeholder-card" data-reveal data-reveal-delay="3">
+          <span class="placeholder-tag">Placeholder</span>
+          <span class="milestone-icon" aria-hidden="true">🎯</span>
+          <h3>Add Achievement Title</h3>
+          <p>Team: replace with a specific, verified achievement (award, milestone, press mention, etc.), including the date and source.</p>
+        </div>
+        <div class="milestone-card placeholder-card" data-reveal data-reveal-delay="4">
+          <span class="placeholder-tag">Placeholder</span>
+          <span class="milestone-icon" aria-hidden="true">🏆</span>
+          <h3>Add Achievement Title</h3>
+          <p>Team: replace with a specific, verified achievement (award, milestone, press mention, etc.), including the date and source.</p>
+        </div>
+      </div>
+    </div>
+  </section><!-- /milestones -->
+
+  <!-- ===================== FACULTY PROFILES (PLACEHOLDER — NEEDS REAL CONTENT) ===================== -->
+  <section class="section faculty-section" id="faculty" aria-label="Faculty and coaching profiles">
+    <div class="wrap">
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">Our People</div>
+        <h2>FACULTY &amp; <em>COACHING PROFILES</em></h2>
+        <p class="sec-subtitle" style="margin:0 auto; max-width: 650px; color: var(--g1);">Individual profiles for our academic tutors, preschool educators, and skill-development coaches. The cards below are placeholders pending real photos and bios from the team.</p>
+      </div>
+
+      <div class="faculty-grid">
+        <div class="faculty-card placeholder-card" data-reveal data-reveal-delay="1">
+          <span class="placeholder-tag">Placeholder</span>
+          <div class="faculty-photo-placeholder" aria-hidden="true">📷</div>
+          <h4>Add Faculty Name</h4>
+          <span class="faculty-role">Subject / Role Placeholder</span>
+          <p class="faculty-bio">Team: replace with a real name, photo, subject/role, and one-line bio.</p>
+        </div>
+        <div class="faculty-card placeholder-card" data-reveal data-reveal-delay="2">
+          <span class="placeholder-tag">Placeholder</span>
+          <div class="faculty-photo-placeholder" aria-hidden="true">📷</div>
+          <h4>Add Faculty Name</h4>
+          <span class="faculty-role">Subject / Role Placeholder</span>
+          <p class="faculty-bio">Team: replace with a real name, photo, subject/role, and one-line bio.</p>
+        </div>
+        <div class="faculty-card placeholder-card" data-reveal data-reveal-delay="3">
+          <span class="placeholder-tag">Placeholder</span>
+          <div class="faculty-photo-placeholder" aria-hidden="true">📷</div>
+          <h4>Add Faculty Name</h4>
+          <span class="faculty-role">Subject / Role Placeholder</span>
+          <p class="faculty-bio">Team: replace with a real name, photo, subject/role, and one-line bio.</p>
+        </div>
+      </div>
+    </div>
+  </section><!-- /faculty -->
+
+  <!-- ===================== CERTIFICATIONS & ACCREDITATIONS ===================== -->
+  <section class="section certifications-section" id="certifications" aria-label="Certifications and accreditations">
+    <div class="wrap">
+      <div class="section-head text-center" data-reveal>
+        <div class="sec-tag">Certifications</div>
+        <h2>CERTIFICATIONS &amp; <em>ACCREDITATIONS</em></h2>
+        <p class="sec-subtitle" style="margin:0 auto; max-width: 650px; color: var(--g1);">Verified credentials are marked below; the rest are placeholders for the team to complete with real, verifiable certifications and accreditations.</p>
+      </div>
+
+      <div class="cert-badge-row" data-reveal>
+        <div class="cert-badge">
+          <span class="cert-badge-icon" aria-hidden="true">🎓</span>
+          <span>Licensed ZIN&trade; Coaches (Zumba&reg;)</span>
+        </div>
+        <div class="cert-badge is-placeholder">
+          <span class="cert-badge-icon" aria-hidden="true">➕</span>
+          <span>Team: add academic/preschool accreditation here</span>
+        </div>
+        <div class="cert-badge is-placeholder">
+          <span class="cert-badge-icon" aria-hidden="true">➕</span>
+          <span>Team: add safety/child-care certification here</span>
+        </div>
+        <div class="cert-badge is-placeholder">
+          <span class="cert-badge-icon" aria-hidden="true">➕</span>
+          <span>Team: add other verified credential here</span>
+        </div>
+      </div>
+    </div>
+  </section><!-- /certifications -->
 
   <!-- ===================== VALUES ======================= -->
   <section class="values-section" aria-label="Our values">
